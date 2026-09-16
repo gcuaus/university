@@ -66,8 +66,8 @@ local filesystem.
   server. This GitHub App is separate from the OAuth App used for sign-in.
 
 For production, add the same three environment variables to the deployment
-provider and register the production callback URL:
-`https://your-domain.example/api/keystatic/github/oauth/callback`.
+provider and register this staging callback URL:
+`https://staging.gcua.us/api/keystatic/github/oauth/callback`.
 
 The GitHub OAuth App must be authorized by an account with write access to the
 repository. Do not put a GitHub password, OAuth secret, or personal access
