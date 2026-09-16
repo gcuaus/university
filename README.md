@@ -44,3 +44,31 @@ vercel --prod
   admissions number before going live.
 - Legal footer links (Privacy/Terms/Refund/FAQ) open a placeholder modal —
   real legal copy gets dropped in during full build.
+
+## Keystatic GitHub login
+
+Keystatic is configured to use the `gcuaus/university` GitHub repository. The
+CMS now shows its built-in GitHub sign-in screen before allowing content edits;
+successful edits are committed through GitHub rather than written only to the
+local filesystem.
+
+### Local setup
+
+1. In GitHub, open **Settings → Developer settings → OAuth Apps → New OAuth App**.
+2. Set the callback URL to `http://127.0.0.1:3000/api/keystatic/github/oauth/callback`.
+3. Copy `.env.example` to `.env.local` and set the OAuth client ID, client
+  secret, and a long random `KEYSTATIC_SECRET`.
+4. Start the site with `npm run dev` and open `http://localhost:3000/keystatic`.
+
+5. After signing in, use Keystatic's **Create GitHub App** flow. Install the
+  app on `gcuaus/university`, then copy its GitHub App slug into
+  `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` in `.env.local` and restart the dev
+  server. This GitHub App is separate from the OAuth App used for sign-in.
+
+For production, add the same three environment variables to the deployment
+provider and register the production callback URL:
+`https://your-domain.example/api/keystatic/github/oauth/callback`.
+
+The GitHub OAuth App must be authorized by an account with write access to the
+repository. Do not put a GitHub password, OAuth secret, or personal access
+token in this repository.
