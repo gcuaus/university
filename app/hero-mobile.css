@@ -15,4 +15,19 @@
   .hero-slide-caption strong {
     max-width: 100%;
   }
+
+  .stats-table-item {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .stats-table-item strong {
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stats-table-item span {
+    text-align: center;
+  }
 }
