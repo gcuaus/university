@@ -198,7 +198,10 @@ export default config({
         schema: {
           title: fields.slug({ name: { label: 'Location name', validation: { isRequired: true } } }),
           address: fields.text({ label: 'Address', multiline: true, validation: { isRequired: true } }),
+          phone: fields.text({ label: 'Phone number' }),
           directionsUrl: fields.url({ label: 'Directions URL' }),
+          mapUrl: fields.url({ label: 'Google Maps link' }),
+          mapEmbedUrl: fields.url({ label: 'Google Maps embed URL' }),
           hours: fields.text({ label: 'Hours', multiline: true }),
           details: fields.document({ label: 'Location details', formatting: true, links: true }),
         },
