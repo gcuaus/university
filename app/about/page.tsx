@@ -3,6 +3,7 @@ import { createReader } from '@keystatic/core/reader';
 import config from '../../keystatic.config';
 import '../globals.css';
 import '../site-content.css';
+import '../navigation-footer.css';
 
 const reader = createReader(process.cwd(), config);
 

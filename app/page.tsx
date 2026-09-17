@@ -7,6 +7,7 @@ import ThemeToggle from './components/theme-toggle';
 import HeroSlider from './components/hero-slider';
 import EvaluationForm from './components/evaluation-form';
 import './site-content.css';
+import './navigation-footer.css';
 
 const reader = createReader(process.cwd(), config);
 
