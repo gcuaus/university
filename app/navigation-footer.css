@@ -1,0 +1,3 @@
+@media(max-width:720px){.site-header{gap:16px}.site-header nav{font-size:12px;line-height:1.4}.site-header nav a:nth-child(-n+3){display:inline}.site-header nav .nav-cta{padding:8px 10px}}
+footer{display:grid;grid-template-columns:1fr auto;align-items:end;gap:18px 25px}.tuition-page footer>div,body>main:not(.tuition-page) footer>div{grid-column:1/-1}.footer-admin{grid-column:1}.footer-theme-toggle{display:flex;grid-column:2;grid-row:2;justify-content:flex-end;align-items:center;margin:0}
+@media(max-width:720px){footer{grid-template-columns:1fr auto;gap:16px 12px}.footer-admin{margin:0}.footer-theme-toggle{grid-column:2;grid-row:2}.tuition-page footer{display:grid}}

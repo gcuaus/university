@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import './navigation-footer.css';
 
 export const metadata: Metadata = {
   title: 'GCTSA | Great Commission Theological Seminary of America',
