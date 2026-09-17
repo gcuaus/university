@@ -1,11 +1,17 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { getCountryCallingCode, getCountries, type Country } from 'react-phone-number-input';
 
 const WHATSAPP_NUMBER = '';
 
+function countryFlag(country: Country) {
+  return country.replace(/./g, (character) => String.fromCodePoint(character.charCodeAt(0) + 127397));
+}
+
 export default function EvaluationForm() {
   const [sent, setSent] = useState(false);
+  const [country, setCountry] = useState<Country>('US');
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -13,7 +19,7 @@ export default function EvaluationForm() {
     const message = [
       `Name: ${formData.get('name') || ''}`,
       `Email: ${formData.get('email') || ''}`,
-      `WhatsApp: ${formData.get('whatsapp') || ''}`,
+      `WhatsApp: +${getCountryCallingCode(country)} ${formData.get('whatsapp') || ''}`,
       `Ministry or study interest: ${formData.get('interest') || ''}`,
     ].join('\n');
 
@@ -31,8 +37,15 @@ export default function EvaluationForm() {
     <form className="evaluation-form" onSubmit={handleSubmit}>
       <label>Name<input name="name" required /></label>
       <label>Email<input name="email" type="email" required /></label>
-      <label>WhatsApp<input name="whatsapp" type="tel" required /></label>
-      <label>Ministry or study interest<textarea name="interest" rows={3} required /></label>
+      <label className="whatsapp-field">WhatsApp
+        <span className="phone-input">
+          <select aria-label="Country calling code" value={country} onChange={(event) => setCountry(event.target.value as Country)}>
+            {getCountries().map((countryCode) => <option value={countryCode} key={countryCode}>{countryFlag(countryCode)} +{getCountryCallingCode(countryCode)}</option>)}
+          </select>
+          <input name="whatsapp" type="tel" inputMode="tel" placeholder="Phone number" required />
+        </span>
+      </label>
+      <label className="interest-field">Ministry or study interest<textarea name="interest" rows={5} required /></label>
       <button className="button gold" type="submit">Request evaluation <span aria-hidden="true">↗</span></button>
     </form>
   );

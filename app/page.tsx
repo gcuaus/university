@@ -12,6 +12,7 @@ import ProgramsCarousel from './components/programs-carousel';
 import FloatingWhatsApp from './components/floating-whatsapp';
 import './site-content.css';
 import './navigation-footer.css';
+import './evaluation-form.css';
 
 const reader = createReader(process.cwd(), config);
 

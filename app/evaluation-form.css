@@ -1,0 +1,50 @@
+.evaluation-form {
+  max-width: 640px;
+  gap: 14px;
+}
+
+.evaluation-form label {
+  min-width: 0;
+}
+
+.phone-input {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 8px;
+}
+
+.phone-input select,
+.phone-input input {
+  min-width: 0;
+}
+
+.phone-input select {
+  appearance: none;
+  padding: 11px 10px;
+  border: 1px solid rgba(245, 240, 231, .35);
+  color: var(--paper);
+  background: rgba(16, 35, 56, .25);
+  font: 13px var(--body);
+  cursor: pointer;
+}
+
+.interest-field {
+  grid-column: 1 / -1;
+}
+
+.interest-field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+@media (max-width: 720px) {
+  .phone-input {
+    grid-template-columns: 118px 1fr;
+  }
+}
+
+html[data-theme='light'] .phone-input select {
+  border-color: rgba(16, 35, 56, .25);
+  color: var(--ink);
+  background: rgba(255, 255, 255, .45);
+}
