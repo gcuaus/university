@@ -14,6 +14,8 @@
   padding: 0;
   color: var(--paper);
   background: var(--ink);
+  background-position: center;
+  background-size: cover;
 }
 
 .faculty-card-overlay {
