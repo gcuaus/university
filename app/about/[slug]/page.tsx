@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { createReader } from '@keystatic/core/reader';
 import config from '../../../keystatic.config';
 import MarkdocContent from '../../components/markdoc-content';
+import Breadcrumbs from '../../components/breadcrumbs';
 import { breadcrumbJsonLd, jsonLdHtml, pageMetadata } from '../../lib/seo';
 
 const reader = createReader(process.cwd(), config);
@@ -50,6 +51,13 @@ export default async function AboutArticlePage({
             ]),
           ),
         }}
+      />
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: entry.title },
+        ]}
       />
       <section className="directory-hero">
         <p className="eyebrow">About GCTSA</p>

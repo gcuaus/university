@@ -18,4 +18,5 @@ html:not([data-theme='light']) .location-page .location-copy h2,html:not([data-t
 .contact-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:22px}
 .contact-links a{color:#8b6320;font-size:14px;font-weight:600;text-decoration:underline}
 .contact-entry .prose-content{max-width:none;margin:0;padding:0}
-@media(max-width:720px){.prose-content{padding:0 24px 55px}.contact-list{padding:0 24px 55px}.contact-entry{padding:28px 0}}
+.breadcrumbs{max-width:950px;margin:auto;padding:22px 24px 0}.breadcrumbs ol{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}.breadcrumbs li{display:flex;align-items:center;gap:8px;color:#68747b;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.breadcrumbs li+li:before{content:'/';color:#b8b0a3}.breadcrumbs a{color:#8b6320}.breadcrumbs a:hover{text-decoration:underline}.breadcrumbs [aria-current='page']{color:#102338}
+@media(max-width:720px){.prose-content{padding:0 24px 55px}.contact-list{padding:0 24px 55px}.contact-entry{padding:28px 0}.breadcrumbs{padding-top:16px}}

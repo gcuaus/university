@@ -16,6 +16,8 @@ export default config({
         navAbout: fields.text({ label: 'About navigation label' }),
         navPrograms: fields.text({ label: 'Programs navigation label' }),
         navFaculty: fields.text({ label: 'Faculty navigation label' }),
+        navLocation: fields.text({ label: 'Location navigation label' }),
+        navTuition: fields.text({ label: 'Tuition navigation label' }),
         navNews: fields.text({ label: 'News navigation label' }),
         navContact: fields.text({ label: 'Contact navigation label' }),
         navApply: fields.text({ label: 'Apply navigation label' }),

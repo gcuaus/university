@@ -5,6 +5,7 @@ import './site-content.css';
 import './navigation-footer.css';
 import SiteNavigation from './components/site-navigation';
 import SiteFooter from './components/site-footer';
+import { getHome } from './lib/home';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, jsonLdHtml, organizationJsonLd } from './lib/seo';
 
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const home = await getHome();
   return (
     <html
       lang="en"
@@ -46,7 +48,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLdHtml(organizationJsonLd()) }}
         />
-        <SiteNavigation />
+        <SiteNavigation
+          labels={{
+            about: home.navAbout,
+            programs: home.navPrograms,
+            faculty: home.navFaculty,
+            location: home.navLocation,
+            tuition: home.navTuition,
+            news: home.navNews,
+            contact: home.navContact,
+            apply: home.navApply,
+          }}
+        />
         <div id="main-content" className="site-main" tabIndex={-1}>
           {children}
         </div>

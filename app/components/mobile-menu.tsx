@@ -2,19 +2,75 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function MobileMenu() {
+type MenuItem = { href: string; label: string };
+
+const DEFAULT_LINKS: MenuItem[] = [
+  { href: '/about', label: 'About' },
+  { href: '/programs', label: 'Programs' },
+  { href: '/faculty', label: 'Faculty' },
+  { href: '/location', label: 'Location' },
+  { href: '/tuition', label: 'Tuition' },
+  { href: '/blog', label: 'News' },
+  { href: '/contact', label: 'Contact' },
+];
+
+export default function MobileMenu({
+  items = DEFAULT_LINKS,
+  apply = 'Apply now',
+}: {
+  items?: MenuItem[];
+  apply?: string;
+}) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
+  useEffect(() => {
+    if (!open) return;
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') setOpen(false);
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [open]);
+
   return (
     <div className="mobile-menu">
-      <button className="mobile-menu-button" type="button" aria-expanded={open} aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setOpen(!open)}>
+      <button
+        className="mobile-menu-button"
+        type="button"
+        aria-expanded={open}
+        aria-controls="mobile-menu-panel"
+        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        onClick={() => setOpen(!open)}
+      >
         <span aria-hidden="true">{open ? '×' : '☰'}</span>
       </button>
-      {open && <div className="mobile-menu-panel"><Link className={isActive('/about') ? 'is-active' : undefined} href="/about" aria-current={isActive('/about') ? 'page' : undefined} onClick={() => setOpen(false)}>About</Link><Link className={isActive('/programs') ? 'is-active' : undefined} href="/programs" aria-current={isActive('/programs') ? 'page' : undefined} onClick={() => setOpen(false)}>Programs</Link><Link className={isActive('/faculty') ? 'is-active' : undefined} href="/faculty" aria-current={isActive('/faculty') ? 'page' : undefined} onClick={() => setOpen(false)}>Faculty</Link><Link className={isActive('/location') ? 'is-active' : undefined} href="/location" aria-current={isActive('/location') ? 'page' : undefined} onClick={() => setOpen(false)}>Location</Link><Link className={isActive('/tuition') ? 'is-active' : undefined} href="/tuition" aria-current={isActive('/tuition') ? 'page' : undefined} onClick={() => setOpen(false)}>Tuition</Link><Link className={isActive('/') ? 'is-active' : undefined} href="/#evaluation" aria-current={isActive('/') ? 'page' : undefined} onClick={() => setOpen(false)}>Apply now</Link></div>}
+      {open && (
+        <div className="mobile-menu-panel" id="mobile-menu-panel">
+          {items.map((item) => (
+            <Link
+              className={isActive(item.href) ? 'is-active' : undefined}
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              onClick={() => setOpen(false)}
+              key={item.href}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            className={isActive('/') ? 'is-active' : undefined}
+            href="/#evaluation"
+            aria-current={isActive('/') ? 'page' : undefined}
+            onClick={() => setOpen(false)}
+          >
+            {apply}
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

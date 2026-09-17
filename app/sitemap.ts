@@ -6,7 +6,7 @@ import { SITE_URL } from './lib/seo';
 const reader = createReader(process.cwd(), config);
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ['', '/about', '/programs', '/faculty', '/location', '/contact', '/blog'];
+  const staticRoutes = ['', '/about', '/programs', '/faculty', '/location', '/tuition', '/contact', '/blog'];
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((path) => ({
     url: `${SITE_URL}${path}`,
     changeFrequency: 'monthly',

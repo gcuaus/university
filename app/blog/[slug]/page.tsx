@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { createReader } from '@keystatic/core/reader';
 import config from '../../../keystatic.config';
 import MarkdocContent from '../../components/markdoc-content';
+import Breadcrumbs from '../../components/breadcrumbs';
 import { formatDate } from '../../lib/format';
 import { SITE_NAME, breadcrumbJsonLd, jsonLdHtml, pageMetadata } from '../../lib/seo';
 
@@ -77,6 +78,13 @@ export default async function PostPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdHtml(article) }}
+      />
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'News', href: '/blog' },
+          { label: entry.title },
+        ]}
       />
       <section className="directory-hero">
         <p className="eyebrow">News</p>
