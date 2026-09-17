@@ -48,7 +48,14 @@
 }
 
 html[data-theme='light'] .program-levels button {
-  color: rgba(245, 240, 231, .72);
+  color: var(--ink);
+  background: rgba(16, 35, 56, .06);
+}
+
+html[data-theme='light'] .program-levels button:hover,
+html[data-theme='light'] .program-levels button.is-active {
+  color: #8b6320;
+  background: rgba(199, 150, 56, .16);
 }
 
 @media (max-width: 720px) {
