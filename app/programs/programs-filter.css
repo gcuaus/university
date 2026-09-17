@@ -6,6 +6,9 @@
   max-width: 950px;
   margin: 0 auto 30px;
   padding: 14px 18px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .program-levels {
@@ -30,7 +33,7 @@
   border: 0;
   border-radius: 999px;
   color: rgba(245, 240, 231, .7);
-  background: rgba(245, 240, 231, .06);
+  background: transparent;
   font: 10px var(--mono);
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -40,8 +43,8 @@
 
 .program-levels button:hover,
 .program-levels button.is-active {
-  color: var(--ink);
-  background: var(--gold);
+  color: var(--gold);
+  background: transparent;
 }
 
 html[data-theme='light'] .program-levels button {
