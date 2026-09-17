@@ -1,0 +1,24 @@
+.program-levels button {
+  display: block;
+  width: 100%;
+  padding: 7px 0;
+  border: 0;
+  color: rgba(245, 240, 231, .72);
+  background: transparent;
+  font: 10px var(--mono);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.program-levels button:hover,
+.program-levels button.is-active {
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+html[data-theme='light'] .program-levels button {
+  color: rgba(245, 240, 231, .72);
+}
