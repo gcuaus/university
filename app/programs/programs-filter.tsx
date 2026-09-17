@@ -51,7 +51,8 @@ export default function ProgramsFilter({ programs }: { programs: Program[] }) {
                 {disciplines.length > 0 && <ul className="programs-disciplines">{disciplines.map((discipline) => <li key={`${program.slug}-${discipline}`}>{discipline}</li>)}</ul>}
                 <p className="programs-card-summary">{program.summary}</p>
                 <p className="programs-card-meta">{program.duration || 'Flexible format'}</p>
-                {program.curriculumUrl ? <a href={program.curriculumUrl} target="_blank" rel="noreferrer">View curriculum <span>↗</span></a> : <Link href="/keystatic/collection/programs">Edit program <span>↗</span></Link>}
+                {program.curriculumUrl && <a href={program.curriculumUrl} target="_blank" rel="noreferrer">View curriculum <span>↗</span></a>}
+                <Link href={`/programs/${program.slug}`}>Program details <span>↗</span></Link>
               </div>
             </article>
           );
