@@ -7,7 +7,7 @@ import './infographics.css';
 import ThemeToggle from './components/theme-toggle';
 import HeroSlider from './components/hero-slider';
 import EvaluationForm from './components/evaluation-form';
-import MobileMenu from './components/mobile-menu';
+import SiteNavigation from './components/site-navigation';
 import ProgramsCarousel from './components/programs-carousel';
 import FloatingWhatsApp from './components/floating-whatsapp';
 import './site-content.css';
@@ -52,7 +52,7 @@ export default async function HomePage() {
   return (
     <main>
       <div className="announcement">{home.announcement}<span>↗</span></div>
-      <header className="site-header"><Link className="brand" href="#top"><span className="seal">G</span><span><strong>{home.brand}</strong><small>{home.brandDescriptor}</small></span></Link><nav className="site-nav"><Link href="/about">{home.navAbout}</Link><Link href="/programs">{home.navPrograms}</Link><Link href="/faculty">{home.navFaculty}</Link><Link href="/location">Location</Link><Link href="/tuition">Tuition</Link><Link href="/#evaluation">Apply now</Link><span className="header-theme-toggle"><ThemeToggle /></span><Link className="nav-cta" href="/keystatic">Login</Link></nav><div className="mobile-header-actions"><Link className="nav-cta" href="/keystatic">Login</Link><MobileMenu /></div></header>
+      <SiteNavigation />
       <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">{home.heroEyebrow}</p><h1>{home.heroTitle}</h1><p className="hero-body">{home.heroBody}</p><div className="actions"><Link className="button gold" href="/programs">{home.heroPrimaryCta}<span>↗</span></Link><Link className="button outline" href="/faculty">{home.heroSecondaryCta}</Link></div></div><HeroSlider slides={heroSlides.map(({ entry }) => entry)} /></section>
       <section className="stats-table-wrap">
         <div className="stats-table" aria-label="School statistics">

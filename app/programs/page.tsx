@@ -3,6 +3,7 @@ import { createReader } from '@keystatic/core/reader';
 import config from '../../keystatic.config';
 import '../globals.css';
 import '../navigation-footer.css';
+import SiteNavigation from '../components/site-navigation';
 
 const reader = createReader(process.cwd(), config);
 
@@ -14,14 +15,7 @@ export default async function ProgramsPage() {
 
   return (
     <main className="directory-page programs-page">
-      <header className="directory-header">
-        <Link href="/" className="back-link">
-          GCTSA <span>↗</span>
-        </Link>
-        <Link href="/keystatic" className="admin-link">
-          Edit
-        </Link>
-      </header>
+      <SiteNavigation variant="directory" />
 
       <section className="programs-intro">
         <div className="programs-intro-copy">

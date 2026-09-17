@@ -3,6 +3,7 @@ import { createReader } from '@keystatic/core/reader';
 import config from '../../keystatic.config';
 import '../globals.css';
 import '../navigation-footer.css';
+import SiteNavigation from '../components/site-navigation';
 
 const reader = createReader(process.cwd(), config);
 
@@ -11,10 +12,7 @@ export default async function LocationPage() {
 
   return (
     <main className="directory-page location-page">
-      <header className="directory-header">
-        <Link href="/" className="back-link">GCTSA <span>↗</span></Link>
-        <Link href="/keystatic" className="admin-link">Edit</Link>
-      </header>
+      <SiteNavigation variant="directory" />
 
       <section className="directory-hero">
         <p className="eyebrow">Come and see</p>
