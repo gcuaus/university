@@ -89,16 +89,36 @@ export default function ProgramsCarousel({ programs }: { programs: ProgramCard[]
       </div>
 
       {slides.length > 1 && (
-        <div className="program-carousel-dots" aria-label="Program carousel pagination">
-          {slides.map((_, dotIndex) => (
-            <button
-              key={`dot-${dotIndex}`}
-              type="button"
-              className={dotIndex === currentSlide ? 'is-active' : ''}
-              aria-label={`Go to slide ${dotIndex + 1}`}
-              onClick={() => setCurrentSlide(dotIndex)}
-            />
-          ))}
+        <div className="program-carousel-controls">
+          <button
+            type="button"
+            className="program-carousel-arrow"
+            aria-label="Scroll to previous program slide"
+            onClick={() => setCurrentSlide((previous) => (previous === 0 ? slides.length - 1 : previous - 1))}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+
+          <div className="program-carousel-dots" aria-label="Program carousel pagination">
+            {slides.map((_, dotIndex) => (
+              <button
+                key={`dot-${dotIndex}`}
+                type="button"
+                className={dotIndex === currentSlide ? 'is-active' : ''}
+                aria-label={`Go to slide ${dotIndex + 1}`}
+                onClick={() => setCurrentSlide(dotIndex)}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="program-carousel-arrow"
+            aria-label="Scroll to next program slide"
+            onClick={() => setCurrentSlide((previous) => (previous + 1) % slides.length)}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+          </button>
         </div>
       )}
     </div>
