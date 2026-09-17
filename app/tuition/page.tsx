@@ -3,6 +3,7 @@ import config from '../../keystatic.config';
 import TuitionCalculator from './tuition-calculator';
 import '../globals.css';
 import '../navigation-footer.css';
+import './tuition.css';
 
 const reader = createReader(process.cwd(), config);
 

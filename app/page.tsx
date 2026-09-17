@@ -6,6 +6,7 @@ import './infographics.css';
 import ThemeToggle from './components/theme-toggle';
 import HeroSlider from './components/hero-slider';
 import EvaluationForm from './components/evaluation-form';
+import MobileMenu from './components/mobile-menu';
 import './site-content.css';
 import './navigation-footer.css';
 
@@ -13,7 +14,7 @@ const reader = createReader(process.cwd(), config);
 
 const fallback = {
   announcement: 'Applications for Fall 2026 are now open', brand: 'GCTSA', brandDescriptor: 'Great Commission Theological Seminary of America',
-  navAbout: 'About', navPrograms: 'Programs', navFaculty: 'Faculty', navApply: 'Apply now', heroEyebrow: 'Forming faithful leaders for a changing world',
+  navAbout: 'About', navPrograms: 'Programs', navFaculty: 'Faculty', navApply: 'Apply', heroEyebrow: 'Forming faithful leaders for a changing world',
   heroTitle: 'Rooted in truth. Ready for service.', heroBody: 'A theological education for the whole person: rigorous in study, generous in community, and alive to the call of Christ.', heroPrimaryCta: 'Explore programs', heroSecondaryCta: 'Meet our faculty',
   statOneValue: '35+', statOneLabel: 'Years of faithful formation', statTwoValue: '12', statTwoLabel: 'Distinctive programs', statThreeValue: '1', statThreeLabel: 'Shared calling',
   welcomeEyebrow: 'A place to belong', welcomeTitle: 'Study deeply. Serve faithfully.', welcomeBody: 'At GCTSA, we believe theological education should shape more than what you know. It should form how you live, lead, and love your neighbors.',
@@ -46,7 +47,7 @@ export default async function HomePage() {
   return (
     <main>
       <div className="announcement">{home.announcement}<span>↗</span></div>
-      <header className="site-header"><Link className="brand" href="#top"><span className="seal">G</span><span><strong>{home.brand}</strong><small>{home.brandDescriptor}</small></span></Link><nav><Link href="/about">{home.navAbout}</Link><Link href="/programs">{home.navPrograms}</Link><Link href="/faculty">{home.navFaculty}</Link><Link href="/tuition">Tuition</Link><span className="header-theme-toggle"><ThemeToggle /></span><Link className="nav-cta" href="/keystatic">{home.navApply} <span>↗</span></Link></nav></header>
+      <header className="site-header"><Link className="brand" href="#top"><span className="seal">G</span><span><strong>{home.brand}</strong><small>{home.brandDescriptor}</small></span></Link><nav className="site-nav"><Link href="/about">{home.navAbout}</Link><Link href="/programs">{home.navPrograms}</Link><Link href="/faculty">{home.navFaculty}</Link><Link href="/tuition">Tuition</Link><span className="header-theme-toggle"><ThemeToggle /></span><Link className="nav-cta" href="/keystatic">{home.navApply} <span>↗</span></Link></nav><div className="mobile-header-actions"><Link className="nav-cta" href="/keystatic">{home.navApply} <span>↗</span></Link><MobileMenu /></div></header>
       <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">{home.heroEyebrow}</p><h1>{home.heroTitle}</h1><p className="hero-body">{home.heroBody}</p><div className="actions"><Link className="button gold" href="/programs">{home.heroPrimaryCta}<span>↗</span></Link><Link className="button outline" href="/faculty">{home.heroSecondaryCta}</Link></div></div><HeroSlider slides={heroSlides.map(({ entry }) => entry)} /></section>
       <section className="infographics" aria-labelledby="infographics-title"><div className="infographics-heading"><p className="eyebrow">GCITS distinctive</p><h2 id="infographics-title">A serious education for a faithful life.</h2></div><div className="infographics-grid">{infographics.map(({ slug, entry }) => <article className="infographic-card" key={slug}><img src={entry.imageUrl} alt={entry.imageAlt} /><div><h3>{entry.title}</h3><p>{entry.description}</p></div></article>)}</div></section>
       <section className="split-section" id="about"><div className="section-label"><p className="eyebrow">{home.welcomeEyebrow}</p><span>01</span></div><div><h2>{home.welcomeTitle}</h2><p>{home.welcomeBody}</p><Link className="under-link" href="/keystatic">Read our story <span>↗</span></Link></div></section>
