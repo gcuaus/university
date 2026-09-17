@@ -17,7 +17,10 @@ export default function EvaluationForm() {
   const [sent, setSent] = useState(false);
   const [country, setCountry] = useState<Country>('US');
   const [countrySearch, setCountrySearch] = useState('');
-  const matchingCountries = getCountries().filter((countryCode) => countryName(countryCode).toLowerCase().includes(countrySearch.toLowerCase()));
+  const countryOptions = getCountries().map((countryCode) => ({
+    code: countryCode,
+    label: `${countryFlag(countryCode)} ${countryName(countryCode)} (+${getCountryCallingCode(countryCode)})`,
+  }));
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -46,10 +49,10 @@ export default function EvaluationForm() {
       <label className="whatsapp-field">WhatsApp
         <span className="phone-input">
           <span className="country-picker">
-            <input aria-label="Search country" className="country-search" value={countrySearch} onChange={(event) => setCountrySearch(event.target.value)} placeholder="Search country" />
-            <select aria-label="Country calling code" value={country} onChange={(event) => { setCountry(event.target.value as Country); setCountrySearch(''); }}>
-              {matchingCountries.map((countryCode) => <option value={countryCode} key={countryCode}>{countryFlag(countryCode)} {countryName(countryCode)} (+{getCountryCallingCode(countryCode)})</option>)}
-            </select>
+            <input aria-label="Search country and calling code" className="country-search" list="country-options" value={countrySearch} onChange={(event) => { const selected = countryOptions.find((option) => option.label === event.target.value); if (selected) setCountry(selected.code); setCountrySearch(event.target.value); }} placeholder="Search country or code" required />
+            <datalist id="country-options">
+              {countryOptions.map((option) => <option value={option.label} key={option.code} />)}
+            </datalist>
           </span>
           <input name="whatsapp" type="tel" inputMode="tel" placeholder="Phone number" required />
         </span>

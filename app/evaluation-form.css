@@ -9,7 +9,7 @@
 
 .phone-input {
   display: grid;
-  grid-template-columns: 128px 1fr;
+  grid-template-columns: 230px 1fr;
   gap: 8px;
 }
 
@@ -19,14 +19,13 @@
 }
 
 .country-picker {
-  display: grid;
-  gap: 4px;
+  display: block;
   min-width: 0;
 }
 
 .country-search {
   width: 100%;
-  padding: 7px 9px !important;
+  padding: 11px 10px !important;
   font-size: 11px !important;
 }
 
@@ -63,11 +62,7 @@
 
 @media (max-width: 720px) {
   .phone-input {
-    grid-template-columns: 118px 1fr;
-  }
-
-  .country-picker select {
-    font-size: 10px;
+    grid-template-columns: 180px 1fr;
   }
 }
 
