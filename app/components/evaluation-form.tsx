@@ -11,7 +11,11 @@ export default function EvaluationForm() {
   }
 
   if (sent) {
-    return <p className="evaluation-success">Thank you. We will be in touch about your free evaluation.</p>;
+    return (
+      <p className="evaluation-success" role="status">
+        Thank you. We will be in touch about your free evaluation.
+      </p>
+    );
   }
 
   return (

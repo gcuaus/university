@@ -1,11 +1,18 @@
+import type { Metadata } from 'next';
+import { pageMetadata } from '../lib/seo';
 import { createReader } from '@keystatic/core/reader';
 import config from '../../keystatic.config';
 import TuitionCalculator from './tuition-calculator';
-import '../globals.css';
-import '../navigation-footer.css';
 import './tuition.css';
 
 const reader = createReader(process.cwd(), config);
+
+
+export const metadata: Metadata = pageMetadata({
+  title: 'Tuition',
+  description: 'Tuition and payment plan information for GCTSA programs.',
+  path: '/tuition',
+});
 
 export default async function TuitionPage() {
   const entries = await reader.collections.tuition.all();

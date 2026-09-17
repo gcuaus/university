@@ -1,19 +1,22 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { createReader } from '@keystatic/core/reader';
 import config from '../../keystatic.config';
-import '../globals.css';
-import '../navigation-footer.css';
-import SiteNavigation from '../components/site-navigation';
-import SiteFooter from '../components/site-footer';
+import { pageMetadata } from '../lib/seo';
 
 const reader = createReader(process.cwd(), config);
+
+export const metadata: Metadata = pageMetadata({
+  title: 'Location',
+  description: 'Find your way to GCTSA - location, address, and directions.',
+  path: '/location',
+});
 
 export default async function LocationPage() {
   const locations = await reader.collections.location.all();
 
   return (
     <main className="directory-page location-page">
-      <SiteNavigation variant="directory" />
 
       <section className="directory-hero">
         <p className="eyebrow">Come and see</p>
@@ -75,7 +78,6 @@ export default async function LocationPage() {
       </section>
 
       {locations.length === 0 && <p className="empty-state">Locations will appear here once they are added in Keystatic.</p>}
-      <SiteFooter />
     </main>
   );
 }

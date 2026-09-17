@@ -1,4 +1,9 @@
 node_modules
 .next
+.vercel
+*.tsbuildinfo
 .env*
 !.env.example
+AGENTS.md
+docs/
+TASKS.md

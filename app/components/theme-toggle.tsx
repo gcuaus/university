@@ -1,40 +1,46 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
+
+const THEME_EVENT = 'gctsa-theme-change';
+const STORAGE_KEY = 'gctsa-theme';
+
+function getSnapshot() {
+  return document.documentElement.dataset.theme === 'light';
+}
+
+function getServerSnapshot() {
+  return false;
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener(THEME_EVENT, callback);
+  return () => window.removeEventListener(THEME_EVENT, callback);
+}
+
+function setTheme(light: boolean) {
+  document.documentElement.dataset.theme = light ? 'light' : 'dark';
+  window.localStorage.setItem(STORAGE_KEY, light ? 'light' : 'dark');
+  window.dispatchEvent(new Event(THEME_EVENT));
+}
 
 export default function ThemeToggle() {
-  const [light, setLight] = useState(false);
+  const light = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
-    const applyTheme = (value: string | null) => {
-      const nextLight = value === 'light';
-      setLight(nextLight);
-      document.documentElement.dataset.theme = nextLight ? 'light' : 'dark';
-    };
-    applyTheme(window.localStorage.getItem('gctsa-theme'));
-    const handleThemeChange = (event: Event) => applyTheme((event as CustomEvent<string>).detail);
-    window.addEventListener('gctsa-theme-change', handleThemeChange);
-    return () => window.removeEventListener('gctsa-theme-change', handleThemeChange);
+    const saved = window.localStorage.getItem(STORAGE_KEY);
+    setTheme(saved === 'light');
   }, []);
-
-  function toggleTheme() {
-    const nextLight = !light;
-    setLight(nextLight);
-    document.documentElement.dataset.theme = nextLight ? 'light' : 'dark';
-    window.localStorage.setItem('gctsa-theme', nextLight ? 'light' : 'dark');
-    window.dispatchEvent(new CustomEvent('gctsa-theme-change', { detail: nextLight ? 'light' : 'dark' }));
-  }
 
   return (
     <button
       className="theme-toggle"
       type="button"
-      onClick={toggleTheme}
+      onClick={() => setTheme(!light)}
       aria-label={light ? 'Switch to dark mode' : 'Switch to light mode'}
       aria-pressed={light}
     >
       <span aria-hidden="true" className="theme-toggle-knob" />
-      <span className="theme-toggle-label">{light ? 'Light' : 'Dark'}</span>
     </button>
   );
 }

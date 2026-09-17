@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 
 type Slide = {
   title: string;
@@ -10,22 +10,52 @@ type Slide = {
   youtubeUrl?: string | null;
 };
 
+function subscribeReducedMotion(callback: () => void) {
+  const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+  query.addEventListener('change', callback);
+  return () => query.removeEventListener('change', callback);
+}
+
+function getReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function getReducedMotionServer() {
+  return false;
+}
+
 export default function HeroSlider({ slides }: { slides: Slide[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotion,
+    getReducedMotionServer,
+  );
   const activeSlide = slides[activeIndex] ?? slides[0];
+  const autoplay = slides.length > 1 && !paused && !hovered && !reducedMotion;
 
   useEffect(() => {
-    if (slides.length < 2) return;
+    if (!autoplay) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
     }, 6000);
     return () => window.clearInterval(timer);
-  }, [slides.length]);
+  }, [autoplay, slides.length]);
 
   if (!activeSlide) return null;
 
   return (
-    <div className="hero-slider" aria-label="Featured stories">
+    <section
+      className="hero-slider"
+      aria-label="Featured stories"
+      aria-roledescription="carousel"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
+    >
       <div className="hero-slide" key={activeSlide.title}>
         <img src={activeSlide.imageUrl} alt={activeSlide.imageAlt} />
         <div className="hero-slide-shade" />
@@ -40,8 +70,14 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
         </div>
       </div>
       <div className="hero-slider-controls">
-        <button type="button" onClick={() => setActiveIndex((activeIndex - 1 + slides.length) % slides.length)} aria-label="Previous slide">←</button>
-        <div className="hero-slider-dots" aria-label="Choose slide">
+        <button
+          type="button"
+          onClick={() => setActiveIndex((activeIndex - 1 + slides.length) % slides.length)}
+          aria-label="Previous slide"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+        <div className="hero-slider-dots" role="group" aria-label="Choose slide">
           {slides.map((slide, index) => (
             <button
               type="button"
@@ -53,8 +89,23 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
             />
           ))}
         </div>
-        <button type="button" onClick={() => setActiveIndex((activeIndex + 1) % slides.length)} aria-label="Next slide">→</button>
+        {slides.length > 1 && (
+          <button
+            type="button"
+            onClick={() => setPaused((value) => !value)}
+            aria-label={paused ? 'Play slideshow' : 'Pause slideshow'}
+          >
+            <span aria-hidden="true">{paused ? '▶' : '❚'}</span>
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={() => setActiveIndex((activeIndex + 1) % slides.length)}
+          aria-label="Next slide"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
       </div>
-    </div>
+    </section>
   );
 }

@@ -15,14 +15,17 @@ const links = [
   { href: '/faculty', label: 'Faculty' },
   { href: '/location', label: 'Location' },
   { href: '/tuition', label: 'Tuition' },
+  { href: '/blog', label: 'News' },
+  { href: '/contact', label: 'Contact' },
 ];
 
-export default function SiteNavigation({ variant = 'home' }: SiteNavigationProps) {
+export default function SiteNavigation({ variant }: SiteNavigationProps) {
   const pathname = usePathname();
+  const resolvedVariant = variant ?? (pathname === '/' ? 'home' : 'directory');
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className={variant === 'directory' ? 'site-header directory-site-header' : 'site-header'}>
+    <header className={resolvedVariant === 'directory' ? 'site-header directory-site-header' : 'site-header'}>
       <Link className="brand" href="/#top">
         <span className="seal">G</span>
         <span><strong>GCTSA</strong><small>Great Commission Theological Seminary of America</small></span>

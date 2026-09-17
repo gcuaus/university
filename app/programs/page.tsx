@@ -1,14 +1,18 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { createReader } from '@keystatic/core/reader';
 import config from '../../keystatic.config';
-import '../globals.css';
-import '../navigation-footer.css';
-import SiteNavigation from '../components/site-navigation';
-import SiteFooter from '../components/site-footer';
+import { pageMetadata } from '../lib/seo';
 import ProgramsFilter from './programs-filter';
 import './programs-filter.css';
 
 const reader = createReader(process.cwd(), config);
+
+export const metadata: Metadata = pageMetadata({
+  title: 'Programs',
+  description: 'Explore the graduate, certificate, and undergraduate programs offered by GCTSA.',
+  path: '/programs',
+});
 
 export default async function ProgramsPage() {
   const programs = await reader.collections.programs.all();
@@ -18,7 +22,6 @@ export default async function ProgramsPage() {
 
   return (
     <main className="directory-page programs-page">
-      <SiteNavigation variant="directory" />
 
       <section className="programs-intro">
         <div className="programs-intro-copy">
@@ -42,7 +45,6 @@ export default async function ProgramsPage() {
           Request a free evaluation
         </Link>
       </section>
-      <SiteFooter />
     </main>
   );
 }
