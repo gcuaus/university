@@ -220,5 +220,21 @@ export default config({
           details: fields.document({ label: 'Contact details', formatting: true, links: true }),
         },
       }),
+      tuition: collection({
+        label: 'Tuition',
+        slugField: 'title',
+        path: 'content/tuition/*',
+        format: 'yaml',
+        schema: {
+          title: fields.slug({ name: { label: 'Title', validation: { isRequired: true } } }),
+          descriptor: fields.text({ label: 'Descriptor' }),
+          intro: fields.text({ label: 'Introduction', multiline: true }),
+          downPayment: fields.text({ label: 'Annual down payment' }),
+          matriculationFee: fields.text({ label: 'Matriculation fee' }),
+          booksFee: fields.text({ label: 'Books estimate' }),
+          shippingFee: fields.text({ label: 'Shipping fee' }),
+          discount: fields.text({ label: 'Prepay discount' }),
+        },
+      }),
   },
 });
