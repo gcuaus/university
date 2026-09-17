@@ -18,6 +18,18 @@
   min-width: 0;
 }
 
+.country-picker {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.country-search {
+  width: 100%;
+  padding: 7px 9px !important;
+  font-size: 11px !important;
+}
+
 .phone-input select {
   appearance: none;
   width: 100%;
@@ -35,6 +47,11 @@
   font-family: var(--body), "Segoe UI Emoji", sans-serif;
 }
 
+.country-picker select {
+  padding: 8px 9px;
+  font-size: 11px;
+}
+
 .interest-field {
   grid-column: 1 / -1;
 }
@@ -47,6 +64,10 @@
 @media (max-width: 720px) {
   .phone-input {
     grid-template-columns: 118px 1fr;
+  }
+
+  .country-picker select {
+    font-size: 10px;
   }
 }
 
