@@ -6,10 +6,15 @@ export default function ThemeToggle() {
   const [light, setLight] = useState(false);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem('gctsa-theme');
-    const prefersLight = saved === 'light';
-    setLight(prefersLight);
-    document.documentElement.dataset.theme = prefersLight ? 'light' : 'dark';
+    const applyTheme = (value: string | null) => {
+      const nextLight = value === 'light';
+      setLight(nextLight);
+      document.documentElement.dataset.theme = nextLight ? 'light' : 'dark';
+    };
+    applyTheme(window.localStorage.getItem('gctsa-theme'));
+    const handleThemeChange = (event: Event) => applyTheme((event as CustomEvent<string>).detail);
+    window.addEventListener('gctsa-theme-change', handleThemeChange);
+    return () => window.removeEventListener('gctsa-theme-change', handleThemeChange);
   }, []);
 
   function toggleTheme() {
@@ -17,6 +22,7 @@ export default function ThemeToggle() {
     setLight(nextLight);
     document.documentElement.dataset.theme = nextLight ? 'light' : 'dark';
     window.localStorage.setItem('gctsa-theme', nextLight ? 'light' : 'dark');
+    window.dispatchEvent(new CustomEvent('gctsa-theme-change', { detail: nextLight ? 'light' : 'dark' }));
   }
 
   return (
