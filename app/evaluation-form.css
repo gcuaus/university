@@ -9,8 +9,8 @@
 
 .phone-input {
   display: grid;
-  grid-template-columns: 230px 1fr;
-  gap: 8px;
+  grid-template-columns: .82fr 1fr;
+  gap: 7px;
 }
 
 .phone-input select,
@@ -25,8 +25,13 @@
 
 .country-search {
   width: 100%;
+  height: 42px;
   padding: 11px 10px !important;
   font-size: 11px !important;
+}
+
+.phone-input > input {
+  height: 42px;
 }
 
 .phone-input select {
@@ -62,7 +67,7 @@
 
 @media (max-width: 720px) {
   .phone-input {
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: .9fr 1fr;
   }
 }
 
