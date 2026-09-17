@@ -1,24 +1,61 @@
+.programs-intro-aside {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 950px;
+  margin: 0 auto 30px;
+  padding: 14px 18px;
+}
+
+.program-levels {
+  display: flex;
+  flex: 1;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.program-levels::-webkit-scrollbar {
+  display: none;
+}
+
 .program-levels button {
-  display: block;
-  width: 100%;
-  padding: 7px 0;
-  border: 0;
-  color: rgba(245, 240, 231, .72);
-  background: transparent;
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: rgba(245, 240, 231, .7);
+  background: rgba(245, 240, 231, .06);
   font: 10px var(--mono);
-  text-align: left;
   text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   cursor: pointer;
-  transition: color .2s ease, transform .2s ease;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
 }
 
 .program-levels button:hover,
 .program-levels button.is-active {
-  color: var(--gold);
-  transform: translateX(4px);
+  border-color: rgba(199, 150, 56, .65);
+  color: var(--ink);
+  background: var(--gold);
 }
 
 html[data-theme='light'] .program-levels button {
   color: rgba(245, 240, 231, .72);
+}
+
+@media (max-width: 720px) {
+  .programs-intro-aside {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .program-levels {
+    width: 100%;
+  }
 }
