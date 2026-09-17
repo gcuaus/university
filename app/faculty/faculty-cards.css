@@ -21,7 +21,7 @@
 .faculty-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(16, 35, 56, .2) 0%, rgba(16, 35, 56, .62) 48%, rgba(16, 35, 56, .96) 100%);
+  background: linear-gradient(180deg, rgba(10, 24, 38, .4) 0%, rgba(10, 24, 38, .68) 42%, rgba(10, 24, 38, .97) 100%);
 }
 
 .faculty-card-content {
@@ -38,16 +38,19 @@
 .faculty-card .card-meta,
 .faculty-card a {
   color: #e0c27b;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .35);
 }
 
 .faculty-card h2 {
   margin: 42px 0 13px;
   color: var(--paper);
   font: 500 27px var(--display);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .45);
 }
 
 .faculty-card p {
   color: #e1e7e8;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .45);
 }
 
 .faculty-card:hover {
