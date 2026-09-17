@@ -20,12 +20,19 @@
 
 .phone-input select {
   appearance: none;
+  width: 100%;
   padding: 11px 10px;
   border: 1px solid rgba(245, 240, 231, .35);
   color: var(--paper);
   background: rgba(16, 35, 56, .25);
-  font: 13px var(--body);
+  font: 13px var(--body), "Segoe UI Emoji", sans-serif;
   cursor: pointer;
+}
+
+.phone-input option {
+  color: var(--paper);
+  background: var(--ink2);
+  font-family: var(--body), "Segoe UI Emoji", sans-serif;
 }
 
 .interest-field {
@@ -47,4 +54,9 @@ html[data-theme='light'] .phone-input select {
   border-color: rgba(16, 35, 56, .25);
   color: var(--ink);
   background: rgba(255, 255, 255, .45);
+}
+
+html[data-theme='light'] .phone-input option {
+  color: var(--ink);
+  background: #fff;
 }
