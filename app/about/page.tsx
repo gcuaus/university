@@ -5,6 +5,7 @@ import '../globals.css';
 import '../site-content.css';
 import '../navigation-footer.css';
 import SiteNavigation from '../components/site-navigation';
+import SiteFooter from '../components/site-footer';
 
 const reader = createReader(process.cwd(), config);
 
@@ -16,6 +17,7 @@ export default async function AboutPage() {
       <section className="directory-hero"><p className="eyebrow">Who we are</p><h1>About Great Commission.</h1><p>Learn about the convictions, goals, and vision that shape our theological education.</p></section>
       <section className="faq-section" aria-labelledby="about-faq-title"><div className="faq-intro"><p className="eyebrow">About us</p><h2 id="about-faq-title">Convictions that guide our work.</h2><Link className="admin-link" href="/keystatic/collection/aboutFaqs">Edit About FAQs ↗</Link></div><div className="faq-list">{faqs.map(({ slug, entry }, index) => <details className="faq-item" key={slug} open={index === 0}><summary><span>{String(index + 1).padStart(2, '0')}</span>{entry.title}<b>+</b></summary><p>{entry.answer}</p></details>)}</div></section>
       {faqs.length === 0 && <p className="empty-state">About Us FAQs will appear here once they are added in Keystatic.</p>}
+      <SiteFooter />
     </main>
   );
 }

@@ -4,6 +4,7 @@ import config from '../../keystatic.config';
 import '../globals.css';
 import '../navigation-footer.css';
 import SiteNavigation from '../components/site-navigation';
+import SiteFooter from '../components/site-footer';
 
 const reader = createReader(process.cwd(), config);
 
@@ -94,6 +95,7 @@ export default async function ProgramsPage() {
           Request a free evaluation
         </Link>
       </section>
+      <SiteFooter />
     </main>
   );
 }
