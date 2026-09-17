@@ -67,7 +67,7 @@
 
 @media (max-width: 720px) {
   .phone-input {
-    grid-template-columns: .9fr 1fr;
+    grid-template-columns: .68fr 1fr;
   }
 }
 
