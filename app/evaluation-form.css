@@ -1,0 +1,83 @@
+.evaluation-form {
+  max-width: 640px;
+  gap: 14px;
+}
+
+.evaluation-form label {
+  min-width: 0;
+}
+
+.phone-input {
+  display: grid;
+  grid-template-columns: .82fr 1fr;
+  gap: 7px;
+}
+
+.phone-input select,
+.phone-input input {
+  min-width: 0;
+}
+
+.country-picker {
+  display: block;
+  min-width: 0;
+}
+
+.country-search {
+  width: 100%;
+  height: 42px;
+  padding: 11px 10px !important;
+  font-size: 11px !important;
+}
+
+.phone-input > input {
+  height: 42px;
+}
+
+.phone-input select {
+  appearance: none;
+  width: 100%;
+  padding: 11px 10px;
+  border: 1px solid rgba(245, 240, 231, .35);
+  color: var(--paper);
+  background: rgba(16, 35, 56, .25);
+  font: 13px var(--body), "Segoe UI Emoji", sans-serif;
+  cursor: pointer;
+}
+
+.phone-input option {
+  color: var(--paper);
+  background: var(--ink2);
+  font-family: var(--body), "Segoe UI Emoji", sans-serif;
+}
+
+.country-picker select {
+  padding: 8px 9px;
+  font-size: 11px;
+}
+
+.interest-field {
+  grid-column: 1 / -1;
+}
+
+.interest-field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+@media (max-width: 720px) {
+  .phone-input {
+    grid-template-columns: .68fr 1fr;
+  }
+}
+
+html[data-theme='light'] .phone-input select {
+  border-color: rgba(16, 35, 56, .25);
+  color: var(--ink);
+  background: rgba(255, 255, 255, .45);
+}
+
+html[data-theme='light'] .phone-input option {
+  color: var(--ink);
+  background: #fff;
+}

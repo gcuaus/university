@@ -3,6 +3,7 @@ import { createReader } from '@keystatic/core/reader';
 import config from '../keystatic.config';
 import './hero-mobile.css';
 import './infographics.css';
+import './evaluation-form.css';
 import HeroSlider from './components/hero-slider';
 import EvaluationForm from './components/evaluation-form';
 import ProgramsCarousel from './components/programs-carousel';
