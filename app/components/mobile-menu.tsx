@@ -11,7 +11,7 @@ export default function MobileMenu() {
       <button className="mobile-menu-button" type="button" aria-expanded={open} aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setOpen(!open)}>
         <span aria-hidden="true">{open ? '×' : '☰'}</span>
       </button>
-      {open && <div className="mobile-menu-panel"><Link href="/about" onClick={() => setOpen(false)}>About</Link><Link href="/programs" onClick={() => setOpen(false)}>Programs</Link><Link href="/faculty" onClick={() => setOpen(false)}>Faculty</Link><Link href="/tuition" onClick={() => setOpen(false)}>Tuition</Link></div>}
+      {open && <div className="mobile-menu-panel"><Link href="/about" onClick={() => setOpen(false)}>About</Link><Link href="/programs" onClick={() => setOpen(false)}>Programs</Link><Link href="/faculty" onClick={() => setOpen(false)}>Faculty</Link><Link href="/tuition" onClick={() => setOpen(false)}>Tuition</Link><Link href="/#evaluation" onClick={() => setOpen(false)}>Apply now</Link></div>}
     </div>
   );
 }
