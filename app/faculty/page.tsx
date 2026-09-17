@@ -4,6 +4,7 @@ import config from '../../keystatic.config';
 import '../globals.css';
 import '../site-content.css';
 import '../navigation-footer.css';
+import './faculty-cards.css';
 import SiteNavigation from '../components/site-navigation';
 
 const reader = createReader(process.cwd(), config);
