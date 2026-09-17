@@ -180,17 +180,13 @@ export default config({
         format: { data: 'yaml', contentField: 'content' },
         schema: {
           title: fields.slug({ name: { label: 'Program name', validation: { isRequired: true } } }),
-          level: fields.select({
-            label: 'Level',
-            options: [
-              { label: 'Graduate', value: 'graduate' },
-              { label: 'Certificate', value: 'certificate' },
-              { label: 'Undergraduate', value: 'undergraduate' },
-            ],
-            defaultValue: 'graduate',
-          }),
-          duration: fields.text({ label: 'Duration' }),
+          sortOrder: fields.integer({ label: 'Display order', defaultValue: 0 }),
+          level: fields.text({ label: 'Academic level', validation: { isRequired: true } }),
+          programType: fields.text({ label: 'Program category', validation: { isRequired: true } }),
+          disciplines: fields.text({ label: 'Disciplines', multiline: true }),
+          duration: fields.text({ label: 'Duration / commitment' }),
           summary: fields.text({ label: 'Summary', multiline: true, validation: { isRequired: true } }),
+          curriculumUrl: fields.url({ label: 'Curriculum URL' }),
           content: fields.document({ label: 'Program details', formatting: true, links: true, images: true }),
         },
       }),
