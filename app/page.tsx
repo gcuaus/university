@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { createReader } from '@keystatic/core/reader';
 import config from '../keystatic.config';
 import './globals.css';
+import './hero-mobile.css';
 import './infographics.css';
 import ThemeToggle from './components/theme-toggle';
 import HeroSlider from './components/hero-slider';
