@@ -27,6 +27,7 @@ export default function ThemeToggle() {
       aria-label={light ? 'Switch to dark mode' : 'Switch to light mode'}
       aria-pressed={light}
     >
+      <span aria-hidden="true" className="theme-toggle-knob" />
       <span className="theme-toggle-label">{light ? 'Light' : 'Dark'}</span>
     </button>
   );
