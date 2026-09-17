@@ -22,7 +22,7 @@ export default function SiteNavigation({ variant = 'home' }: SiteNavigationProps
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className={variant === 'directory' ? 'directory-header directory-site-header' : 'site-header'}>
+    <header className={variant === 'directory' ? 'site-header directory-site-header' : 'site-header'}>
       <Link className="brand" href="/#top">
         <span className="seal">G</span>
         <span><strong>GCTSA</strong><small>Great Commission Theological Seminary of America</small></span>
