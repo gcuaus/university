@@ -9,7 +9,7 @@ const reader = createReader(process.cwd(), config);
 
 export const metadata: Metadata = pageMetadata({
   title: 'Faculty',
-  description: 'Meet the faculty of Great Commission Theological Seminary of America.',
+  description: 'Meet the faculty of Great Commission University of America.',
   path: '/faculty',
 });
 

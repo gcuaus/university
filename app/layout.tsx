@@ -15,7 +15,7 @@ const dmMono = DM_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Great Commission Theological Seminary of America`,
+    default: `${SITE_NAME} | Great Commission University of America`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Great Commission Theological Seminary of America`,
+    title: `${SITE_NAME} | Great Commission University of America`,
     description: SITE_DESCRIPTION,
     url: '/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} | Great Commission Theological Seminary of America`,
+    title: `${SITE_NAME} | Great Commission University of America`,
     description: SITE_DESCRIPTION,
   },
   robots: { index: true, follow: true },
