@@ -10,7 +10,7 @@ const reader = createReader(process.cwd(), config);
 
 export const metadata: Metadata = pageMetadata({
   title: 'Tuition',
-  description: 'Tuition and payment plan information for GCTSA programs.',
+  description: 'Tuition and payment plan information for GCUA programs.',
   path: '/tuition',
 });
 

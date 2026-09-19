@@ -60,7 +60,7 @@ export default async function AboutArticlePage({
         ]}
       />
       <section className="directory-hero">
-        <p className="eyebrow">About GCTSA</p>
+        <p className="eyebrow">About GCUA</p>
         <h1>{entry.title}</h1>
         <p>{entry.summary}</p>
       </section>

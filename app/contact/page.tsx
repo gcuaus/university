@@ -8,7 +8,7 @@ const reader = createReader(process.cwd(), config);
 
 export const metadata: Metadata = pageMetadata({
   title: 'Contact',
-  description: 'Contact GCTSA for admissions, academic, and general enquiries.',
+  description: 'Contact GCUA for admissions, academic, and general enquiries.',
   path: '/contact',
 });
 

@@ -52,7 +52,7 @@ export default function SiteNavigation({ variant, labels }: SiteNavigationProps)
     <header className={resolvedVariant === 'directory' ? 'site-header directory-site-header' : 'site-header'}>
       <Link className="brand" href="/#top">
         <span className="seal">G</span>
-        <span><strong>GCTSA</strong><small>Great Commission Theological Seminary of America</small></span>
+        <span><strong>GCUA</strong><small>Great Commission Theological Seminary of America</small></span>
       </Link>
       <nav className="site-nav" aria-label="Main navigation">
         {links.map((link) => <Link className={isActive(link.href) ? 'is-active' : undefined} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} key={link.href}>{link.label}</Link>)}

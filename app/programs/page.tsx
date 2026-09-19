@@ -10,7 +10,7 @@ const reader = createReader(process.cwd(), config);
 
 export const metadata: Metadata = pageMetadata({
   title: 'Programs',
-  description: 'Explore the graduate, certificate, and undergraduate programs offered by GCTSA.',
+  description: 'Explore the graduate, certificate, and undergraduate programs offered by GCUA.',
   path: '/programs',
 });
 

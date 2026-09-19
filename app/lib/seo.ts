@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-export const SITE_NAME = 'GCTSA';
+export const SITE_NAME = 'GCUA';
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://staging.gcua.us';
 export const SITE_DESCRIPTION =
-  'Great Commission Theological Seminary of America (GCTSA) — a theological education for the whole person: rigorous in study, generous in community, and alive to the call of Christ.';
+  'Great Commission Theological Seminary of America (GCUA) — a theological education for the whole person: rigorous in study, generous in community, and alive to the call of Christ.';
 
 export function pageMetadata({
   title,
