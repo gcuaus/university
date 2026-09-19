@@ -5,6 +5,7 @@ import './site-content.css';
 import './navigation-footer.css';
 import SiteNavigation from './components/site-navigation';
 import SiteFooter from './components/site-footer';
+import SiteShell from './components/site-shell';
 import { getHome } from './lib/home';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, jsonLdHtml, organizationJsonLd } from './lib/seo';
 
@@ -53,28 +54,30 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
       <body>
-        <a className="skip-link" href="#main-content">Skip to content</a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLdHtml(organizationJsonLd()) }}
         />
-        <SiteNavigation
-          logo={home.logo}
-          labels={{
-            about: home.navAbout,
-            programs: home.navPrograms,
-            faculty: home.navFaculty,
-            location: home.navLocation,
-            tuition: home.navTuition,
-            news: home.navNews,
-            contact: home.navContact,
-            apply: home.navApply,
-          }}
-        />
-        <div id="main-content" className="site-main" tabIndex={-1}>
+        <SiteShell
+          navigation={
+            <SiteNavigation
+              logo={home.logo}
+              labels={{
+                about: home.navAbout,
+                programs: home.navPrograms,
+                faculty: home.navFaculty,
+                location: home.navLocation,
+                tuition: home.navTuition,
+                news: home.navNews,
+                contact: home.navContact,
+                apply: home.navApply,
+              }}
+            />
+          }
+          footer={<SiteFooter logo={home.logo} />}
+        >
           {children}
-        </div>
-        <SiteFooter logo={home.logo} />
+        </SiteShell>
       </body>
     </html>
   );
