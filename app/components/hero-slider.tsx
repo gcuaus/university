@@ -26,7 +26,6 @@ function getReducedMotionServer() {
 
 export default function HeroSlider({ slides }: { slides: Slide[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const reducedMotion = useSyncExternalStore(
     subscribeReducedMotion,
@@ -34,7 +33,7 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
     getReducedMotionServer,
   );
   const activeSlide = slides[activeIndex] ?? slides[0];
-  const autoplay = slides.length > 1 && !paused && !hovered && !reducedMotion;
+  const autoplay = slides.length > 1 && !hovered && !reducedMotion;
 
   useEffect(() => {
     if (!autoplay) return;
@@ -89,15 +88,6 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
             />
           ))}
         </div>
-        {slides.length > 1 && (
-          <button
-            type="button"
-            onClick={() => setPaused((value) => !value)}
-            aria-label={paused ? 'Play slideshow' : 'Pause slideshow'}
-          >
-            <span aria-hidden="true">{paused ? '▶' : '❚'}</span>
-          </button>
-        )}
         <button
           type="button"
           onClick={() => setActiveIndex((activeIndex + 1) % slides.length)}
