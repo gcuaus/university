@@ -13,6 +13,7 @@ export default config({
         announcement: fields.text({ label: 'Announcement bar' }),
         brand: fields.text({ label: 'Brand name', validation: { isRequired: true } }),
         brandDescriptor: fields.text({ label: 'Brand descriptor' }),
+        logo: fields.image({ label: 'Site logo', directory: 'public/images/branding', publicPath: '/images/branding/' }),
         navAbout: fields.text({ label: 'About navigation label' }),
         navPrograms: fields.text({ label: 'Programs navigation label' }),
         navFaculty: fields.text({ label: 'Faculty navigation label' }),

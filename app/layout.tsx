@@ -12,28 +12,38 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' });
 const dmMono = DM_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-dm-mono' });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: `${SITE_NAME} | Great Commission University of America`,
-    template: `%s | ${SITE_NAME}`,
-  },
-  description: SITE_DESCRIPTION,
-  alternates: { canonical: '/' },
-  openGraph: {
-    type: 'website',
-    siteName: SITE_NAME,
-    title: `${SITE_NAME} | Great Commission University of America`,
+export async function generateMetadata(): Promise<Metadata> {
+  const home = await getHome();
+  const socialImage = home.logo ? new URL(home.logo, SITE_URL).toString() : undefined;
+  const socialImages = socialImage
+    ? [{ url: socialImage, alt: 'Great Commission University of America logo' }]
+    : undefined;
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: `${SITE_NAME} | Great Commission University of America`,
+      template: `%s | ${SITE_NAME}`,
+    },
     description: SITE_DESCRIPTION,
-    url: '/',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${SITE_NAME} | Great Commission University of America`,
-    description: SITE_DESCRIPTION,
-  },
-  robots: { index: true, follow: true },
-};
+    alternates: { canonical: '/' },
+    openGraph: {
+      type: 'website',
+      siteName: SITE_NAME,
+      title: `${SITE_NAME} | Great Commission University of America`,
+      description: SITE_DESCRIPTION,
+      url: '/',
+      images: socialImages,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${SITE_NAME} | Great Commission University of America`,
+      description: SITE_DESCRIPTION,
+      images: socialImage ? [socialImage] : undefined,
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const home = await getHome();
@@ -49,6 +59,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           dangerouslySetInnerHTML={{ __html: jsonLdHtml(organizationJsonLd()) }}
         />
         <SiteNavigation
+          logo={home.logo}
           labels={{
             about: home.navAbout,
             programs: home.navPrograms,
@@ -63,7 +74,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <div id="main-content" className="site-main" tabIndex={-1}>
           {children}
         </div>
-        <SiteFooter />
+        <SiteFooter logo={home.logo} />
       </body>
     </html>
   );
