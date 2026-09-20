@@ -20,4 +20,6 @@ html:not([data-theme='light']) .location-page .location-copy h2,html:not([data-t
 .contact-entry .prose-content{max-width:none;margin:0;padding:0}
 .breadcrumbs{max-width:950px;margin:auto;padding:22px 24px 0}.breadcrumbs ol{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}.breadcrumbs li{display:flex;align-items:center;gap:8px;color:#68747b;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.breadcrumbs li+li:before{content:'/';color:#b8b0a3}.breadcrumbs a{color:#8b6320}.breadcrumbs a:hover{text-decoration:underline}.breadcrumbs [aria-current='page']{color:#102338}
 .program-detail-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;max-width:720px;margin:0 auto;padding:0 24px 6px}.program-detail-meta{margin:0;color:#8b6320;font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.program-detail-bar .under-link{font-size:12px}
+.faculty-detail-portrait-wrap{max-width:720px;margin:0 auto;padding:0 24px 8px}
+.faculty-detail-portrait{display:block;width:220px;height:260px;object-fit:cover;border:1px solid #d8d1c5;background:#e7e1d7}
 @media(max-width:720px){.prose-content{padding:0 24px 55px}.contact-list{padding:0 24px 55px}.contact-entry{padding:28px 0}.breadcrumbs{padding-top:16px}}

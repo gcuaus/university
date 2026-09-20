@@ -27,6 +27,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const facultyEntries = await reader.collections.faculty.all();
+  const facultyUrls: MetadataRoute.Sitemap = facultyEntries.map(({ slug }) => ({
+    url: `${SITE_URL}/faculty/${slug}`,
+    changeFrequency: 'yearly',
+    priority: 0.5,
+  }));
+
   const posts = await reader.collections.posts.all();
   const postUrls: MetadataRoute.Sitemap = posts
     .filter(({ entry }) => entry.status === 'published')
@@ -37,5 +44,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }));
 
-  return [...staticEntries, ...aboutUrls, ...programUrls, ...postUrls];
+  return [...staticEntries, ...aboutUrls, ...programUrls, ...facultyUrls, ...postUrls];
 }
