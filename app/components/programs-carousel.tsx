@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 
 type ProgramCard = {
   slug: string;
@@ -22,6 +22,20 @@ function getDisciplines(value?: string) {
     .slice(0, 3);
 }
 
+function subscribeReducedMotion(callback: () => void) {
+  const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+  query.addEventListener('change', callback);
+  return () => query.removeEventListener('change', callback);
+}
+
+function getReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function getReducedMotionServer() {
+  return false;
+}
+
 export default function ProgramsCarousel({ programs }: { programs: ProgramCard[] }) {
   const slides = useMemo(() => {
     if (!programs.length) return [];
@@ -29,23 +43,37 @@ export default function ProgramsCarousel({ programs }: { programs: ProgramCard[]
   }, [programs]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotion,
+    getReducedMotionServer,
+  );
+  const autoplay = slides.length > 1 && !paused && !hovered && !reducedMotion;
 
   useEffect(() => {
-    if (slides.length <= 1) return undefined;
+    if (!autoplay) return undefined;
 
     const intervalId = window.setInterval(() => {
       setCurrentSlide((previous) => (previous + 1) % slides.length);
     }, 4200);
 
     return () => window.clearInterval(intervalId);
-  }, [slides.length]);
+  }, [autoplay, slides.length]);
 
   if (!slides.length) {
     return <div className="program-carousel empty">Programs will appear here once they are added.</div>;
   }
 
   return (
-    <div className="program-carousel">
+    <div
+      className="program-carousel"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
+    >
       <div className="program-carousel-viewport">
         <div className="program-carousel-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
           {slides.map((slide, slideIndex) => (
@@ -76,9 +104,16 @@ export default function ProgramsCarousel({ programs }: { programs: ProgramCard[]
                       <p className="program-carousel-summary">{program.summary}</p>
                       <p className="program-carousel-meta">{program.duration || 'Flexible format'}</p>
 
-                      <Link href={program.curriculumUrl || '/programs'} target={program.curriculumUrl ? '_blank' : undefined} rel={program.curriculumUrl ? 'noreferrer' : undefined}>
-                        View curriculum <span>↗</span>
-                      </Link>
+                      <div className="program-carousel-actions">
+                        <Link href={`/programs/${program.slug}`}>
+                          Program details <span aria-hidden="true">↗</span>
+                        </Link>
+                        {program.curriculumUrl && (
+                          <a href={program.curriculumUrl} target="_blank" rel="noreferrer">
+                            View curriculum <span aria-hidden="true">↗</span>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </article>
                 );
@@ -99,17 +134,28 @@ export default function ProgramsCarousel({ programs }: { programs: ProgramCard[]
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
           </button>
 
-          <div className="program-carousel-dots" aria-label="Program carousel pagination">
+          <div className="program-carousel-dots" role="group" aria-label="Program carousel pagination">
             {slides.map((_, dotIndex) => (
               <button
                 key={`dot-${dotIndex}`}
                 type="button"
                 className={dotIndex === currentSlide ? 'is-active' : ''}
                 aria-label={`Go to slide ${dotIndex + 1}`}
+                aria-current={dotIndex === currentSlide ? 'true' : undefined}
                 onClick={() => setCurrentSlide(dotIndex)}
               />
             ))}
           </div>
+
+          <button
+            type="button"
+            className="program-carousel-arrow"
+            aria-label={paused ? 'Play program slideshow' : 'Pause program slideshow'}
+            aria-pressed={paused}
+            onClick={() => setPaused((value) => !value)}
+          >
+            <span aria-hidden="true">{paused ? '▶' : '❚❚'}</span>
+          </button>
 
           <button
             type="button"
