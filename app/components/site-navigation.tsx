@@ -19,6 +19,7 @@ export type NavLabels = {
 type SiteNavigationProps = {
   variant?: 'home' | 'directory';
   labels?: NavLabels;
+  logo?: string | null;
   brand?: string;
   descriptor?: string;
 };
@@ -36,7 +37,7 @@ const DEFAULTS: Required<NavLabels> = {
 
 const BRAND_DEFAULTS = { brand: 'GCUA', descriptor: 'Great Commission University of America' };
 
-export default function SiteNavigation({ variant, labels, brand, descriptor }: SiteNavigationProps) {
+export default function SiteNavigation({ variant, labels, logo, brand, descriptor }: SiteNavigationProps) {
   const pathname = usePathname();
   const resolvedVariant = variant ?? (pathname === '/' ? 'home' : 'directory');
   const t = { ...DEFAULTS, ...labels };
@@ -56,7 +57,7 @@ export default function SiteNavigation({ variant, labels, brand, descriptor }: S
   return (
     <header className={resolvedVariant === 'directory' ? 'site-header directory-site-header' : 'site-header'}>
       <Link className="brand" href="/#top">
-        <span className="seal">G</span>
+        {logo ? <img className="brand-logo" src={logo} alt={`${b.brand} logo`} /> : <span className="seal">G</span>}
         <span><strong>{b.brand}</strong><small>{b.descriptor}</small></span>
       </Link>
       <nav className="site-nav" aria-label="Main navigation">
