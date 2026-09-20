@@ -8,7 +8,7 @@ const reader = createReader(process.cwd(), config);
 
 export const metadata: Metadata = pageMetadata({
   title: 'About',
-  description: 'Learn about the convictions, goals, and vision that shape GCTSA.',
+  description: 'Learn about the convictions, goals, and vision that shape GCUA.',
   path: '/about',
 });
 

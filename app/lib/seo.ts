@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-export const SITE_NAME = 'GCTSA';
+export const SITE_NAME = 'GCUA';
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://staging.gcua.us';
 export const SITE_DESCRIPTION =
-  'Great Commission Theological Seminary of America (GCTSA) — a theological education for the whole person: rigorous in study, generous in community, and alive to the call of Christ.';
+  'Great Commission University of America (GCUA) — a theological education for the whole person: rigorous in study, generous in community, and alive to the call of Christ.';
 
 export function pageMetadata({
   title,
@@ -45,7 +45,7 @@ export function organizationJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'Great Commission Theological Seminary of America',
+    name: 'Great Commission University of America',
     alternateName: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,

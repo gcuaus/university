@@ -9,7 +9,7 @@ const reader = createReader(process.cwd(), config);
 
 export const metadata: Metadata = pageMetadata({
   title: 'News',
-  description: 'News, updates, and articles from GCTSA.',
+  description: 'News, updates, and articles from GCUA.',
   path: '/blog',
 });
 
@@ -24,7 +24,7 @@ export default async function BlogPage() {
       <section className="directory-hero">
         <p className="eyebrow">News &amp; articles</p>
         <h1>From the seminary.</h1>
-        <p>Updates, reflections, and stories from the GCTSA community.</p>
+        <p>Updates, reflections, and stories from the GCUA community.</p>
       </section>
       <section className="directory-grid">
         {posts.map(({ slug, entry }) => (

@@ -1,6 +1,6 @@
-# GCTSA Website
+# GCUA Website
 
-Website for **Great Commission Theological Seminary of America (GCTSA)**, built with
+Website for **Great Commission University of America (GCUA)**, built with
 Next.js and Keystatic. Content is edited in Keystatic and committed to this GitHub
 repository; the hosting platform (Vercel) builds and deploys every commit.
 

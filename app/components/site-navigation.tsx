@@ -19,6 +19,8 @@ export type NavLabels = {
 type SiteNavigationProps = {
   variant?: 'home' | 'directory';
   labels?: NavLabels;
+  brand?: string;
+  descriptor?: string;
 };
 
 const DEFAULTS: Required<NavLabels> = {
@@ -32,10 +34,13 @@ const DEFAULTS: Required<NavLabels> = {
   apply: 'Apply now',
 };
 
-export default function SiteNavigation({ variant, labels }: SiteNavigationProps) {
+const BRAND_DEFAULTS = { brand: 'GCUA', descriptor: 'Great Commission University of America' };
+
+export default function SiteNavigation({ variant, labels, brand, descriptor }: SiteNavigationProps) {
   const pathname = usePathname();
   const resolvedVariant = variant ?? (pathname === '/' ? 'home' : 'directory');
   const t = { ...DEFAULTS, ...labels };
+  const b = { brand: brand ?? BRAND_DEFAULTS.brand, descriptor: descriptor ?? BRAND_DEFAULTS.descriptor };
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   const links = [
@@ -52,7 +57,7 @@ export default function SiteNavigation({ variant, labels }: SiteNavigationProps)
     <header className={resolvedVariant === 'directory' ? 'site-header directory-site-header' : 'site-header'}>
       <Link className="brand" href="/#top">
         <span className="seal">G</span>
-        <span><strong>GCTSA</strong><small>Great Commission Theological Seminary of America</small></span>
+        <span><strong>{b.brand}</strong><small>{b.descriptor}</small></span>
       </Link>
       <nav className="site-nav" aria-label="Main navigation">
         {links.map((link) => <Link className={isActive(link.href) ? 'is-active' : undefined} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} key={link.href}>{link.label}</Link>)}

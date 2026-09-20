@@ -9,7 +9,7 @@ export default async function SiteFooter() {
     <>
       <footer>
         <div><span className="seal small">G</span><p>{home.footerText}</p></div>
-        <span className="footer-admin"><Link href="/keystatic">Content manager</Link> · © 2026 GCTSA</span>
+        <span className="footer-admin"><Link href="/keystatic">Content manager</Link> · © 2026 {home.brand}</span>
         <span className="footer-theme-toggle"><ThemeToggle /></span>
       </footer>
       <FloatingWhatsApp />

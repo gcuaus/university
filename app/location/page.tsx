@@ -8,7 +8,7 @@ const reader = createReader(process.cwd(), config);
 
 export const metadata: Metadata = pageMetadata({
   title: 'Location',
-  description: 'Find your way to GCTSA - location, address, and directions.',
+  description: 'Find your way to GCUA - location, address, and directions.',
   path: '/location',
 });
 
@@ -20,7 +20,7 @@ export default async function LocationPage() {
 
       <section className="directory-hero">
         <p className="eyebrow">Come and see</p>
-        <h1>Find your way to GCTSA.</h1>
+        <h1>Find your way to GCUA.</h1>
         <p>Visit our campus, meet our community, and see where theological education comes to life.</p>
       </section>
 
