@@ -14,6 +14,7 @@ export default config({
         brand: fields.text({ label: 'Brand name', validation: { isRequired: true } }),
         brandDescriptor: fields.text({ label: 'Brand descriptor' }),
         logo: fields.image({ label: 'Site logo', directory: 'public/images/branding', publicPath: '/images/branding/' }),
+        whatsappNumber: fields.text({ label: 'WhatsApp number (digits with country code, no + or spaces)' }),
         navAbout: fields.text({ label: 'About navigation label' }),
         navPrograms: fields.text({ label: 'Programs navigation label' }),
         navFaculty: fields.text({ label: 'Faculty navigation label' }),

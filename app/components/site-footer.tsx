@@ -12,7 +12,7 @@ export default async function SiteFooter({ logo }: { logo?: string | null }) {
         <span className="footer-admin"><Link href="/keystatic">Content manager</Link> · © 2026 {home.brand}</span>
         <span className="footer-theme-toggle"><ThemeToggle /></span>
       </footer>
-      <FloatingWhatsApp />
+      <FloatingWhatsApp number={home.whatsappNumber} />
     </>
   );
 }

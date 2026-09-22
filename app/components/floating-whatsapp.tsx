@@ -1,9 +1,20 @@
 'use client';
 
-export default function FloatingWhatsApp() {
+const DEFAULT_MESSAGE = "Hello GCUA, I'd like to ask about your programs.";
+
+export default function FloatingWhatsApp({
+  number,
+  message = DEFAULT_MESSAGE,
+}: {
+  number?: string | null;
+  message?: string;
+}) {
+  const digits = (number ?? '').replace(/[^\d]/g, '');
+  if (!digits) return null;
+
   return (
     <a
-      href="https://wa.me/17185366638?text=Hello%20GCUA%2C%20I%27d%20like%20to%20ask%20about%20your%20programs."
+      href={`https://wa.me/${digits}?text=${encodeURIComponent(message)}`}
       className="floating-whatsapp"
       target="_blank"
       rel="noreferrer"
