@@ -10,11 +10,13 @@ const renderers = {
 
 export default function MarkdocContent({
   document,
+  className,
 }: {
   document: DocumentRendererProps['document'];
+  className?: string;
 }) {
   return (
-    <div className="prose-content">
+    <div className={className ? `prose-content ${className}` : 'prose-content'}>
       <DocumentRenderer document={document} renderers={renderers} />
     </div>
   );

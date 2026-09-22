@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { createReader } from '@keystatic/core/reader';
 import config from '../../keystatic.config';
+import MarkdocContent from '../components/markdoc-content';
 import { pageMetadata } from '../lib/seo';
 
 const reader = createReader(process.cwd(), config);
@@ -13,7 +14,10 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function LocationPage() {
-  const locations = await reader.collections.location.all();
+  const entries = await reader.collections.location.all();
+  const locations = await Promise.all(
+    entries.map(async ({ slug, entry }) => ({ slug, entry, details: await entry.details() })),
+  );
 
   return (
     <main className="directory-page location-page">
@@ -25,7 +29,7 @@ export default async function LocationPage() {
       </section>
 
       <section className="location-layout">
-        {locations.map(({ slug, entry }) => {
+        {locations.map(({ slug, entry, details }) => {
           const telHref = entry.phone ? `tel:${entry.phone.replace(/[^\d+]/g, '')}` : '';
 
           return (
@@ -43,6 +47,8 @@ export default async function LocationPage() {
                 )}
 
                 {entry.hours && <p className="location-hours">{entry.hours}</p>}
+
+                {details.length > 0 && <MarkdocContent document={details} className="location-details" />}
 
                 <div className="location-actions">
                   {entry.mapUrl && (
