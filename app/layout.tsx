@@ -3,6 +3,7 @@ import { DM_Mono, DM_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import './site-content.css';
 import './navigation-footer.css';
+import './a11y-contrast.css';
 import SiteNavigation from './components/site-navigation';
 import SiteFooter from './components/site-footer';
 import SiteShell from './components/site-shell';

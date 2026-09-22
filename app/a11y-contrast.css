@@ -1,0 +1,61 @@
+/*
+ * WCAG AA contrast fixes for the dark theme surfaces.
+ *
+ * The default theme is dark: navigation-footer.css renders .directory-page and
+ * cards on ink surfaces. Several text colours (ours and upstream) were tuned for
+ * light backgrounds and fail axe colour-contrast there. These overrides apply in
+ * the dark theme only and are imported last so they win on equal specificity.
+ */
+
+html:not([data-theme='light']) .prose-content { color: #c1ccd2; }
+html:not([data-theme='light']) .prose-content blockquote { color: var(--muted); }
+html:not([data-theme='light']) .prose-content a { color: var(--gold); }
+html:not([data-theme='light']) .directory-hero>p:last-child { color: var(--muted); }
+html:not([data-theme='light']) .directory-card p { color: var(--muted); }
+html:not([data-theme='light']) .empty-state { color: var(--muted); }
+html:not([data-theme='light']) .directory-card a { color: var(--gold); }
+html:not([data-theme='light']) .directory-card .card-meta { color: #d9c58e; }
+html:not([data-theme='light']) .card-index { color: #d9c58e; }
+html:not([data-theme='light']) .back-link span,
+html:not([data-theme='light']) .admin-link { color: var(--gold); }
+html:not([data-theme='light']) .about-page .admin-link { color: var(--gold); }
+html:not([data-theme='light']) .faq-item p { color: #c1ccd2; }
+html:not([data-theme='light']) .faq-item summary span,
+html:not([data-theme='light']) .faq-item summary b { color: #d9c58e; }
+html:not([data-theme='light']) .breadcrumbs li { color: var(--muted); }
+html:not([data-theme='light']) .breadcrumbs a { color: var(--gold); }
+html:not([data-theme='light']) .breadcrumbs [aria-current='page'] { color: var(--paper); }
+html:not([data-theme='light']) .contact-links a { color: var(--gold); }
+html:not([data-theme='light']) .location-page .location-contact strong { color: #d9c58e; }
+html:not([data-theme='light']) .directory-site-header .site-nav { color: #c1ccd2; }
+html:not([data-theme='light']) .directory-site-header .brand small { color: var(--gold); }
+
+html:not([data-theme='light']) .program-carousel-summary,
+html:not([data-theme='light']) .programs-card-summary { color: var(--muted); }
+html:not([data-theme='light']) .program-carousel-index,
+html:not([data-theme='light']) .program-carousel-level,
+html:not([data-theme='light']) .program-carousel-type,
+html:not([data-theme='light']) .program-carousel-meta,
+html:not([data-theme='light']) .programs-card-meta,
+html:not([data-theme='light']) .programs-card-type,
+html:not([data-theme='light']) .program-card-level { color: #d9c58e; }
+html:not([data-theme='light']) .program-carousel a,
+html:not([data-theme='light']) .programs-card a { color: var(--gold); }
+html:not([data-theme='light']) .programs-intro-copy p:last-child { color: var(--muted); }
+html:not([data-theme='light']) .program-levels button.is-active { color: #e2c15c; }
+html:not([data-theme='light']) .program-detail-meta { color: #d9c58e; }
+
+html:not([data-theme='light']) .tuition-principles h2 { color: #102338; }
+html:not([data-theme='light']) .tuition-principles .eyebrow { color: #6f4a1e; }
+html:not([data-theme='light']) .principle-grid article>span { color: #6f4a1e; }
+html:not([data-theme='light']) .principle-grid p { color: #4f5d68; }
+html:not([data-theme='light']) .tuition-page .program-select-row span,
+html:not([data-theme='light']) .tuition-page .tuition-slider-label span,
+html:not([data-theme='light']) .tuition-page .prepay-callout span { color: #d9c58e; }
+html:not([data-theme='light']) .tuition-page .term-toggle button { color: #c1ccd2; }
+html:not([data-theme='light']) .principle-grid h3 { color: #102338; }
+html:not([data-theme='light']) .tuition-notes .note-strip span { color: var(--muted); }
+html:not([data-theme='light']) .tuition-notes .note-strip b { color: var(--paper); }
+
+/* The oxblood CTA panel is the same colour in both themes. */
+html .cta .eyebrow { color: #e0cacc; }

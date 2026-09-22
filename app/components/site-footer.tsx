@@ -11,8 +11,8 @@ export default async function SiteFooter({ logo }: { logo?: string | null }) {
         <div>{logo ? <img className="footer-logo" src={logo} alt={`${home.brand} logo`} /> : <span className="seal small">G</span>}<p>{home.footerText}</p></div>
         <span className="footer-admin"><Link href="/keystatic">Content manager</Link> · © 2026 {home.brand}</span>
         <span className="footer-theme-toggle"><ThemeToggle /></span>
+        <FloatingWhatsApp number={home.whatsappNumber} />
       </footer>
-      <FloatingWhatsApp number={home.whatsappNumber} />
     </>
   );
 }
