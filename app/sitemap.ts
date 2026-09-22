@@ -34,6 +34,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
+  const pageEntries = await reader.collections.pages.all();
+  const pageUrls: MetadataRoute.Sitemap = pageEntries
+    .filter(({ entry }) => entry.status === 'published')
+    .map(({ slug }) => ({
+      url: `${SITE_URL}/${slug}`,
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    }));
+
   const posts = await reader.collections.posts.all();
   const postUrls: MetadataRoute.Sitemap = posts
     .filter(({ entry }) => entry.status === 'published')
@@ -44,5 +53,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }));
 
-  return [...staticEntries, ...aboutUrls, ...programUrls, ...facultyUrls, ...postUrls];
+  return [...staticEntries, ...aboutUrls, ...programUrls, ...facultyUrls, ...pageUrls, ...postUrls];
 }
