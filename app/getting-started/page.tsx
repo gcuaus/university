@@ -28,7 +28,7 @@ export default async function GettingStartedPage() {
   const content = await entry.content();
 
   return (
-    <main className="directory-page">
+    <main className="directory-page getting-started-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -41,11 +41,7 @@ export default async function GettingStartedPage() {
         }}
       />
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: entry.title }]} />
-      <section className="directory-hero">
-        <h1>{entry.title}</h1>
-        <p>{entry.summary}</p>
-      </section>
-      <MarkdocContent document={content} />
+      <MarkdocContent document={content} className="getting-started-timeline" />
     </main>
   );
 }
