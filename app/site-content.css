@@ -43,4 +43,10 @@ html:not([data-theme='light']) .location-page .location-copy h2,html:not([data-t
 html[data-theme='light'] .getting-started-timeline.prose-content{color:#52616b}
 html[data-theme='light'] .getting-started-timeline h2,html[data-theme='light'] .getting-started-timeline h5{color:var(--ink)}
 html:not([data-theme='light']) .getting-started-page .getting-started-timeline h2,html:not([data-theme='light']) .getting-started-page .getting-started-timeline h5{color:var(--paper)}
+.doctrinal-foundation-page .prose-content h2~h3{margin:20px 0 0;padding:15px 20px 6px;border:1px solid #d8d1c5;border-bottom:0;border-radius:8px 8px 0 0;background:#eee8dc;color:var(--ink);font-size:19px}
+.doctrinal-foundation-page .prose-content h2~h3+p{margin:0;padding:5px 20px 17px;border:1px solid #d8d1c5;border-top:0;border-radius:0 0 8px 8px;background:#eee8dc;color:#52616b}
+.doctrinal-foundation-page .prose-content h2~h3:hover{border-color:#c79638;background:#f2ecdf}
+html:not([data-theme='light']) .doctrinal-foundation-page .prose-content h2~h3{border-color:var(--line);background:var(--ink2);color:var(--paper)}
+html:not([data-theme='light']) .doctrinal-foundation-page .prose-content h2~h3+p{border-color:var(--line);background:var(--ink2);color:#c1ccd2}
+html:not([data-theme='light']) .doctrinal-foundation-page .prose-content h2~h3:hover,html:not([data-theme='light']) .doctrinal-foundation-page .prose-content h2~h3:hover+p{border-color:rgba(199,150,56,.65)}
 @media(max-width:720px){.getting-started-section{padding:34px 24px 42px}.getting-started-timeline.prose-content{font-size:13px;line-height:1.6}.getting-started-timeline h2{font-size:30px}.getting-started-timeline h4{font-size:16px;margin-bottom:12px}.getting-started-timeline h5{margin-top:19px;font-size:16px}.getting-started-timeline h5~p{padding-left:38px;margin-bottom:11px}}
