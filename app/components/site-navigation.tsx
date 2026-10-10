@@ -7,6 +7,7 @@ import ThemeToggle from './theme-toggle';
 
 export type NavLabels = {
   about?: string;
+  whyUs?: string;
   programs?: string;
   faculty?: string;
   location?: string;
@@ -26,6 +27,7 @@ type SiteNavigationProps = {
 
 const DEFAULTS: Required<NavLabels> = {
   about: 'About',
+  whyUs: 'Why Us?',
   programs: 'Programs',
   faculty: 'Faculty',
   location: 'Location',
@@ -53,6 +55,18 @@ export default function SiteNavigation({ variant, labels, logo, brand, descripto
     { href: '/blog', label: t.news },
     { href: '/contact', label: t.contact },
   ];
+  const mobileLinks = [
+    links[0],
+    {
+      href: '/about/doctrinal-foundation',
+      label: t.whyUs,
+      children: [
+        { href: '/about/doctrinal-foundation', label: 'Our Doctrinal Foundation' },
+        { href: '/getting-started', label: 'Getting Started' },
+      ],
+    },
+    ...links.slice(1),
+  ];
 
   return (
     <header className={resolvedVariant === 'directory' ? 'site-header directory-site-header' : 'site-header'}>
@@ -61,14 +75,22 @@ export default function SiteNavigation({ variant, labels, logo, brand, descripto
         <span><strong>{b.brand}</strong><small>{b.descriptor}</small></span>
       </Link>
       <nav className="site-nav" aria-label="Main navigation">
-        {links.map((link) => <Link className={isActive(link.href) ? 'is-active' : undefined} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} key={link.href}>{link.label}</Link>)}
+        {links.slice(0, 1).map((link) => <Link className={isActive(link.href) ? 'is-active' : undefined} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} key={link.href}>{link.label}</Link>)}
+        <details className="site-nav-dropdown">
+          <summary className={isActive('/about/doctrinal-foundation') || isActive('/getting-started') ? 'is-active' : undefined}>{t.whyUs}</summary>
+          <div className="site-nav-submenu">
+            <Link href="/about/doctrinal-foundation">Our Doctrinal Foundation</Link>
+            <Link href="/getting-started">Getting Started</Link>
+          </div>
+        </details>
+        {links.slice(1).map((link) => <Link className={isActive(link.href) ? 'is-active' : undefined} href={link.href} aria-current={isActive(link.href) ? 'page' : undefined} key={link.href}>{link.label}</Link>)}
         <Link className={isActive('/') ? 'is-active' : undefined} href="/#evaluation" aria-current={isActive('/') ? 'page' : undefined}>{t.apply}</Link>
         <span className="header-theme-toggle"><ThemeToggle /></span>
         <Link className="nav-cta" href="/keystatic">Login</Link>
       </nav>
       <div className="mobile-header-actions">
         <Link className="nav-cta" href="/keystatic">Login</Link>
-        <MobileMenu items={links} apply={t.apply} />
+        <MobileMenu items={mobileLinks} apply={t.apply} />
       </div>
     </header>
   );

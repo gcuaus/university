@@ -67,6 +67,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
               descriptor={home.brandDescriptor}
               labels={{
                 about: home.navAbout,
+                whyUs: home.navWhyUs,
                 programs: home.navPrograms,
                 faculty: home.navFaculty,
                 location: home.navLocation,

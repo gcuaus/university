@@ -23,6 +23,7 @@ export default config({
         navNews: fields.text({ label: 'News navigation label' }),
         navContact: fields.text({ label: 'Contact navigation label' }),
         navApply: fields.text({ label: 'Apply navigation label' }),
+        navWhyUs: fields.text({ label: 'Why Us navigation label' }),
         heroEyebrow: fields.text({ label: 'Hero eyebrow' }),
         heroTitle: fields.text({ label: 'Hero title', multiline: true, validation: { isRequired: true } }),
         heroBody: fields.text({ label: 'Hero description', multiline: true }),
@@ -172,6 +173,17 @@ export default config({
         label: 'About',
         slugField: 'title',
         path: 'content/about/*',
+        format: { data: 'yaml', contentField: 'content' },
+        schema: {
+          title: fields.slug({ name: { label: 'Title', validation: { isRequired: true } } }),
+          summary: fields.text({ label: 'Summary', multiline: true, validation: { isRequired: true } }),
+          content: fields.document({ label: 'Content', formatting: true, links: true, images: true }),
+        },
+      }),
+      gettingStarted: collection({
+        label: 'Getting Started',
+        slugField: 'title',
+        path: 'content/getting-started/*',
         format: { data: 'yaml', contentField: 'content' },
         schema: {
           title: fields.slug({ name: { label: 'Title', validation: { isRequired: true } } }),

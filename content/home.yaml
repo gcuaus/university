@@ -3,7 +3,8 @@ brand: GCUA
 brandDescriptor: Great Commission University of America
 logo: /images/branding/logo.png
 whatsappNumber: '17185366638'
-navAbout: About
+navAbout: About Us
+navWhyUs: Why Us?
 navPrograms: Programs
 navFaculty: Faculty
 navLocation: Location
@@ -11,10 +12,11 @@ navTuition: Tuition
 navNews: News
 navContact: Contact
 navApply: Apply now
-heroEyebrow: Forming faithful leaders for a changing world
-heroTitle: Rooted in truth. Ready for Service
-heroBody: >-
-  Pursue Your Degree. Prepare for Your Calling.
+heroEyebrow: A Personal Invitation
+heroTitle: |-
+  Pursue Your Degree. Prepare
+  for Your Calling.
+heroBody: ''
 heroPrimaryCta: Explore programs
 heroSecondaryCta: Meet our faculty
 statOneValue: 20+
