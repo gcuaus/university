@@ -3,5 +3,17 @@ html[data-theme='light'] .infographics{color:var(--ink)}html[data-theme='light']
 html[data-theme='light'] .hero h1,html[data-theme='light'] .hero .hero-body{color:var(--paper)}
 html[data-theme='light'] .hero .button.outline{color:#fff;border-color:#fff;background:rgba(16,35,56,.42)}
 .infographics{padding-top:64px;padding-bottom:64px}.split-section,.programs{padding-top:64px;padding-bottom:64px}.cta{padding-top:72px;padding-bottom:72px}
+.welcome-invitation{width:100%;padding:clamp(56px,7vw,96px) max(24px,8vw);color:var(--paper)}
+.welcome-invitation-inner{width:100%;max-width:1080px;margin:0 auto}
+.welcome-invitation h2{max-width:760px;margin:20px 0 30px;font:500 clamp(34px,4.5vw,58px)/1.12 var(--display);letter-spacing:-.02em}
+.welcome-invitation-copy{max-width:900px}
+.welcome-invitation-copy p{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.8}
+.welcome-invitation-closing{max-width:900px;margin:34px 0;color:var(--gold);font:500 clamp(20px,2.3vw,28px)/1.45 var(--display)}
+.welcome-invitation-signature{display:grid;gap:5px;margin:32px 0 0;font-size:14px;line-height:1.6}
+.welcome-invitation-signature strong{font-family:var(--display);font-size:18px;font-weight:500}
+.welcome-invitation-signature span{color:var(--muted)}
+html[data-theme='light'] .welcome-invitation{color:var(--ink)}
+html[data-theme='light'] .welcome-invitation-copy p,html[data-theme='light'] .welcome-invitation-signature span{color:#52616b}
+html[data-theme='light'] .welcome-invitation-closing{color:#8b6320}
 @media(max-width:900px){.infographics-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:720px){.hero{padding-bottom:88px}.infographics{padding:48px 24px 52px}.infographics-heading{margin-bottom:30px}.infographics-grid{grid-template-columns:1fr;gap:28px}.infographic-card h3{font-size:19px}.split-section{padding-top:56px;padding-bottom:56px}.programs{padding-bottom:56px}.cta{padding-top:60px;padding-bottom:60px}}
+@media(max-width:720px){.hero{padding-bottom:88px}.infographics{padding:48px 24px 52px}.infographics-heading{margin-bottom:30px}.infographics-grid{grid-template-columns:1fr;gap:28px}.infographic-card h3{font-size:19px}.split-section{padding-top:56px;padding-bottom:56px}.welcome-invitation{padding:52px 24px}.welcome-invitation h2{margin:18px 0 24px;font-size:clamp(32px,9vw,44px)}.welcome-invitation-copy p{font-size:15px;line-height:1.75}.welcome-invitation-closing{margin:28px 0;font-size:22px}.welcome-invitation-signature{margin-top:26px}.programs{padding-bottom:56px}.cta{padding-top:60px;padding-bottom:60px}}

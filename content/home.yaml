@@ -25,13 +25,27 @@ statTwoValue: '12'
 statTwoLabel: Distinctive programs
 statThreeValue: '1'
 statThreeLabel: Shared calling
-welcomeEyebrow: A place to belong
-welcomeTitle: Study deeply. Serve faithfully.
+welcomeEyebrow: A Personal Invitation
+welcomeTitle: |-
+  Pursue Your Degree.
+  Prepare for Your Calling.
 welcomeBody: >-
-  At GCUA, we believe theological education should shape more than what you
-  know. It should form how you live, lead, and love your neighbors.
+  Great Commission University of America (GCUA) provides biblically grounded,
+  academically focused, and ministry-centered higher education for men and
+  women called to serve Christ and His Church.
+
+  As a Pentecostal-Charismatic institution, GCUA affirms the authority of
+  Scripture and the continuing work and power of the Holy Spirit. Our programs
+  integrate biblical studies, theological education, spiritual formation,
+  leadership development, and practical ministry preparation.
+
+  Whether you are preparing for pastoral ministry, Christian education,
+  missions, evangelism, counseling, church leadership, or deeper biblical
+  study, GCUA offers flexible learning opportunities designed to equip you for
+  effective Christian service.
+welcomeClosing: Study from wherever you are. Grow in knowledge. Be empowered by the Spirit. Fulfill your calling.
 welcomeSignatureName: Dr. Ferdinand Saerang
-welcomeSignatureTitle: President, Great Commission University of America
+welcomeSignatureTitle: President of Great Commission University of America
 programsEyebrow: Find your path
 programsTitle: Programs shaped around your calling
 programsBody: >-

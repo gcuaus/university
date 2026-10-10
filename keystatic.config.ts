@@ -38,6 +38,7 @@ export default config({
         welcomeEyebrow: fields.text({ label: 'Welcome eyebrow' }),
         welcomeTitle: fields.text({ label: 'Welcome title' }),
         welcomeBody: fields.text({ label: 'Welcome copy', multiline: true }),
+        welcomeClosing: fields.text({ label: 'Welcome closing statement', multiline: true }),
         welcomeSignatureName: fields.text({ label: 'Welcome signature name' }),
         welcomeSignatureTitle: fields.text({ label: 'Welcome signature title' }),
         programsEyebrow: fields.text({ label: 'Programs eyebrow' }),
