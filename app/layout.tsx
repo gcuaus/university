@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
 import { DM_Mono, DM_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import './site-content.css';
@@ -49,9 +50,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const home = await getHome();
+  const locale = (await cookies()).get('gcua-locale')?.value === 'id' ? 'id' : 'en';
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
       <body>
@@ -65,6 +67,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
               logo={home.logo}
               brand={home.brand}
               descriptor={home.brandDescriptor}
+              locale={locale}
               labels={{
                 about: home.navAbout,
                 whyUs: home.navWhyUs,
@@ -78,7 +81,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
               }}
             />
           }
-          footer={<SiteFooter logo={home.logo} />}
+          footer={<SiteFooter logo={home.logo} locale={locale} />}
         >
           {children}
         </SiteShell>

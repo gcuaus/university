@@ -7,11 +7,32 @@ import { useEffect, useState } from 'react';
 type MenuItem = { href: string; label: string; children?: MenuItem[] };
 
 const DEFAULT_LINKS: MenuItem[] = [
-  { href: '/about', label: 'About' },
-  { href: '/programs', label: 'Programs' },
-  { href: '/faculty', label: 'Faculty' },
+  { href: '/about', label: 'About Us' },
+  {
+    href: '/about/doctrinal-foundation',
+    label: 'Why Us?',
+    children: [
+      { href: '/about/doctrinal-foundation', label: 'Our Doctrinal Foundation' },
+      { href: '/getting-started', label: 'Getting Started' },
+    ],
+  },
+  {
+    href: '/programs',
+    label: 'Academy',
+    children: [
+      { href: '/programs', label: 'Programs' },
+      { href: '/faculty', label: 'Faculty' },
+    ],
+  },
+  {
+    href: '/tuition',
+    label: 'Admission',
+    children: [
+      { href: '/tuition', label: 'Tuition' },
+      { href: '/#evaluation', label: 'Application' },
+    ],
+  },
   { href: '/location', label: 'Location' },
-  { href: '/tuition', label: 'Tuition' },
   { href: '/blog', label: 'News' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -19,9 +40,11 @@ const DEFAULT_LINKS: MenuItem[] = [
 export default function MobileMenu({
   items = DEFAULT_LINKS,
   apply = 'Apply now',
+  locale = 'en',
 }: {
   items?: MenuItem[];
   apply?: string;
+  locale?: 'en' | 'id';
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -43,7 +66,9 @@ export default function MobileMenu({
         type="button"
         aria-expanded={open}
         aria-controls="mobile-menu-panel"
-        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-label={locale === 'id'
+          ? open ? 'Tutup menu navigasi' : 'Buka menu navigasi'
+          : open ? 'Close navigation menu' : 'Open navigation menu'}
         onClick={() => setOpen(!open)}
       >
         <span aria-hidden="true">{open ? '×' : '☰'}</span>
