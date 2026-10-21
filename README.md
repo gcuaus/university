@@ -51,6 +51,7 @@ KEYSTATIC_GITHUB_CLIENT_SECRET
 KEYSTATIC_SECRET
 NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG
 NEXT_PUBLIC_SITE_URL
+NEXT_PUBLIC_CRM_FORM_URL
 ```
 
 Without the Keystatic variables the public site still builds and runs; `/api/keystatic/*`
