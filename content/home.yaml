@@ -11,11 +11,12 @@ navTuition: Tuition
 navNews: News
 navContact: Contact
 navApply: Apply now
-heroEyebrow: Forming faithful leaders for a changing world
-heroTitle: Rooted in truth. Ready for Service
+heroEyebrow: Great Commission University of America
+heroTitle: Pursue Your Degree. Prepare for Your Calling.
 heroBody: >-
-  A theological education for the whole person: rigorous in study, generous in
-  community, and alive to the call of Christ.
+  Great Commission University of America (GCUA) provides biblically grounded,
+  academically focused, and ministry-centered higher education for men and women
+  called to serve Christ and His Church.
 heroPrimaryCta: Explore programs
 heroSecondaryCta: Meet our faculty
 statOneValue: 20+
@@ -24,11 +25,35 @@ statTwoValue: '12'
 statTwoLabel: Distinctive programs
 statThreeValue: '1'
 statThreeLabel: Shared calling
-welcomeEyebrow: A place to belong
-welcomeTitle: Study deeply. Serve faithfully.
-welcomeBody: >-
-  At GCUA, we believe theological education should shape more than what you
-  know. It should form how you live, lead, and love your neighbors.
+welcomeEyebrow: From the President
+welcomeTitle: A Personal Invitation
+welcomeBody: |-
+  As a Pentecostal-Charismatic institution, GCUA affirms the authority of Scripture and the continuing work and power of the Holy Spirit. Our programs integrate biblical studies, theological education, spiritual formation, leadership development, and practical ministry preparation.
+
+  Whether you are preparing for pastoral ministry, Christian education, missions, evangelism, counseling, church leadership, or deeper biblical study, GCUA offers flexible learning opportunities designed to equip you for effective Christian service.
+
+  Study from wherever you are. Grow in knowledge. Be empowered by the Spirit. Fulfill your calling.
+welcomeSignerName: Dr. Ferdinand Saerang
+welcomeSignerRole: President of Great Commission University of America
+offerTitle: What We Offer Every Student
+offerBody: ''
+offerItems:
+  - A complimentary personal evaluation of your educational background, ministry experience, and academic goals
+  - Flexible, interest-free payment options designed to make Christian higher education more accessible
+  - A biblically grounded, Christ-centered, and Spirit-empowered curriculum rooted in sound Pentecostal and Charismatic theology
+  - Purposefully structured coursework designed to minimize unnecessary repetition and support steady academic progression
+  - "Personalized academic guidance from faculty committed to students' spiritual, intellectual, and ministry development"
+  - Systematic and progressive studies that move students from foundational knowledge to advanced biblical, theological, and ministry competency
+  - Opportunities to receive academic credit for documented ministry training and qualifying prior learning, subject to institutional evaluation
+  - Transfer credit consideration for eligible coursework completed at qualified Bible colleges, seminaries, and other institutions
+  - Alternative academic pathways for qualified students with previous education, ministry training, or significant ministry experience
+whyEyebrow: Why Choose GCUA
+whyTitle: A Spirit-Empowered Christian University for Biblical and Ministry Education
+whyBody: >-
+  Great Commission University of America exists to provide accessible, affordable,
+  and academically structured Christian higher education for believers who desire to
+  grow in biblical knowledge, spiritual formation, leadership, and ministry without
+  leaving their church, family, career, or ministry responsibilities.
 programsEyebrow: Find your path
 programsTitle: Programs shaped around your calling
 programsBody: >-
@@ -40,6 +65,40 @@ programTwoTitle: Master of Arts
 programTwoBody: Focused graduate study for educators, counselors, and working professionals.
 programThreeTitle: Certificate Studies
 programThreeBody: Flexible theological formation for the season of life you are in.
+stepsEyebrow: Getting Started
+stepsTitle: How to Enroll at Great Commission University of America
+stepsBody: >-
+  Beginning your educational journey at Great Commission University of America
+  (GCUA) is a meaningful step toward greater biblical knowledge, spiritual growth,
+  and preparation for Christian ministry. Our enrollment process is designed to be
+  personal, prayerful, and straightforward.
+steps:
+  - title: Begin with Prayer and Fasting
+    body: >-
+      Before enrolling, we encourage prospective students to spend intentional time
+      in prayer and, when appropriate, fasting, seeking God's wisdom and guidance
+      concerning their educational and ministry journey.
+  - title: Request Your Academic Evaluation
+    body: >-
+      Submit information about your previous education, theological training,
+      ministry experience, and academic goals. GCUA will review your background and
+      help determine the academic program that best corresponds with your
+      qualifications and ministry objectives.
+  - title: Receive Your Personalized Academic Plan
+    body: >-
+      Following your evaluation, you will receive a recommended academic pathway
+      outlining your degree requirements, applicable transfer credits, remaining
+      courses, and estimated progression toward completion.
+  - title: Complete Your Enrollment and Registration
+    body: >-
+      Complete the required application and registration process and submit the
+      necessary academic documents. Once approved, you will receive information
+      regarding your program, courses, tuition arrangements, and academic resources.
+  - title: Study, Grow, and Complete Your Degree
+    body: >-
+      Begin your courses and progress systematically through your academic program,
+      completing assigned readings, coursework, examinations, and research while
+      receiving guidance throughout your educational journey.
 ctaTitle: Your next faithful step starts here.
 ctaBody: Come and see what thoughtful, Christ-centered education can make possible.
 ctaButton: Begin your application
