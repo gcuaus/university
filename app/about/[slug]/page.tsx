@@ -39,7 +39,7 @@ export default async function AboutArticlePage({
   const content = await entry.content();
 
   return (
-    <main className="directory-page">
+    <main className={`directory-page${slug === 'doctrinal-foundation' ? ' doctrinal-foundation-page' : ''}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

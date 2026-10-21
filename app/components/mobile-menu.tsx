@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-type MenuItem = { href: string; label: string };
+type MenuItem = { href: string; label: string; children?: MenuItem[] };
 
 const DEFAULT_LINKS: MenuItem[] = [
   { href: '/about', label: 'About' },
@@ -51,15 +51,32 @@ export default function MobileMenu({
       {open && (
         <div className="mobile-menu-panel" id="mobile-menu-panel">
           {items.map((item) => (
-            <Link
-              className={isActive(item.href) ? 'is-active' : undefined}
-              href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-              onClick={() => setOpen(false)}
-              key={item.href}
-            >
-              {item.label}
-            </Link>
+            item.children ? (
+              <details className="mobile-menu-group" key={item.href} open={item.children.some((child) => isActive(child.href))}>
+                <summary className={item.children.some((child) => isActive(child.href)) ? 'is-active' : undefined}>{item.label}</summary>
+                {item.children.map((child) => (
+                  <Link
+                    className={isActive(child.href) ? 'is-active' : undefined}
+                    href={child.href}
+                    aria-current={isActive(child.href) ? 'page' : undefined}
+                    onClick={() => setOpen(false)}
+                    key={child.href}
+                  >
+                    {child.label}
+                  </Link>
+                ))}
+              </details>
+            ) : (
+              <Link
+                className={isActive(item.href) ? 'is-active' : undefined}
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                onClick={() => setOpen(false)}
+                key={item.href}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
           <Link
             className={isActive('/') ? 'is-active' : undefined}
