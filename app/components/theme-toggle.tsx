@@ -1,42 +1,29 @@
 'use client';
 
-import { useEffect, useSyncExternalStore } from 'react';
-
-const THEME_EVENT = 'gctsa-theme-change';
-const STORAGE_KEY = 'gctsa-theme';
-
-function getSnapshot() {
-  return document.documentElement.dataset.theme === 'light';
-}
-
-function getServerSnapshot() {
-  return false;
-}
-
-function subscribe(callback: () => void) {
-  window.addEventListener(THEME_EVENT, callback);
-  return () => window.removeEventListener(THEME_EVENT, callback);
-}
-
-function setTheme(light: boolean) {
-  document.documentElement.dataset.theme = light ? 'light' : 'dark';
-  window.localStorage.setItem(STORAGE_KEY, light ? 'light' : 'dark');
-  window.dispatchEvent(new Event(THEME_EVENT));
-}
+import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
-  const light = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const [light, setLight] = useState(false);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    setTheme(saved === 'light');
+    const saved = window.localStorage.getItem('gctsa-theme');
+    const prefersLight = saved === 'light';
+    setLight(prefersLight);
+    document.documentElement.dataset.theme = prefersLight ? 'light' : 'dark';
   }, []);
+
+  function toggleTheme() {
+    const nextLight = !light;
+    setLight(nextLight);
+    document.documentElement.dataset.theme = nextLight ? 'light' : 'dark';
+    window.localStorage.setItem('gctsa-theme', nextLight ? 'light' : 'dark');
+  }
 
   return (
     <button
       className="theme-toggle"
       type="button"
-      onClick={() => setTheme(!light)}
+      onClick={toggleTheme}
       aria-label={light ? 'Switch to dark mode' : 'Switch to light mode'}
       aria-pressed={light}
     >

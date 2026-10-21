@@ -6,23 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "lint": "next lint"
   },
   "dependencies": {
     "@keystatic/core": "latest",
     "@keystatic/next": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "react-phone-number-input": "^3.4.18"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.5",
     "typescript": "latest"
   }
 }

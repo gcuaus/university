@@ -1,0 +1,57 @@
+.about-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:1080px;margin:0 auto;padding:0 24px 80px}
+.about-feature-grid article,.pathway-card,.financing-grid article{padding:24px;border:1px solid #d8d1c5;background:#fff}
+.about-feature-grid h2{margin:25px 0 10px;color:var(--ink);font:500 24px/1.15 var(--display)}
+.about-feature-grid p,.pathway-card>p,.financing-grid p,.tuition-year>p{color:#68747b;font-size:13px;line-height:1.7}
+.about-feature-grid a,.pathway-links a{display:inline-block;margin-top:14px;color:#8b6320;font-size:12px;font-weight:600}
+.about-feature-grid a span,.pathway-links a span{margin-left:6px}
+.pathway-section,.financing-section,.tuition-plan,.tuition-year{max-width:1080px;margin:auto;padding:24px 24px 72px}
+.pathway-section>h2,.financing-section>h2,.tuition-plan>h2,.tuition-year>h2{margin:16px 0 28px;color:var(--ink);font:500 38px/1.1 var(--display)}
+.program-filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;padding:4px;border:1px solid #d8d1c5;width:max-content;max-width:100%}
+.program-filter{padding:8px 12px;border:0;color:#52616b;background:transparent;font:10px var(--mono);cursor:pointer;white-space:nowrap}
+.program-filter[aria-pressed='true']{color:var(--paper);background:var(--ink)}
+.program-filter-count{margin:0 0 16px;color:#68747b;font:10px var(--mono)}
+.program-filter-empty{padding:24px;border:1px solid #d8d1c5;color:#68747b;font-size:13px}
+html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)}
+.pathway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pathway-card{display:flex;min-width:0;flex-direction:column;align-items:flex-start}
+.pathway-category,.pathway-fields,.pathway-credential{color:#98702f;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.pathway-category{margin:24px 0 0}
+.pathway-card h3{margin:9px 0;color:var(--ink);font:500 25px/1.15 var(--display)}
+.pathway-card .pathway-fields{margin:4px 0}
+.pathway-card>p:not(.pathway-category):not(.pathway-fields){flex:1}
+.pathway-credential{margin-top:12px}
+.pathway-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:10px}
+.programs-next-step{max-width:1080px;margin:0 auto;padding:44px 24px 80px;border-top:1px solid #d8d1c5}
+.programs-next-step h2{max-width:700px;margin:16px 0 24px;color:var(--ink);font:500 36px/1.15 var(--display)}
+.tuition-page .directory-hero{padding-bottom:56px}
+.tuition-plan>p:not(.eyebrow){max-width:600px;color:#68747b;font-size:14px;line-height:1.7}
+.tuition-plan-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:14px;margin-top:30px}
+.tuition-program,.tuition-payment{padding:28px;border:1px solid #d8d1c5;background:#fff}
+.tuition-program h3{margin:36px 0 24px;color:var(--ink);font:500 27px var(--display)}
+.tuition-amount-label{margin:0;color:#98702f;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.tuition-amount{margin:7px 0;color:var(--ink);font:500 44px/1 var(--display)}
+.tuition-amount small{font:400 16px var(--body)}
+.tuition-division,.payment-rhythms{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;color:#68747b;font:10px var(--mono);text-transform:uppercase}
+.tuition-division span,.payment-rhythms span{padding:9px 11px;border:1px solid #d8d1c5}
+.tuition-payment>p:not(.tuition-amount-label):not(.tuition-amount){color:#68747b;font-size:12px;line-height:1.6}
+.tuition-payment dl{margin:24px 0}
+.tuition-payment dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #d8d1c5;font-size:12px}
+.tuition-payment dt{color:#68747b}.tuition-payment dd{margin:0;color:var(--ink);font-weight:600}
+.tuition-payment .pay-in-full{display:grid;gap:5px;margin:20px 0 0;padding-top:15px;border-top:1px solid #d8d1c5}
+.tuition-payment .pay-in-full strong{color:var(--ink);font:600 12px var(--mono);text-transform:uppercase}
+.financing-section{padding-top:18px}
+.financing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.financing-grid h3{margin:30px 0 8px;color:var(--ink);font:500 21px/1.2 var(--display)}
+.tuition-year{padding-top:44px;border-top:1px solid #d8d1c5}
+.tuition-year>p{max-width:760px}
+.tuition-year .button{margin-top:14px}
+.location-map-wrap{max-width:950px;margin:50px auto;padding:0 24px}
+.location-map{display:block;width:100%;aspect-ratio:16/9;border:0}
+@media(max-width:720px){
+  .about-feature-grid,.pathway-grid,.financing-grid,.tuition-plan-grid{grid-template-columns:1fr}
+  .about-feature-grid{padding-bottom:56px}
+  .pathway-section>h2,.financing-section>h2,.tuition-plan>h2,.tuition-year>h2,.programs-next-step h2{font-size:30px}
+  .pathway-section,.financing-section,.tuition-plan,.tuition-year{padding-bottom:52px}
+  .tuition-program,.tuition-payment,.pathway-card,.financing-grid article{padding:22px}
+  .location-map-wrap{margin:24px auto}
+}
