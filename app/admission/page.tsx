@@ -6,7 +6,7 @@ export default function AdmissionPage() {
       <header className="directory-header"><Link href="/#evaluation" className="admin-link">Start application</Link></header>
       <section className="directory-hero">
         <p className="eyebrow">Join our community</p>
-        <h1>Admission to GCTSA.</h1>
+        <h1>Admission to GCUA.</h1>
         <p>Find tuition information and take your next step toward theological study.</p>
       </section>
       <section className="directory-grid">

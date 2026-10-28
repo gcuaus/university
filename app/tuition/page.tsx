@@ -40,7 +40,7 @@ export default function TuitionPage() {
         <div className="financing-grid">
           <article><span className="card-index">01</span><h3>No qualifying required</h3><p>No credit check, grants, or government loans. GCUA finances every student directly.</p></article>
           <article><span className="card-index">02</span><h3>Choose your rhythm</h3><p>After the annual down payment, the remaining balance is divided evenly over 12 or 18 months.</p></article>
-          <article><span className="card-index">03</span><h3>Prepay and save</h3><p>Pay the full year's tuition up front and receive a 20% discount on tuition.</p></article>
+          <article><span className="card-index">03</span><h3>Prepay and save</h3><p>Pay the full year&apos;s tuition up front and receive a 20% discount on tuition.</p></article>
         </div>
       </section>
       <section className="tuition-year">

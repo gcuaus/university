@@ -1,19 +1,33 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 
 type Language = 'en-US' | 'id';
 
+const LANGUAGE_EVENT = 'gctsa-language-change';
+const STORAGE_KEY = 'gctsa-language';
+
+function getSnapshot(): Language {
+  return window.localStorage.getItem(STORAGE_KEY) === 'id' ? 'id' : 'en-US';
+}
+
+function getServerSnapshot(): Language {
+  return 'en-US';
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener(LANGUAGE_EVENT, callback);
+  return () => window.removeEventListener(LANGUAGE_EVENT, callback);
+}
+
 export default function LanguageSwitcher() {
-  const [language, setLanguage] = useState<Language>('en-US');
   const [open, setOpen] = useState(false);
 
+  const language = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
   useEffect(() => {
-    const savedLanguage = window.localStorage.getItem('gctsa-language');
-    const nextLanguage = savedLanguage === 'id' ? 'id' : 'en-US';
-    setLanguage(nextLanguage);
-    document.documentElement.lang = nextLanguage;
-  }, []);
+    document.documentElement.lang = language;
+  }, [language]);
 
   useEffect(() => {
     function closeOnOutsideClick(event: PointerEvent) {
@@ -21,17 +35,15 @@ export default function LanguageSwitcher() {
         setOpen(false);
       }
     }
-
     document.addEventListener('pointerdown', closeOnOutsideClick);
     return () => document.removeEventListener('pointerdown', closeOnOutsideClick);
-  }, []);
+  }, [setOpen]);
 
   function changeLanguage(nextLanguage: Language) {
-    setLanguage(nextLanguage);
     setOpen(false);
     document.documentElement.lang = nextLanguage;
-    window.localStorage.setItem('gctsa-language', nextLanguage);
-    window.dispatchEvent(new CustomEvent('gctsa-language-change', { detail: nextLanguage }));
+    window.localStorage.setItem(STORAGE_KEY, nextLanguage);
+    window.dispatchEvent(new CustomEvent(LANGUAGE_EVENT, { detail: nextLanguage }));
   }
 
   const flag = language === 'id' ? '/flags/id.svg' : '/flags/us.svg';

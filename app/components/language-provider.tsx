@@ -1,10 +1,26 @@
 'use client';
 
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useSyncExternalStore, type ReactNode } from 'react';
 import { translations } from '../translations';
 
 type Language = 'en-US' | 'id';
 type TranslationRecord = { original: string; translated: string };
+
+const LANGUAGE_EVENT = 'gctsa-language-change';
+const STORAGE_KEY = 'gctsa-language';
+
+function getLanguageSnapshot(): Language {
+  return window.localStorage.getItem(STORAGE_KEY) === 'id' ? 'id' : 'en-US';
+}
+
+function getLanguageServerSnapshot(): Language {
+  return 'en-US';
+}
+
+function subscribeLanguage(callback: () => void) {
+  window.addEventListener(LANGUAGE_EVENT, callback);
+  return () => window.removeEventListener(LANGUAGE_EVENT, callback);
+}
 
 const textRecords = new WeakMap<Text, TranslationRecord>();
 const attributeRecords = new WeakMap<Element, Map<string, TranslationRecord>>();
@@ -66,19 +82,11 @@ function applyLanguage(language: Language) {
 }
 
 export default function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en-US');
-
-  useEffect(() => {
-    if (window.localStorage.getItem('gctsa-language') === 'id') setLanguage('id');
-
-    function handleLanguageChange(event: Event) {
-      const nextLanguage = (event as CustomEvent<Language>).detail;
-      if (nextLanguage === 'en-US' || nextLanguage === 'id') setLanguage(nextLanguage);
-    }
-
-    window.addEventListener('gctsa-language-change', handleLanguageChange);
-    return () => window.removeEventListener('gctsa-language-change', handleLanguageChange);
-  }, []);
+  const language = useSyncExternalStore(
+    subscribeLanguage,
+    getLanguageSnapshot,
+    getLanguageServerSnapshot,
+  );
 
   useEffect(() => {
     applyLanguage(language);

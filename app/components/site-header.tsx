@@ -10,8 +10,8 @@ const reader = createReader(process.cwd(), config);
 
 const fallback = {
   announcement: 'Applications for Fall 2026 are now open',
-  brand: 'GCTSA',
-  brandDescriptor: 'Great Commission Theological Seminary of America',
+  brand: 'GCUA',
+  brandDescriptor: 'Great Commission University of America',
   navPrograms: 'Programs',
   navFaculty: 'Faculty',
   navApply: 'Apply now',

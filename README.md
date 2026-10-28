@@ -1,4 +1,4 @@
-# GCTSA Website Revamp — Design Preview
+# GCUA Website Revamp — Design Preview
 
 Static, no-build mockup (HTML/CSS/JS only) built from the real content on
 https://gcits.org, restyled with a distinct "manuscript & seal" visual identity
