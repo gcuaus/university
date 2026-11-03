@@ -24,13 +24,27 @@ function setTheme(light: boolean) {
   window.dispatchEvent(new Event(THEME_EVENT));
 }
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ variant = 'switch' }: { variant?: 'switch' | 'text' }) {
   const light = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
     const saved = window.localStorage.getItem(STORAGE_KEY);
     setTheme(saved === 'light');
   }, []);
+
+  if (variant === 'text') {
+    return (
+      <div aria-label="Color theme" className="theme-toggle-text" role="group">
+        <button aria-pressed={!light} className={!light ? 'is-active' : ''} onClick={() => setTheme(false)} type="button">
+          Dark
+        </button>
+        <span aria-hidden="true">|</span>
+        <button aria-pressed={light} className={light ? 'is-active' : ''} onClick={() => setTheme(true)} type="button">
+          Light
+        </button>
+      </div>
+    );
+  }
 
   return (
     <button
