@@ -14,7 +14,7 @@ export default function AdmissionPage() {
           <span className="card-index">TUITION</span>
           <h2>Tuition and fees</h2>
           <p>For current tuition, fees, and payment options, contact the Admissions Office.</p>
-          <a href="mailto:admissions@gctsa.edu">Email admissions <span>↗</span></a>
+          <a href="mailto:admission@gcua.us">Email admissions <span>↗</span></a>
         </article>
         <article className="directory-card" id="application">
           <span className="card-index">APPLICATION</span>

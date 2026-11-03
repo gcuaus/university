@@ -7,7 +7,7 @@ import './reference-pages.css';
 
 export const metadata: Metadata = {
   title: 'GCUA | Great Commission University of America',
-  description: 'Great Commission University of America.',
+  description: 'GCUA Great Commission University of America',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -7,10 +7,7 @@
 .site-dropdown-links a{display:block;padding:10px 12px;white-space:nowrap}
 .site-dropdown-links a:hover{background:var(--ink2)}
 .brand-logo{display:block;width:56px;height:56px;flex:0 0 auto;object-fit:contain}
-.brand-logo-dark{display:block}
-.brand-logo-light{display:none}
-html[data-theme='light'] .brand-logo-dark{display:none}
-html[data-theme='light'] .brand-logo-light{display:block}
+.footer-logo{display:block;width:36px;height:36px;flex:0 0 auto;object-fit:contain}
 .site-header>.nav-cta{font-size:11px;line-height:1;white-space:nowrap}
 .header-utilities{display:inline-flex;align-items:center;gap:10px}
 @media(min-width:721px){.site-header>.nav-cta{margin-left:16px}}
@@ -50,8 +47,6 @@ html[data-theme='light'] .language-option:hover{background:#f4efe6}
 	.site-header{position:relative;height:auto;min-height:68px;padding:12px 20px;align-items:center;flex-wrap:nowrap;border-bottom-color:rgba(16,35,56,.18);color:#102338;background:#fff}
 	.site-header .brand small{display:none}
 	.site-header .brand-logo{width:44px;height:44px}
-	.site-header .brand-logo-dark{display:none}
-	.site-header .brand-logo-light{display:block}
 	.site-header>.nav-cta{margin-left:8px;padding:7px 8px;font-size:10px;line-height:1;white-space:nowrap}
 	.mobile-navigation{position:static;display:flex;flex:1;justify-content:flex-end}
 	.mobile-nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:38px;height:34px;padding:8px;border:1px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer}
