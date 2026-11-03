@@ -51,6 +51,7 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="language-switcher">
+      <span className="language-switcher-label">Select a language</span>
       <button
         aria-label={`Language: ${label}`}
         aria-expanded={open}
