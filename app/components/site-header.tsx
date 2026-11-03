@@ -49,7 +49,7 @@ export default async function SiteHeader() {
               <Link href="/admission#application">Application</Link>
             </SiteDropdown>
             <Link href="/keystatic">Staff Login</Link>
-            <a href="https://student.gcua.us">Student Login</a>
+            <a href="https://online.gcua.us/lms">Student Login</a>
           </nav>
           <div className="header-utilities"><LanguageSwitcher /><span className="header-theme-toggle"><ThemeToggle /></span></div>
         </MobileNavigation>
