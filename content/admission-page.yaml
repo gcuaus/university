@@ -1,0 +1,20 @@
+startLabel: Start application
+startHref: /#evaluation
+heroEyebrow: Join our community
+heroTitle: Admission to GCUA.
+heroDescription: Find tuition information and take your next step toward theological study.
+cards:
+  - id: tuition
+    label: TUITION
+    title: Tuition and fees
+    description: For current tuition, fees, and payment options, contact the Admissions Office.
+    email: admission@gcua.us
+    linkLabel: Email admissions
+    linkHref: mailto:admission@gcua.us
+  - id: application
+    label: APPLICATION
+    title: Take your next step
+    description: Start by requesting a free evaluation. Our team will follow up about your educational background and study interests.
+    email: ''
+    linkLabel: Request an evaluation
+    linkHref: /#evaluation

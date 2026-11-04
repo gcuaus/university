@@ -1,54 +1,57 @@
 import Link from 'next/link';
+import { createReader } from '@keystatic/core/reader';
+import config from '../../keystatic.config';
 
-export default function TuitionPage() {
+const reader = createReader(process.cwd(), config);
+
+export default async function TuitionPage() {
+  const page = await reader.singletons.tuitionPage.read();
   return (
     <main className="directory-page tuition-page">
       <section className="directory-hero">
-        <p className="eyebrow">Affordable · Transparent · Interest-free</p>
-        <h1>Tuition that keeps the calling within reach.</h1>
-        <p>A seminary-level education designed to be within reach of every called servant of God, with interest-free payments and no credit qualification required.</p>
+        <p className="eyebrow">{page?.heroEyebrow}</p>
+        <h1>{page?.heroTitle}</h1>
+        <p>{page?.heroDescription}</p>
       </section>
       <section className="tuition-plan" aria-labelledby="tuition-plan-title">
-        <p className="eyebrow">Plan your year</p>
-        <h2 id="tuition-plan-title">Build your tuition plan.</h2>
-        <p>Move the slider to explore a program, then choose the payment rhythm that works for your season.</p>
+        <p className="eyebrow">{page?.planEyebrow}</p>
+        <h2 id="tuition-plan-title">{page?.planTitle}</h2>
+        <p>{page?.planDescription}</p>
         <div className="tuition-plan-grid">
           <article className="tuition-program">
-            <span className="card-index">1ST YEAR</span>
-            <h3>Foundation Courses</h3>
-            <p className="tuition-amount-label">Annual tuition</p>
-            <p className="tuition-amount">$1,447</p>
-            <div className="tuition-division"><span>College division</span><span>Seminary division</span></div>
+            <span className="card-index">{page?.yearLabel}</span>
+            <h3>{page?.programTitle}</h3>
+            <p className="tuition-amount-label">{page?.annualTuitionLabel}</p>
+            <p className="tuition-amount">{page?.annualTuition}</p>
+            <div className="tuition-division"><span>{page?.collegeDivisionLabel}</span><span>{page?.seminaryDivisionLabel}</span></div>
           </article>
           <article className="tuition-payment">
-            <div className="payment-rhythms"><span>12 months</span><span>18 months</span></div>
-            <p className="tuition-amount-label">Estimated monthly</p>
-            <p className="tuition-amount">$121<small>/mo</small></p>
-            <p>after $375 down · 12 interest-free payments</p>
+            <div className="payment-rhythms"><span>{page?.shortPaymentTerm}</span><span>{page?.longPaymentTerm}</span></div>
+            <p className="tuition-amount-label">{page?.monthlyLabel}</p>
+            <p className="tuition-amount">{page?.monthlyAmount}<small>{page?.monthlyUnit}</small></p>
+            <p>{page?.paymentDescription}</p>
             <dl>
-              <div><dt>Annual tuition</dt><dd>$1,447</dd></div>
-              <div><dt>Fees &amp; books</dt><dd>$375</dd></div>
-              <div><dt>Financed balance</dt><dd>$1,447</dd></div>
+              <div><dt>{page?.annualTuitionLabel}</dt><dd>{page?.annualTuition}</dd></div>
+              <div><dt>{page?.feesLabel}</dt><dd>{page?.feesAmount}</dd></div>
+              <div><dt>{page?.balanceLabel}</dt><dd>{page?.balanceAmount}</dd></div>
             </dl>
-            <p className="pay-in-full"><strong>Pay in full</strong><span>$1,533 includes a 20% tuition prepay discount</span></p>
+            <p className="pay-in-full"><strong>{page?.payInFullTitle}</strong><span>{page?.payInFullDescription}</span></p>
           </article>
         </div>
       </section>
       <section className="financing-section" aria-labelledby="financing-title">
-        <p className="eyebrow">Simple &amp; straightforward</p>
-        <h2 id="financing-title">How GCUA financing works.</h2>
+        <p className="eyebrow">{page?.financingEyebrow}</p>
+        <h2 id="financing-title">{page?.financingTitle}</h2>
         <div className="financing-grid">
-          <article><span className="card-index">01</span><h3>No qualifying required</h3><p>No credit check, grants, or government loans. GCUA finances every student directly.</p></article>
-          <article><span className="card-index">02</span><h3>Choose your rhythm</h3><p>After the annual down payment, the remaining balance is divided evenly over 12 or 18 months.</p></article>
-          <article><span className="card-index">03</span><h3>Prepay and save</h3><p>Pay the full year&apos;s tuition up front and receive a 20% discount on tuition.</p></article>
+          {page?.financingCards.map((card, index) => <article key={`${index}-${card.title}`}><span className="card-index">{String(index + 1).padStart(2, '0')}</span><h3>{card.title}</h3><p>{card.description}</p></article>)}
         </div>
       </section>
       <section className="tuition-year">
-        <p className="eyebrow">Before you enroll</p>
-        <h2>A clear picture of the year ahead.</h2>
-        <p>Every program includes $110 matriculation, approximately $250 books, and $15 shipping. International students add $200 shipping. Canadian students add $95.</p>
-        <p>Students must maintain a 2.0 GPA to qualify for the Ecclesiastical Scholarship.</p>
-        <Link className="button gold" href="/#evaluation">Request a free evaluation <span>↗</span></Link>
+        <p className="eyebrow">{page?.yearEyebrow}</p>
+        <h2>{page?.yearTitle}</h2>
+        <p>{page?.yearDescription}</p>
+        <p>{page?.scholarshipDescription}</p>
+        <Link className="button gold" href={page?.ctaHref || '/#evaluation'}>{page?.ctaLabel} <span>↗</span></Link>
       </section>
     </main>
   );

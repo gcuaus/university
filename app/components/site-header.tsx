@@ -12,8 +12,21 @@ const fallback = {
   announcement: 'Applications for Fall 2026 are now open',
   brand: 'GCUA',
   brandDescriptor: 'Great Commission University of America',
+  navAbout: 'About Us',
+  navAcademy: 'Academy',
+  navWhyUs: 'Why Us?',
+  navDoctrinalFoundation: 'Doctrinal Foundation',
+  navGettingStarted: 'Getting Started',
   navPrograms: 'Programs',
   navFaculty: 'Faculty',
+  navTuition: 'Tuition',
+  navLocation: 'Location',
+  navNews: 'News',
+  navAdmission: 'Admission',
+  navAdmissionTuition: 'Tuition',
+  navApplication: 'Application',
+  navStaffLogin: 'Staff Login',
+  navStudentLogin: 'Student Login',
   navApply: 'Apply now',
 };
 
@@ -30,25 +43,24 @@ export default async function SiteHeader() {
         </Link>
         <MobileNavigation>
           <nav aria-label="Main navigation">
-            <Link href="/about">About Us</Link>
-            <SiteDropdown label="Why Us?" id="why-us-menu" className="why-us-menu">
-              <a href="https://staging.gcua.us/about/doctrinal-foundation">Doctrinal Foundation</a>
-              <a href="https://staging.gcua.us/getting-started">Getting Started</a>
+            <Link href="/about">{home.navAbout}</Link>
+            <SiteDropdown label={home.navWhyUs} id="why-us-menu" className="why-us-menu">
+              <Link href="/about/doctrinal-foundation">{home.navDoctrinalFoundation}</Link>
+              <Link href="/about/getting-started">{home.navGettingStarted}</Link>
             </SiteDropdown>
-            <SiteDropdown label="Academy" id="academy-menu" className="academy-menu">
+            <SiteDropdown label={home.navAcademy} id="academy-menu" className="academy-menu">
               <Link href="/programs">{home.navPrograms}</Link>
               <Link href="/faculty">{home.navFaculty}</Link>
             </SiteDropdown>
-            <Link href="/tuition">Tuition</Link>
-            <Link href="/location">Location</Link>
-            <a href="https://staging.gcua.us/blog">News</a>
-            <a href="https://staging.gcua.us/contact">Contact</a>
-            <SiteDropdown label="Admission" id="admission-menu" className="admission-menu">
-              <Link href="/admission#tuition">Tuition</Link>
-              <Link href="/admission#application">Application</Link>
+            <Link href="/tuition">{home.navTuition}</Link>
+            <Link href="/location">{home.navLocation}</Link>
+            <Link href="/news">{home.navNews}</Link>
+            <SiteDropdown label={home.navAdmission} id="admission-menu" className="admission-menu">
+              <Link href="/admission#tuition">{home.navAdmissionTuition}</Link>
+              <Link href="/admission#application">{home.navApplication}</Link>
             </SiteDropdown>
-            <Link href="/keystatic">Staff Login</Link>
-            <a href="https://online.gcua.us/lms">Student Login</a>
+            <Link href="/keystatic">{home.navStaffLogin}</Link>
+            <a href="https://online.gcua.us/lms">{home.navStudentLogin}</a>
           </nav>
           <div className="header-utilities"><LanguageSwitcher /><span className="header-theme-toggle"><ThemeToggle /></span></div>
         </MobileNavigation>

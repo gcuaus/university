@@ -1,0 +1,39 @@
+heroEyebrow: Affordable · Transparent · Interest-free
+heroTitle: Tuition that keeps the calling within reach.
+heroDescription: A seminary-level education designed to be within reach of every called servant of God, with interest-free payments and no credit qualification required.
+planEyebrow: Plan your year
+planTitle: Build your tuition plan.
+planDescription: Move the slider to explore a program, then choose the payment rhythm that works for your season.
+yearLabel: 1ST YEAR
+programTitle: Foundation Courses
+annualTuitionLabel: Annual tuition
+annualTuition: $1,447
+shortPaymentTerm: 12 months
+longPaymentTerm: 18 months
+collegeDivisionLabel: College division
+seminaryDivisionLabel: Seminary division
+monthlyLabel: Estimated monthly
+monthlyAmount: $121
+monthlyUnit: /mo
+paymentDescription: after $375 down · 12 interest-free payments
+feesLabel: Fees & books
+feesAmount: $375
+balanceLabel: Financed balance
+balanceAmount: $1,447
+payInFullTitle: Pay in full
+payInFullDescription: $1,533 includes a 20% tuition prepay discount
+financingEyebrow: Simple & straightforward
+financingTitle: How GCUA financing works.
+financingCards:
+  - title: No qualifying required
+    description: No credit check, grants, or government loans. GCUA finances every student directly.
+  - title: Choose your rhythm
+    description: After the annual down payment, the remaining balance is divided evenly over 12 or 18 months.
+  - title: Prepay and save
+    description: Pay the full year's tuition up front and receive a 20% discount on tuition.
+yearEyebrow: Before you enroll
+yearTitle: A clear picture of the year ahead.
+yearDescription: Every program includes $110 matriculation, approximately $250 books, and $15 shipping. International students add $200 shipping. Canadian students add $95.
+scholarshipDescription: Students must maintain a 2.0 GPA to qualify for the Ecclesiastical Scholarship.
+ctaLabel: Request a free evaluation
+ctaHref: /#evaluation

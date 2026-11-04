@@ -1,0 +1,35 @@
+heroEyebrow: Who we are
+heroTitle: About Great Commission.
+heroDescription: Learn about the convictions, goals, and vision that shape our theological education.
+detailEyebrow: About GCUA
+faqEyebrow: About us
+faqTitle: Convictions that guide our work.
+faqEditLabel: Edit About FAQs
+faqEditHref: /keystatic/collection/aboutFaqs
+emptyFaqMessage: About Us FAQs will appear here once they are added in Keystatic.
+features:
+  - label: ABOUT
+    title: Our Doctrinal Foundation
+    description: Biblical truth, Pentecostal faith, and Spirit-empowered ministry form the foundation of GCUA.
+    href: /about/doctrinal-foundation
+    linkLabel: Read more
+  - label: ABOUT
+    title: Educational Philosophy
+    description: Our educational philosophy shapes hearts, sharpens minds, and equips Spirit-empowered leaders for ministry and academic service.
+    href: /about/educational-philosophy
+    linkLabel: Read more
+  - label: ABOUT
+    title: Institutional Goals and Objectives
+    description: The goals and objectives that guide GCUA's formation of hearts, preparation of minds, and development of Spirit-empowered leaders.
+    href: /about/institutional-goals
+    linkLabel: Read more
+  - label: ABOUT
+    title: Our Story
+    description: GCUA forms faithful leaders through rigorous theological education and life-giving community.
+    href: /about/our-story
+    linkLabel: Read more
+  - label: ABOUT
+    title: Our Values and Vision
+    description: The values, vision, methods, and commitments that shape GCUA's life and ministry.
+    href: /about/values-and-vision
+    linkLabel: Read more

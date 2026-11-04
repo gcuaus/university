@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 type ProgramPath = {
+  slug: string;
   level: string;
   category: string;
   filter: string;
@@ -14,17 +15,27 @@ type ProgramPath = {
   details: string;
 };
 
-const filters = [
-  { id: 'all', label: 'All programs' },
-  { id: 'associate', label: 'Associate' },
-  { id: 'undergraduate', label: 'Undergraduate' },
-  { id: 'graduate', label: 'Graduate' },
-  { id: 'doctoral', label: 'Doctoral' },
-  { id: 'seminary', label: 'Seminary' },
-];
+type FilterLabels = Record<'all' | 'associate' | 'undergraduate' | 'graduate' | 'doctoral' | 'seminary', string>;
 
-export default function ProgramsFilter({ programs }: { programs: ProgramPath[] }) {
+export default function ProgramsFilter({
+  programs,
+  labels,
+  countLabel,
+  curriculumLabel,
+  detailsLabel,
+  emptyMessage,
+  levelPrefix,
+}: {
+  programs: ProgramPath[];
+  labels: FilterLabels;
+  countLabel: string;
+  curriculumLabel: string;
+  detailsLabel: string;
+  emptyMessage: string;
+  levelPrefix: string;
+}) {
   const [activeFilter, setActiveFilter] = useState('all');
+  const filters = Object.entries(labels).map(([id, label]) => ({ id, label }));
   const visiblePrograms = activeFilter === 'all'
     ? programs
     : programs.filter((program) => program.filter === activeFilter);
@@ -44,26 +55,26 @@ export default function ProgramsFilter({ programs }: { programs: ProgramPath[] }
           </button>
         ))}
       </div>
-      <p aria-live="polite" className="program-filter-count">{visiblePrograms.length} programs</p>
+      <p aria-live="polite" className="program-filter-count">{visiblePrograms.length} {countLabel}</p>
       {visiblePrograms.length > 0 ? (
         <div className="pathway-grid">
           {visiblePrograms.map((program) => (
-            <article className="pathway-card" key={program.level}>
-              <span className="card-index">{program.level} · LEVEL {program.level}</span>
+            <article className="pathway-card" key={program.slug}>
+              <span className="card-index">{program.level} · {levelPrefix} {program.level}</span>
               <p className="pathway-category">{program.category}</p>
               <h3>{program.title}</h3>
               <p className="pathway-fields">{program.fields}</p>
               <p>{program.description}</p>
               <span className="pathway-credential">{program.credential}</span>
               <div className="pathway-links">
-                <a href={program.curriculum} target="_blank" rel="noreferrer">View curriculum <span>↗</span></a>
-                <a href={program.details}>Program details <span>↗</span></a>
+                {program.curriculum && <a href={program.curriculum} target="_blank" rel="noreferrer">{curriculumLabel} <span>↗</span></a>}
+                <a href={program.details}>{detailsLabel} <span>↗</span></a>
               </div>
             </article>
           ))}
         </div>
       ) : (
-        <p className="program-filter-empty">No programs in this category.</p>
+        <p className="program-filter-empty">{emptyMessage}</p>
       )}
     </>
   );

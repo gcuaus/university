@@ -7,18 +7,15 @@ const reader = createReader(process.cwd(), config);
 
 export default async function AboutPage() {
   const faqs = await reader.collections.aboutFaqs.all();
+  const page = await reader.singletons.aboutPage.read();
   return (
     <main className="directory-page about-page">
-      <section className="directory-hero"><p className="eyebrow">Who we are</p><h1>About Great Commission.</h1><p>Learn about the convictions, goals, and vision that shape our theological education.</p></section>
-      <section className="faq-section" aria-labelledby="about-faq-title"><div className="faq-intro"><p className="eyebrow">About us</p><h2 id="about-faq-title">Convictions that guide our work.</h2><Link className="admin-link" href="/keystatic/collection/aboutFaqs">Edit About FAQs ↗</Link></div><div className="faq-list">{faqs.map(({ slug, entry }, index) => <details className="faq-item" key={slug} open={index === 0}><summary><span>{String(index + 1).padStart(2, '0')}</span>{entry.title}<b>+</b></summary><p>{entry.answer}</p></details>)}</div></section>
+      <section className="directory-hero"><p className="eyebrow">{page?.heroEyebrow}</p><h1>{page?.heroTitle}</h1><p>{page?.heroDescription}</p></section>
+      <section className="faq-section" aria-labelledby="about-faq-title"><div className="faq-intro"><p className="eyebrow">{page?.faqEyebrow}</p><h2 id="about-faq-title">{page?.faqTitle}</h2><Link className="admin-link" href={page?.faqEditHref || '/keystatic/collection/aboutFaqs'}>{page?.faqEditLabel} ↗</Link></div><div className="faq-list">{faqs.map(({ slug, entry }, index) => <details className="faq-item" key={slug} open={index === 0}><summary><span>{String(index + 1).padStart(2, '0')}</span>{entry.title}<b>+</b></summary><p>{entry.answer}</p></details>)}</div></section>
       <section className="about-feature-grid" aria-label="About GCUA">
-        <article><span className="card-index">ABOUT</span><h2>Our Doctrinal Foundation</h2><p>Biblical truth, Pentecostal faith, and Spirit-empowered ministry form the foundation of GCUA.</p><Link href="/about/doctrinal-foundation">Read more <span>↗</span></Link></article>
-        <article><span className="card-index">ABOUT</span><h2>Educational Philosophy</h2><p>Our educational philosophy shapes hearts, sharpens minds, and equips Spirit-empowered leaders for ministry and academic service.</p><Link href="/about/educational-philosophy">Read more <span>↗</span></Link></article>
-        <article><span className="card-index">ABOUT</span><h2>Institutional Goals and Objectives</h2><p>The goals and objectives that guide GCUA&apos;s formation of hearts, preparation of minds, and development of Spirit-empowered leaders.</p><Link href="/about/institutional-goals">Read more <span>↗</span></Link></article>
-        <article><span className="card-index">ABOUT</span><h2>Our Story</h2><p>GCUA forms faithful leaders through rigorous theological education and life-giving community.</p><Link href="/about/our-story">Read more <span>↗</span></Link></article>
-        <article><span className="card-index">ABOUT</span><h2>Our Values and Vision</h2><p>The values, vision, methods, and commitments that shape GCUA&apos;s life and ministry.</p><Link href="/about/values-and-vision">Read more <span>↗</span></Link></article>
+        {page?.features.map((feature) => <article key={feature.title}><span className="card-index">{feature.label}</span><h2>{feature.title}</h2><p>{feature.description}</p><Link href={feature.href}>{feature.linkLabel} <span>↗</span></Link></article>)}
       </section>
-      {faqs.length === 0 && <p className="empty-state">About Us FAQs will appear here once they are added in Keystatic.</p>}
+      {faqs.length === 0 && <p className="empty-state">{page?.emptyFaqMessage}</p>}
     </main>
   );
 }
