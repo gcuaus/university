@@ -26,7 +26,7 @@ main.directory-page>section+section{
 .header-utilities{display:inline-flex;align-items:center;gap:10px}
 @media(min-width:721px){.site-header>.nav-cta{margin-left:16px}}
 @media(min-width:721px){
-	.site-header{position:relative;isolation:isolate;color:#102338}
+	.site-header{position:relative;z-index:30;isolation:isolate;color:#102338}
 	.site-header::before{position:absolute;inset-block:0;left:50%;z-index:-1;width:100vw;background:#f4efe6;content:'';transform:translateX(-50%)}
 	.site-header nav{color:#52616b}
 	.site-header>.nav-cta{border-color:#102338;color:#fff!important;background:#102338}
