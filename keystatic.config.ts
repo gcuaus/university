@@ -323,6 +323,8 @@ export default config({
         role: fields.text({ label: 'Role', validation: { isRequired: true } }),
         summary: fields.text({ label: 'Profile summary', multiline: true }),
         photoUrl: fields.url({ label: 'Portrait image URL' }),
+        externalLinkLabel: fields.text({ label: 'External profile link label' }),
+        externalLinkUrl: fields.url({ label: 'External profile link URL' }),
         bio: fields.document({ label: 'Biography', formatting: true, links: true }),
         photo: fields.image({ label: 'Portrait', directory: 'public/images/faculty', publicPath: '/images/faculty/' }),
       },
