@@ -22,6 +22,7 @@ export default function EvaluationForm() {
         body: JSON.stringify({
           name: String(formData.get('name') || ''),
           email: String(formData.get('email') || ''),
+          whatsapp: String(formData.get('whatsapp') || ''),
           interest: String(formData.get('interest') || ''),
         }),
       });
@@ -50,6 +51,7 @@ export default function EvaluationForm() {
     <form className="evaluation-form" onSubmit={handleSubmit}>
       <label>Name<input name="name" required /></label>
       <label>Email<input name="email" type="email" required /></label>
+      <label>WhatsApp number<input name="whatsapp" type="tel" autoComplete="tel" /></label>
       <label>Ministry or study interest<textarea name="interest" rows={3} required /></label>
       {status === 'error' && <p className="evaluation-error" role="alert">{errorMessage}</p>}
       <button className="button gold" type="submit" disabled={status === 'submitting'}>

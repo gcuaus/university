@@ -51,7 +51,7 @@ export const translations: Record<string, string> = {
   'Focused graduate study for educators, counselors, and working professionals.': 'Studi pascasarjana terarah bagi pendidik, konselor, dan para profesional.',
   'Certificate Studies': 'Program Sertifikat',
   'Flexible theological formation for the season of life you are in.': 'Pembentukan teologi yang fleksibel sesuai tahap kehidupan Anda.',
-  'GCITS distinctive': 'Keunggulan GCITS',
+  'GCUA distinctive': 'Keunggulan GCUA',
   'A serious education for a faithful life.': 'Pendidikan yang mendalam untuk kehidupan yang setia.',
   'A Personal Invitation': 'Undangan Pribadi',
   'Pursue Your Degree. Prepare for Your Calling.': 'Raih Gelar Anda. Persiapkan Panggilan Anda.',

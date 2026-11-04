@@ -5,6 +5,13 @@ export default config({
     process.env.NODE_ENV === 'development'
       ? { kind: 'local' }
       : { kind: 'github', repo: 'gcuaus/university' },
+  ui: {
+    navigation: {
+      Pages: ['home', 'aboutPage', 'programsPage', 'tuitionPage', 'admissionPage', 'newsPage', 'facultyPage', 'locationPage'],
+      Infographics: ['infographics', 'credentialsSection', 'credentials'],
+      Content: ['heroSlides', 'aboutFaqs', 'pages', 'posts', 'faculty', 'about', 'programs', 'location', 'contact'],
+    },
+  },
   singletons: {
     home: singleton({
       label: 'Homepage',
@@ -210,6 +217,15 @@ export default config({
         directionsLabel: fields.text({ label: 'Directions link label' }),
       },
     }),
+    credentialsSection: singleton({
+      label: 'Credentials Section',
+      path: 'content/credentials-section',
+      schema: {
+        eyebrow: fields.text({ label: 'Section eyebrow' }),
+        title: fields.text({ label: 'Section title', validation: { isRequired: true } }),
+        description: fields.text({ label: 'Section description', multiline: true }),
+      },
+    }),
   },
   collections: {
     infographics: collection({
@@ -222,6 +238,18 @@ export default config({
         description: fields.text({ label: 'Description', multiline: true, validation: { isRequired: true } }),
         imageUrl: fields.url({ label: 'Icon image URL', validation: { isRequired: true } }),
         imageAlt: fields.text({ label: 'Image alt text', validation: { isRequired: true } }),
+      },
+    }),
+    credentials: collection({
+      label: 'Credentials',
+      slugField: 'title',
+      path: 'content/credentials/*',
+      format: 'yaml',
+      schema: {
+        title: fields.slug({ name: { label: 'Credential title', validation: { isRequired: true } } }),
+        icon: fields.text({ label: 'Icon' }),
+        eyebrow: fields.text({ label: 'Category' }),
+        description: fields.text({ label: 'Description', multiline: true }),
       },
     }),
     heroSlides: collection({

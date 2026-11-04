@@ -39,6 +39,23 @@ async function getInfographics() {
   return reader.collections.infographics.all();
 }
 
+async function getCredentials() {
+  const [section, credentials] = await Promise.all([
+    reader.singletons.credentialsSection.read(),
+    reader.collections.credentials.all(),
+  ]);
+  const credentialOrder = ['Accreditation', 'Established', 'Legal Recognition'];
+  return {
+    section,
+    credentials: [...credentials].sort((left, right) => {
+      const leftOrder = credentialOrder.indexOf(left.entry.eyebrow);
+      const rightOrder = credentialOrder.indexOf(right.entry.eyebrow);
+      return (leftOrder < 0 ? credentialOrder.length : leftOrder)
+        - (rightOrder < 0 ? credentialOrder.length : rightOrder);
+    }),
+  };
+}
+
 async function getFaculty() {
   return reader.collections.faculty.all();
 }
@@ -47,11 +64,29 @@ export default async function HomePage() {
   const home = await getHome();
   const heroSlides = await getHeroSlides();
   const infographics = await getInfographics();
+  const { section: credentialsSection, credentials } = await getCredentials();
   const faculty = await getFaculty();
   return (
     <main>
       <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">{home.heroEyebrow}</p><h1>{home.heroTitle}</h1><p className="hero-body">{home.heroBody}</p><div className="actions"><Link className="button gold" href="/programs">{home.heroPrimaryCta}<span>↗</span></Link><Link className="button outline" href="/faculty">{home.heroSecondaryCta}</Link></div></div><HeroSlider slides={heroSlides.map(({ entry }) => entry)} /></section>
-      <section className="infographics" aria-labelledby="infographics-title"><div className="infographics-heading"><p className="eyebrow">GCITS distinctive</p><h2 id="infographics-title">A serious education for a faithful life.</h2></div><div className="infographics-grid">{infographics.map(({ slug, entry }) => <article className="infographic-card" key={slug}><img src={entry.imageUrl} alt={entry.imageAlt} /><div><h3>{entry.title}</h3><p>{entry.description}</p></div></article>)}</div></section>
+      <section className="credentials-section" aria-labelledby="credentials-title">
+        <div className="credentials-heading">
+          <p className="eyebrow">{credentialsSection?.eyebrow}</p>
+          <h2 id="credentials-title">{credentialsSection?.title}</h2>
+          <p>{credentialsSection?.description}</p>
+        </div>
+        <div className="credentials-grid">
+          {credentials.map(({ slug, entry }) => (
+            <article className="credential-card" key={slug}>
+              <span className="credential-icon" aria-hidden="true">{entry.icon}</span>
+              <p className="credential-eyebrow">{entry.eyebrow}</p>
+              <h3>{entry.title}</h3>
+              <p className="credential-description">{entry.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="infographics" aria-labelledby="infographics-title"><div className="infographics-heading"><p className="eyebrow">GCUA distinctive</p><h2 id="infographics-title">A serious education for a faithful life.</h2></div><div className="infographics-grid">{infographics.map(({ slug, entry }) => <article className="infographic-card" key={slug}><img src={entry.imageUrl} alt={entry.imageAlt} /><div><h3>{entry.title}</h3><p>{entry.description}</p></div></article>)}</div></section>
       <section className="personal-invitation" aria-labelledby="invitation-title"><div className="invitation-image"><img src={home.invitationImageUrl} alt={home.invitationImageAlt} /></div><div className="invitation-copy"><p className="eyebrow">{home.invitationEyebrow}</p><h2 id="invitation-title">{home.invitationTitle}</h2><p>{home.invitationBody}</p><p className="invitation-tagline">{home.invitationTagline}</p><p className="invitation-signature"><strong>{home.invitationName}</strong><span>{home.invitationRole}</span></p></div></section>
       <section className="split-section" id="about"><div className="section-label"><p className="eyebrow">{home.welcomeEyebrow}</p><span>01</span></div><div><h2>{home.welcomeTitle}</h2><p>{home.welcomeBody}</p><Link className="under-link" href="/keystatic">Read our story <span>↗</span></Link></div></section>
       <section className="programs" id="programs"><div className="section-intro"><p className="eyebrow">{home.programsEyebrow}</p><h2>{home.programsTitle}</h2><p>{home.programsBody}</p></div><div className="program-grid"><article><span>01</span><h3>{home.programOneTitle}</h3><p>{home.programOneBody}</p><Link href="/programs">Explore <span>↗</span></Link></article><article><span>02</span><h3>{home.programTwoTitle}</h3><p>{home.programTwoBody}</p><Link href="/programs">Explore <span>↗</span></Link></article><article><span>03</span><h3>{home.programThreeTitle}</h3><p>{home.programThreeBody}</p><Link href="/programs">Explore <span>↗</span></Link></article></div></section>
