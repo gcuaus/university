@@ -13,7 +13,7 @@
 @media(min-width:721px){.site-header>.nav-cta{margin-left:16px}}
 @media(min-width:721px){
 	.site-header{position:relative;isolation:isolate;color:#102338}
-	.site-header::before{position:absolute;inset-block:0;left:50%;z-index:-1;width:100vw;background:#fff;content:'';transform:translateX(-50%)}
+	.site-header::before{position:absolute;inset-block:0;left:50%;z-index:-1;width:100vw;background:#f4efe6;content:'';transform:translateX(-50%)}
 	.site-header nav{color:#52616b}
 	.site-header>.nav-cta{border-color:#102338;color:#fff!important;background:#102338}
 	.site-header>.nav-cta:hover{background:#173651}
@@ -36,7 +36,7 @@
 .theme-toggle-text button{padding:0;border:0;color:inherit;background:transparent;font:inherit;cursor:pointer}
 .theme-toggle-text button.is-active{color:var(--gold)}
 footer{position:relative;isolation:isolate;color:#52616b}
-footer::before{position:absolute;inset-block:0;left:50%;z-index:-1;width:100vw;background:#fff;content:'';transform:translateX(-50%)}
+footer::before{position:absolute;inset-block:0;left:50%;z-index:-1;width:100vw;background:#f4efe6;content:'';transform:translateX(-50%)}
 html[data-theme='light'] .site-dropdown-links{border-color:rgba(16,35,56,.18);background:#fff;box-shadow:0 12px 28px rgba(16,35,56,.12)}
 html[data-theme='light'] .site-dropdown-links a:hover{background:#f4efe6}
 html[data-theme='light'] .language-options{border-color:rgba(16,35,56,.18);background:#fff;box-shadow:0 12px 28px rgba(16,35,56,.12)}
@@ -46,7 +46,7 @@ html[data-theme='light'] .language-option:hover{background:#f4efe6}
 	.hero .hero-slide-caption strong{max-width:100%}
 }
 @media(max-width:720px){
-	.site-header{position:relative;height:auto;min-height:68px;padding:12px 20px;align-items:center;flex-wrap:nowrap;border-bottom-color:rgba(16,35,56,.18);color:#102338;background:#fff}
+	.site-header{position:relative;height:auto;min-height:68px;padding:12px 20px;align-items:center;flex-wrap:nowrap;border-bottom-color:rgba(16,35,56,.18);color:#102338;background:#f4efe6}
 	.site-header .brand small{display:none}
 	.site-header .brand-logo{width:44px;height:44px}
 	.site-header>.nav-cta{margin-left:8px;padding:7px 8px;font-size:10px;line-height:1;white-space:nowrap}
@@ -56,7 +56,7 @@ html[data-theme='light'] .language-option:hover{background:#f4efe6}
 	.mobile-nav-toggle-bars{position:relative}
 	.mobile-nav-toggle-bars::before{position:absolute;top:-5px}
 	.mobile-nav-toggle-bars::after{position:absolute;top:5px}
-	.mobile-nav-panel{position:absolute;top:calc(100% + 8px);right:20px;z-index:20;display:none;width:min(350px,calc(100vw - 40px));max-height:calc(100vh - 110px);overflow:auto;padding:16px;border:1px solid rgba(16,35,56,.18);color:#102338;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.24)}
+	.mobile-nav-panel{position:absolute;top:calc(100% + 8px);right:20px;z-index:20;display:none;width:min(350px,calc(100vw - 40px));max-height:calc(100vh - 110px);overflow:auto;padding:16px;border:1px solid rgba(16,35,56,.18);color:#102338;background:#f4efe6;box-shadow:0 12px 28px rgba(0,0,0,.24)}
 	.mobile-navigation.is-open .mobile-nav-panel{display:flex;flex-direction:column;align-items:stretch;gap:16px}
 	.mobile-nav-panel nav{display:flex;width:100%;flex-direction:column;align-items:stretch;gap:16px;color:#102338}
 	.mobile-nav-panel nav>a,.mobile-nav-panel nav .site-dropdown-trigger{font-size:11px;white-space:nowrap}
