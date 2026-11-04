@@ -55,3 +55,60 @@ html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)
   .tuition-program,.tuition-payment,.pathway-card,.financing-grid article{padding:22px}
   .location-map-wrap{margin:24px auto}
 }
+.tuition-calculator{max-width:880px;margin:28px auto 0;padding:clamp(22px,4vw,40px);border:1px solid #e1dbd1;border-radius:10px;background:linear-gradient(145deg,#fff 0%,#fbfaf7 100%);box-shadow:0 20px 55px rgba(16,35,56,.08)}
+.tuition-calculator-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.tuition-calculator-heading h3{margin:12px 0 5px;color:var(--ink);font:500 clamp(25px,4vw,34px)/1.12 var(--display)}
+.tuition-calculator-heading>div:first-child>p{margin:0;color:#68747b;font-size:13px}
+.tuition-price-preview{display:grid;gap:5px;text-align:right}
+.tuition-price-preview span{color:#68747b;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.tuition-price-preview strong{color:var(--ink);font:500 24px var(--display)}
+.tuition-degree-filters{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 24px}
+.tuition-degree-filter{display:grid;min-width:120px;gap:5px;padding:11px 13px;border:1px solid #e1dbd1;border-radius:6px;color:var(--ink);background:#fff;text-align:left;cursor:pointer;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
+.tuition-degree-filter span{color:#98702f;font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.tuition-degree-filter strong{font:500 12px var(--body)}
+.tuition-degree-filter[aria-pressed='true']{border-color:#173651;background:#f0f4f6;box-shadow:inset 0 0 0 1px #173651}
+.tuition-degree-filter:focus-visible{outline:2px solid #98702f;outline-offset:3px}
+.tuition-slider-control{margin:28px 0 18px}
+.tuition-slider-label{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:13px}
+.tuition-slider-label label{color:var(--ink);font-size:13px;font-weight:600}
+.tuition-slider-label output{color:var(--ink);font:500 16px var(--mono)}
+.tuition-slider-control input{display:block;width:100%;height:28px;margin:0;accent-color:#173651;cursor:pointer;touch-action:pan-y}
+.tuition-slider-control input:focus-visible{outline:2px solid #98702f;outline-offset:5px}
+.tuition-slider-control input:disabled{cursor:default}
+.tuition-slider-endpoints{display:flex;justify-content:space-between;margin-top:3px;color:#68747b;font:10px var(--mono)}
+.tuition-terms{display:flex;width:max-content;max-width:100%;gap:4px;margin:24px 0;padding:4px;border:1px solid #e1dbd1;border-radius:7px;background:#f4f1eb}
+.tuition-terms button{min-height:42px;padding:10px 16px;border:0;border-radius:4px;color:#52616b;background:transparent;font:500 11px var(--mono);cursor:pointer}
+.tuition-terms button[aria-pressed='true']{color:#fff;background:var(--ink);box-shadow:0 2px 6px rgba(16,35,56,.18)}
+.tuition-terms button:focus-visible{outline:2px solid #98702f;outline-offset:3px}
+.tuition-result{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,44px);align-items:center;padding:24px;border:1px solid #e7e1d7;border-radius:7px;background:#fff}
+.tuition-payment-highlight{display:grid;gap:9px}
+.tuition-payment-highlight>span{color:#98702f;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.tuition-payment-highlight>strong{color:var(--ink);font:500 clamp(42px,8vw,60px)/1 var(--display)}
+.tuition-payment-highlight>strong small{margin-left:4px;color:#68747b;font:400 15px var(--body)}
+.tuition-payment-highlight>p{margin:0;color:#68747b;font-size:12px}
+.tuition-cost-breakdown,.tuition-fee-list{margin:0}
+.tuition-cost-breakdown div,.tuition-fee-list div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid #e4ded4;font-size:12px}
+.tuition-cost-breakdown dt,.tuition-fee-list dt{color:#68747b}
+.tuition-cost-breakdown dd,.tuition-fee-list dd{margin:0;color:var(--ink);font-weight:600;text-align:right}
+.tuition-cost-breakdown .tuition-total{margin-top:3px;border-top:1px solid #c9bda8}
+.tuition-cost-breakdown .tuition-total dt,.tuition-cost-breakdown .tuition-total dd{color:var(--ink);font-weight:700}
+.tuition-estimate-note{max-width:760px;margin:15px 0 0;color:#68747b;font-size:11px;line-height:1.6}
+.tuition-fees{max-width:1032px;margin:0 auto 30px;padding:44px 24px 60px;border-top:1px solid #d8d1c5}
+.tuition-fees h2{margin:16px 0 24px;color:var(--ink);font:500 34px/1.1 var(--display)}
+.tuition-fee-list{max-width:700px}
+.tuition-fee-list div{padding:13px 0}
+@media(max-width:720px){
+  .tuition-calculator{margin-top:22px;padding:22px 18px;border-radius:8px}
+  .tuition-calculator-heading{gap:12px}
+  .tuition-price-preview strong{font-size:20px}
+  .tuition-degree-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:24px 0 20px}
+  .tuition-degree-filter{min-width:0;padding:10px}
+  .tuition-degree-filter strong{font-size:11px}
+  .tuition-slider-label{align-items:flex-start}
+  .tuition-result{grid-template-columns:1fr;gap:17px;padding:18px}
+  .tuition-payment-highlight{padding-bottom:17px;border-bottom:1px solid #e4ded4}
+  .tuition-terms{display:grid;width:100%;grid-template-columns:1fr 1fr}
+  .tuition-terms button{padding-inline:7px}
+  .tuition-fees{margin-bottom:10px;padding:36px 24px 44px}
+  .tuition-fees h2{font-size:30px}
+}
