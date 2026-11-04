@@ -1,3 +1,17 @@
+:root{--section-divider-dark:rgba(16,35,56,.14);--section-divider-light:rgba(245,240,231,.16)}
+main:not(.directory-page)>section+section:not(.personal-invitation),
+main.directory-page>section+section{
+	background-repeat:no-repeat;
+	background-position:center top;
+	background-size:min(calc(100% - 48px),1080px) 1px
+}
+main:not(.directory-page)>section+section:not(.personal-invitation){
+	background-image:linear-gradient(90deg,transparent,var(--section-divider-light),transparent)
+}
+html[data-theme='light'] main:not(.directory-page)>section+section:not(.personal-invitation),
+main.directory-page>section+section{
+	background-image:linear-gradient(90deg,transparent,var(--section-divider-dark),transparent)
+}
 .site-dropdown{position:relative}
 .site-dropdown-trigger{padding:0;border:0;color:inherit;background:transparent;font:inherit;cursor:pointer}
 .site-dropdown-trigger::after{margin-left:6px;color:var(--gold);content:'+'}
