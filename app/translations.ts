@@ -206,7 +206,6 @@ export const translations: Record<string, string> = {
   'DOCTOR OF PHILOSOPHY': 'DOKTOR FILSAFAT',
   'SEMINARY': 'SEMINARI',
   'Associate of Theology': 'Associate Teologi',
-  'Graduate of Theology': 'Pascasarjana Teologi',
   'Bachelor of...': 'Sarjana...',
   'Master of...': 'Magister...',
   'Doctor of...': 'Doktor...',

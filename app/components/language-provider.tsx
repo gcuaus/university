@@ -8,13 +8,14 @@ type TranslationRecord = { original: string; translated: string };
 
 const LANGUAGE_EVENT = 'gctsa-language-change';
 const STORAGE_KEY = 'gctsa-language';
+const DEFAULT_LANGUAGE: Language = 'en-US';
 
 function getLanguageSnapshot(): Language {
-  return window.localStorage.getItem(STORAGE_KEY) === 'id' ? 'id' : 'en-US';
+  return window.localStorage.getItem(STORAGE_KEY) === 'id' ? 'id' : DEFAULT_LANGUAGE;
 }
 
 function getLanguageServerSnapshot(): Language {
-  return 'en-US';
+  return DEFAULT_LANGUAGE;
 }
 
 function subscribeLanguage(callback: () => void) {

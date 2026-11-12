@@ -29,11 +29,6 @@ programs:
     subtitle: ''
     tuition: '1600'
     downPayment: '0'
-  - year: 3rd Year
-    title: Graduate of Theology
-    subtitle: ''
-    tuition: '1472'
-    downPayment: '375'
   - year: 4th Year
     title: Bachelor Programs
     subtitle: ''

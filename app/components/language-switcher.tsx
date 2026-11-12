@@ -6,13 +6,14 @@ type Language = 'en-US' | 'id';
 
 const LANGUAGE_EVENT = 'gctsa-language-change';
 const STORAGE_KEY = 'gctsa-language';
+const DEFAULT_LANGUAGE: Language = 'en-US';
 
 function getSnapshot(): Language {
-  return window.localStorage.getItem(STORAGE_KEY) === 'id' ? 'id' : 'en-US';
+  return window.localStorage.getItem(STORAGE_KEY) === 'id' ? 'id' : DEFAULT_LANGUAGE;
 }
 
 function getServerSnapshot(): Language {
-  return 'en-US';
+  return DEFAULT_LANGUAGE;
 }
 
 function subscribe(callback: () => void) {
