@@ -38,7 +38,7 @@ export default async function SiteHeader() {
           </nav>
           <div className="header-utilities"><LanguageSwitcher /></div>
         </MobileNavigation>
-        <a className="nav-cta" href="https://online.gcua.us">Enroll Now</a>
+        <Link className="nav-cta" href="/application">Enroll Now</Link>
       </header>
     </>
   );
