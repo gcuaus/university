@@ -14,13 +14,17 @@ export default async function AboutDetailPage({ params }: { params: Promise<{ sl
   ]);
   if (!entry) notFound();
 
+  const isGettingStarted = slug === 'getting-started';
+
   return (
-    <main className="directory-page">
+    <main className={`directory-page${isGettingStarted ? ' getting-started-page' : ''}`}>
       <section className="directory-hero">
-        <p className="eyebrow">{page?.detailEyebrow}</p>
-        <h1>{entry.title}</h1>
+        <p className="eyebrow">{isGettingStarted ? 'Getting Started' : page?.detailEyebrow}</p>
+        <h1>{isGettingStarted ? 'How to Enroll at Great Commission University of America' : entry.title}</h1>
         <p>{entry.summary}</p>
-        <div className="cms-prose"><DocumentRenderer document={await entry.content()} /></div>
+        <div className={`cms-prose${isGettingStarted ? ' enrollment-journey-content' : ''}`}>
+          <DocumentRenderer document={await entry.content()} />
+        </div>
       </section>
     </main>
   );

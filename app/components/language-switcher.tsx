@@ -51,7 +51,6 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="language-switcher">
-      <span className="language-switcher-label">Select a language</span>
       <button
         aria-label={`Language: ${label}`}
         aria-expanded={open}
@@ -61,15 +60,14 @@ export default function LanguageSwitcher() {
         onClick={() => setOpen((current) => !current)}
       >
         <img src={flag} alt="" />
-        <span className="language-code">{language === 'id' ? 'ID' : 'EN'}</span>
       </button>
       {open && (
         <div className="language-options" id="language-options">
-          <button className="language-option" type="button" onClick={() => changeLanguage('en-US')}>
-            <img src="/flags/us.svg" alt="" /> English (United States)
+          <button aria-label="English (United States)" aria-pressed={language === 'en-US'} className="language-option" type="button" onClick={() => changeLanguage('en-US')}>
+            <img src="/flags/us.svg" alt="" />
           </button>
-          <button className="language-option" type="button" onClick={() => changeLanguage('id')}>
-            <img src="/flags/id.svg" alt="" /> Indonesian
+          <button aria-label="Indonesian" aria-pressed={language === 'id'} className="language-option" type="button" onClick={() => changeLanguage('id')}>
+            <img src="/flags/id.svg" alt="" />
           </button>
         </div>
       )}

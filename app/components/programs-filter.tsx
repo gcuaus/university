@@ -35,7 +35,9 @@ export default function ProgramsFilter({
   levelPrefix: string;
 }) {
   const [activeFilter, setActiveFilter] = useState('all');
-  const filters = Object.entries(labels).map(([id, label]) => ({ id, label }));
+  const filters = Object.entries(labels)
+    .filter(([id]) => id === 'all' || programs.some((program) => program.filter === id))
+    .map(([id, label]) => ({ id, label }));
   const visiblePrograms = activeFilter === 'all'
     ? programs
     : programs.filter((program) => program.filter === activeFilter);
@@ -63,9 +65,9 @@ export default function ProgramsFilter({
               <span className="card-index">{program.level} · {levelPrefix} {program.level}</span>
               <p className="pathway-category">{program.category}</p>
               <h3>{program.title}</h3>
-              <p className="pathway-fields">{program.fields}</p>
+              {program.fields && <p className="pathway-fields">{program.fields}</p>}
               <p>{program.description}</p>
-              <span className="pathway-credential">{program.credential}</span>
+              {program.credential && <span className="pathway-credential">{program.credential}</span>}
               <div className="pathway-links">
                 {program.curriculum && <a href={program.curriculum} target="_blank" rel="noreferrer">{curriculumLabel} <span>↗</span></a>}
                 <a href={program.details}>{detailsLabel} <span>↗</span></a>

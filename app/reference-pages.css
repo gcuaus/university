@@ -25,6 +25,9 @@ html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)
 .programs-next-step h2{max-width:700px;margin:16px 0 24px;color:var(--ink);font:500 36px/1.15 var(--display)}
 .tuition-page .directory-hero{padding-bottom:56px}
 .tuition-plan>p:not(.eyebrow){max-width:600px;color:#68747b;font-size:14px;line-height:1.7}
+.admission-tuition-plan{margin-top:24px;padding-top:44px;border-top:1px solid #d8d1c5}
+.admission-tuition-link{display:inline-block;margin-top:22px;color:#8b6320;font-size:12px;font-weight:600}
+.admission-tuition-link span{margin-left:6px}
 .tuition-plan-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:14px;margin-top:30px}
 .tuition-program,.tuition-payment{padding:28px;border:1px solid #d8d1c5;background:#fff}
 .tuition-program h3{margin:36px 0 24px;color:var(--ink);font:500 27px var(--display)}

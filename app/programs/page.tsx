@@ -19,10 +19,10 @@ export default async function ProgramsPage() {
     category: entry.category,
     filter: entry.filter,
     title: entry.title,
-    fields: entry.fields,
+    fields: entry.fields ?? '',
     description: entry.summary,
-    credential: entry.credential,
-    curriculum: entry.curriculumUrl,
+    credential: entry.credential ?? '',
+    curriculum: entry.curriculumUrl ?? '',
     details: entry.detailsUrl || `/programs/${slug}`,
     }));
   const labels = {

@@ -1,53 +1,36 @@
-announcement: Applications for Fall 2026 are now open
+announcement: Proclaim the Gospel. Fulfill the Great Commission. Serve Christ.
 brand: GCUA
 brandDescriptor: Great Commission University of America
+navHome: Home
 navAbout: About Us
-navAcademy: Academy
-navWhyUs: Why Us?
-navDoctrinalFoundation: Doctrinal Foundation
-navGettingStarted: Getting Started
-navPrograms: Programs
-navFaculty: Faculty
-navTuition: Tuition
-navLocation: Location
-navNews: News
+navAcademic: Academic
 navAdmission: Admission
-navAdmissionTuition: Tuition
-navApplication: Application
-navStaffLogin: Staff Login
-navStudentLogin: Student Login
-navApply: Apply now
-heroEyebrow: Forming faithful leaders for a changing world
-heroTitle: Rooted in truth. Ready for Service
-heroBody: >-
-  A theological education for the whole person: rigorous in study, generous in
-  community, and alive to the call of Christ.
-heroPrimaryCta: Explore programs
-heroSecondaryCta: Meet our faculty
-statOneValue: 35+
-statOneLabel: Years of faithful formation
+navResources: Resources Page
+heroEyebrow: Our mission
+heroTitle: Christ-centered. Bible-based. Spirit-empowered.
+heroBody: Prepare and empower Spirit-filled Christian leaders to proclaim the Gospel, fulfill the Great Commission, and serve Christ effectively throughout the world.
+heroPrimaryCta: Explore academic programs
+heroSecondaryCta: Our mission and vision
+statOneValue: '01'
+statOneLabel: Great Commission
 statTwoValue: '12'
-statTwoLabel: Distinctive programs
-statThreeValue: '1'
-statThreeLabel: Shared calling
-welcomeEyebrow: A place to belong
-welcomeTitle: Study deeply. Serve faithfully.
-welcomeBody: >-
-  At GCUA, we believe theological education should shape more than what you
-  know. It should form how you live, lead, and love your neighbors.
-programsEyebrow: Find your path
-programsTitle: Programs shaped around your calling
-programsBody: >-
-  Build a strong foundation for ministry, scholarship, and thoughtful Christian
-  witness.
-programOneTitle: Master of Divinity
-programOneBody: A comprehensive course of study for pastors and ministry leaders.
-programTwoTitle: Master of Arts
-programTwoBody: Focused graduate study for educators, counselors, and working professionals.
-programThreeTitle: Certificate Studies
-programThreeBody: Flexible theological formation for the season of life you are in.
-ctaTitle: Your next faithful step starts here.
-ctaBody: Come and see what thoughtful, Christ-centered education can make possible.
+statTwoLabel: Degree programs
+statThreeValue: '03'
+statThreeLabel: Areas of education
+welcomeEyebrow: Our vision
+welcomeTitle: Leaders who make disciples and advance God's Kingdom.
+welcomeBody: We develop Christ-centered, biblically grounded, and Holy Spirit-empowered leaders who make disciples and advance God's Kingdom. Our graduates serve as transformational leaders in churches, families, communities, and nations.
+programsEyebrow: Our educational approach
+programsTitle: Know God's Word. Know God's ways. Do God's work.
+programsBody: We provide Christ-centered, Bible-based, and Spirit-empowered education that combines academic learning, spiritual formation, and practical ministry.
+programOneTitle: Associate of Arts in Biblical Studies
+programOneBody: The Associate of Arts in Biblical Studies introduces students to biblical interpretation, Christian theology, and practical ministry from a Pentecostal–Charismatic perspective.
+programTwoTitle: Bachelor of Theology (Th.B.)
+programTwoBody: The Bachelor of Theology prepares students for pastoral ministry, evangelism, Christian education, missions, and church leadership. The program emphasizes biblical scholarship, theological understanding, and Spirit-empowered ministry.
+programThreeTitle: Master of Divinity (M.Div.)
+programThreeBody: The Master of Divinity is a professional graduate degree designed to prepare students for pastoral leadership, preaching, evangelism, missions, church planting, and other areas of Christian ministry.
+ctaTitle: Prepare to fulfill the Great Commission.
+ctaBody: Discover how Christ-centered, Bible-based, Spirit-empowered education can prepare you for Christian leadership and effective Kingdom service.
 ctaButton: Begin your application
 invitationEyebrow: A Personal Invitation
 invitationTitle: Pursue Your Degree. Prepare for Your Calling.
@@ -66,7 +49,7 @@ invitationTagline: Study from wherever you are. Grow in knowledge. Be empowered 
 invitationName: Dr. Ferdinand Saerang
 invitationRole: President of Great Commission University of America
 invitationImageUrl: https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=85
-invitationImageAlt: Students gathered together around a table
+invitationImageAlt: Students learning and growing together in Christian community
 footerText: |-
-  Great Commission University of America
-  Truthful study. Faithful service.
+  Prepare and empower Spirit-filled Christian leaders to proclaim the Gospel,
+  fulfill the Great Commission, and serve Christ effectively throughout the world.

@@ -1,20 +1,48 @@
-startLabel: Start application
+startLabel: Begin your application
 startHref: /#evaluation
 heroEyebrow: Join our community
-heroTitle: Admission to GCUA.
-heroDescription: Find tuition information and take your next step toward theological study.
+heroTitle: Prepare for Christian service and leadership.
+heroDescription: At GCUA, students grow in biblical knowledge, spiritual maturity, Christian leadership, and readiness to serve the Church and fulfill the Great Commission.
 cards:
   - id: tuition
     label: TUITION
     title: Tuition and fees
-    description: For current tuition, fees, and payment options, contact the Admissions Office.
+    description: For current tuition, fees, and payment options, contact the Admissions Office. Our goal is to prepare students for effective Christian service and Kingdom ministry.
     email: admission@gcua.us
     linkLabel: Email admissions
     linkHref: mailto:admission@gcua.us
+  - id: prayer
+    label: STEP 1
+    title: Begin with Prayer and Fasting
+    description: Seek God's wisdom and guidance about your educational and ministry journey. Pray for direction, clarity about your calling, and preparation for the discipline of theological education.
+    email: ''
+    linkLabel: ''
+    linkHref: ''
   - id: application
-    label: APPLICATION
-    title: Take your next step
-    description: Start by requesting a free evaluation. Our team will follow up about your educational background and study interests.
+    label: STEP 2
+    title: Request Your Academic Evaluation
+    description: Submit information about your previous education, theological training, ministry experience, and academic goals. GCUA will review your background and help identify the program that corresponds with your qualifications and ministry objectives. Where applicable, previous college or seminary credits and eligible ministry experience may also be reviewed according to GCUA academic policies.
     email: ''
     linkLabel: Request an evaluation
     linkHref: /#evaluation
+  - id: academic-plan
+    label: STEP 3
+    title: Receive Your Personalized Academic Plan
+    description: After your evaluation, receive a recommended pathway outlining your degree requirements, applicable transfer credits, remaining courses, and estimated progression toward completion.
+    email: ''
+    linkLabel: ''
+    linkHref: ''
+  - id: enrollment
+    label: STEP 4
+    title: Complete Your Enrollment and Registration
+    description: Complete the application and registration process and submit the necessary academic documents. After approval, receive information about your program, courses, tuition arrangements, and academic resources.
+    email: ''
+    linkLabel: ''
+    linkHref: ''
+  - id: study
+    label: STEP 5
+    title: Study, Grow, and Complete Your Degree
+    description: Progress through your academic program by completing readings, coursework, examinations, research, and other requirements while receiving guidance throughout your educational journey.
+    email: ''
+    linkLabel: ''
+    linkHref: ''

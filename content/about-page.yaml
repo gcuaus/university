@@ -1,35 +1,40 @@
 heroEyebrow: Who we are
-heroTitle: About Great Commission.
-heroDescription: Learn about the convictions, goals, and vision that shape our theological education.
+heroTitle: Christ-centered. Bible-based. Spirit-empowered.
+heroDescription: Great Commission University of America prepares and empowers Christian leaders to proclaim the Gospel, fulfill the Great Commission, and serve Christ effectively throughout the world.
 detailEyebrow: About GCUA
-faqEyebrow: About us
-faqTitle: Convictions that guide our work.
+faqEyebrow: Our commitments
+faqTitle: The convictions that shape our community.
 faqEditLabel: Edit About FAQs
 faqEditHref: /keystatic/collection/aboutFaqs
 emptyFaqMessage: About Us FAQs will appear here once they are added in Keystatic.
 features:
-  - label: ABOUT
+  - label: WHY GCUA
+    title: Why Choose GCUA?
+    description: Explore the educational opportunities, academic support, and ministry preparation described in GCUA's institutional profile.
+    href: /about/why-choose-gcua
+    linkLabel: See why students choose GCUA
+  - label: OUR FOUNDATION
     title: Our Doctrinal Foundation
-    description: Biblical truth, Pentecostal faith, and Spirit-empowered ministry form the foundation of GCUA.
+    description: Our statement of faith affirms the authority of Scripture, the Lordship of Jesus Christ, salvation through Christ, and the continuing work of the Holy Spirit.
     href: /about/doctrinal-foundation
-    linkLabel: Read more
-  - label: ABOUT
+    linkLabel: Read our statement of faith
+  - label: EDUCATION
     title: Educational Philosophy
-    description: Our educational philosophy shapes hearts, sharpens minds, and equips Spirit-empowered leaders for ministry and academic service.
+    description: Our Christ-centered, Bible-based, Spirit-empowered education unites biblical knowledge, theological understanding, and practical ministry preparation.
     href: /about/educational-philosophy
-    linkLabel: Read more
-  - label: ABOUT
+    linkLabel: Explore our approach
+  - label: OUR COMMITMENT
     title: Institutional Goals and Objectives
-    description: The goals and objectives that guide GCUA's formation of hearts, preparation of minds, and development of Spirit-empowered leaders.
+    description: We prepare graduates for spiritual maturity, academic excellence, servant leadership, and a lifelong commitment to the Great Commission.
     href: /about/institutional-goals
-    linkLabel: Read more
-  - label: ABOUT
+    linkLabel: Read our commitments
+  - label: OUR MISSION
     title: Our Story
-    description: GCUA forms faithful leaders through rigorous theological education and life-giving community.
+    description: Learn about GCUA's mission to prepare Spirit-filled Christian leaders to proclaim the Gospel and serve Christ around the world.
     href: /about/our-story
-    linkLabel: Read more
-  - label: ABOUT
+    linkLabel: Learn about our mission
+  - label: OUR VISION
     title: Our Values and Vision
-    description: The values, vision, methods, and commitments that shape GCUA's life and ministry.
+    description: Discover the seven core values and vision that guide GCUA's faith, education, and ministry.
     href: /about/values-and-vision
-    linkLabel: Read more
+    linkLabel: Explore our values and vision

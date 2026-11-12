@@ -1,0 +1,34 @@
+heroEyebrow: GCUA resources
+heroTitle: Explore what shapes our community.
+heroDescription: Learn about GCUA's mission, core values, educational approach, statement of faith, and commitment to Spirit-empowered Christian leadership.
+resources:
+  - label: ENROLLMENT
+    title: Getting Started
+    description: Follow the five steps to begin your studies, from prayer and academic evaluation to enrollment and degree completion.
+    href: /about/getting-started
+    linkLabel: Learn how to enroll
+  - label: WHY GCUA
+    title: Why Choose GCUA?
+    description: Review GCUA's educational approach, flexible learning, student support, and preparation for Christian ministry.
+    href: /about/why-choose-gcua
+    linkLabel: Explore GCUA
+  - label: OUR MISSION AND VALUES
+    title: Our Values and Vision
+    description: Read GCUA's mission, vision, and seven core values rooted in Scripture, reconciliation through Christ, the Holy Spirit, ministry, fellowship, and God's glory.
+    href: /about/values-and-vision
+    linkLabel: Explore our values
+  - label: BIBLICAL FOUNDATION
+    title: Our Doctrinal Foundation
+    description: Explore GCUA's statement of faith and historic Pentecostal doctrinal heritage.
+    href: /about/doctrinal-foundation
+    linkLabel: Read our statement of faith
+  - label: EDUCATIONAL APPROACH
+    title: Educational Philosophy
+    description: See how biblical knowledge, theological understanding, and practical ministry preparation shape the educational experience.
+    href: /about/educational-philosophy
+    linkLabel: Learn about our approach
+  - label: STUDENT COMMITMENT
+    title: Institutional Goals and Objectives
+    description: Discover GCUA's commitment to students and its goal of preparing Christ-centered, Bible-based, Spirit-empowered graduates.
+    href: /about/institutional-goals
+    linkLabel: Read our commitments
