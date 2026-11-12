@@ -452,7 +452,6 @@ export const translations: Record<string, string> = {
   '5 ways to build a faithful study habit': '5 cara membangun kebiasaan belajar yang setia',
   'Simple practices for making study a steady and joyful part of the week.': 'Kebiasaan sederhana agar belajar menjadi bagian rutin dan menyenangkan setiap minggu.',
   'Begin with a clear rhythm, a focused reading list, and a community that helps you keep showing up.': 'Mulailah dengan jadwal yang teratur, daftar bacaan yang terarah, dan komunitas yang membantu Anda tetap tekun.',
-  'Content': 'Konten',
   'Home Page': 'Home',
   'Academic': 'Akademik',
   'Resources Page': 'Halaman Sumber Daya',
