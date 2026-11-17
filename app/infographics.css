@@ -27,7 +27,7 @@ html[data-theme='light'] .credentials-heading h2,html[data-theme='light'] .crede
 html[data-theme='light'] .credentials-heading>p:last-child,html[data-theme='light'] .credential-description{color:#52616b}
 @media(max-width:900px){.infographics-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.why-choose-content{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
-@media(max-width:720px){.hero{padding-bottom:88px}.infographics{padding:48px 24px 52px}.infographics-heading{margin-bottom:30px}.infographics-grid{grid-template-columns:1fr;gap:28px}.infographic-card h3{font-size:19px}.split-section{padding-top:56px;padding-bottom:56px}.programs{padding-bottom:56px}.cta{padding-top:60px;padding-bottom:60px}}
+@media(max-width:720px){.infographics{padding:48px 24px 52px}.infographics-heading{margin-bottom:30px}.infographics-grid{grid-template-columns:1fr;gap:28px}.infographic-card h3{font-size:19px}.split-section{padding-top:56px;padding-bottom:56px}.programs{padding-bottom:56px}.cta{padding-top:60px;padding-bottom:60px}}
 @media(max-width:720px){.why-choose-content{grid-template-columns:1fr}.why-choose-content>p:first-child{font-size:18px}.why-choose-content h3{grid-column:1;margin-top:16px;padding:18px 0 0;font-size:19px}.why-choose-content h3+p{grid-column:1;margin-top:0;padding:8px 0 18px;border-top:0}}
 @media(max-width:720px){.personal-invitation{grid-template-columns:1fr;gap:24px;padding:48px 24px}.invitation-image img{aspect-ratio:4/3}}
 @media(max-width:900px){.credentials-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.credential-card{padding-inline:14px}.credential-card h3{font-size:19px}}
