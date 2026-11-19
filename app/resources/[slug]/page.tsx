@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { createReader } from '@keystatic/core/reader';
 import { notFound } from 'next/navigation';
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: ResourcePageProps): Promise<M
       type: 'article',
       title: resource.title,
       description: resource.excerpt,
+      images: [resource.imageUrl],
       publishedTime: resource.publishedAt || undefined,
       authors: [resource.author],
       url: `/resources/${slug}`,
@@ -45,6 +47,14 @@ export default async function ResourceArticlePage({ params }: ResourcePageProps)
           {resource.publishedAt && <p className="eyebrow">{resource.publishedAt}</p>}
           <h1>{resource.title}</h1>
           <p className="resource-article-byline">By {resource.author}</p>
+          <Image
+            className="resource-article-image"
+            src={resource.imageUrl}
+            alt={resource.imageAlt}
+            width={1200}
+            height={675}
+            unoptimized
+          />
           {resource.excerpt && <p className="resource-article-excerpt">{resource.excerpt}</p>}
         </header>
         <div className="cms-prose resource-article-body">

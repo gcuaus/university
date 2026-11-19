@@ -19,13 +19,13 @@ export default function HomeProgramGrid({ programs }: { programs: HomeProgram[] 
     <>
       <div className="program-grid">
         {visiblePrograms.map((program, index) => (
-          <article key={program.slug}>
+          <Link className="program-card" href={program.detailsUrl} key={program.slug}>
             <span>{String(index + 1).padStart(2, '0')}</span>
             <p className="program-category">{program.category}</p>
             <h3>{program.title}</h3>
             <p>{program.summary}</p>
-            <Link href={program.detailsUrl}>View program <span>↗</span></Link>
-          </article>
+            <span className="program-card-link">View program <span aria-hidden="true">↗</span></span>
+          </Link>
         ))}
       </div>
       {visibleCount < programs.length && (

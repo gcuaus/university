@@ -316,6 +316,8 @@ export default config({
         author: fields.text({ label: 'Author', validation: { isRequired: true } }),
         publishedAt: fields.date({ label: 'Published date' }),
         excerpt: fields.text({ label: 'Excerpt', multiline: true }),
+        imageUrl: fields.url({ label: 'Article image URL', validation: { isRequired: true } }),
+        imageAlt: fields.text({ label: 'Article image description', validation: { isRequired: true } }),
         content: fields.document({
           label: 'Post content',
           formatting: true,
