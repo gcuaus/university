@@ -24,7 +24,7 @@ export default config({
         navAbout: fields.text({ label: 'About navigation label' }),
         navAcademic: fields.text({ label: 'Academic navigation label' }),
         navAdmission: fields.text({ label: 'Admission navigation label' }),
-        navResources: fields.text({ label: 'Resources page navigation label' }),
+        navResources: fields.text({ label: 'Resources navigation label' }),
         heroEyebrow: fields.text({ label: 'Hero eyebrow' }),
         heroTitle: fields.text({ label: 'Hero title', multiline: true, validation: { isRequired: true } }),
         heroBody: fields.text({ label: 'Hero description', multiline: true }),

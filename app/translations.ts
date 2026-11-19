@@ -450,7 +450,6 @@ export const translations: Record<string, string> = {
   'Begin with a clear rhythm, a focused reading list, and a community that helps you keep showing up.': 'Mulailah dengan jadwal yang teratur, daftar bacaan yang terarah, dan komunitas yang membantu Anda tetap tekun.',
   'Home Page': 'Home',
   'Academic': 'Akademik',
-  'Resources Page': 'Halaman Sumber Daya',
   'Our mission': 'Misi Kami',
   'Christ-centered. Bible-based. Spirit-empowered.': 'Berpusat pada Kristus. Berlandaskan Alkitab. Diberdayakan oleh Roh.',
   'Prepare and empower Spirit-filled Christian leaders to proclaim the Gospel, fulfill the Great Commission, and serve Christ effectively throughout the world.': 'Mempersiapkan dan memperlengkapi pemimpin Kristen yang dipenuhi Roh untuk memberitakan Injil, menggenapi Amanat Agung, dan melayani Kristus secara efektif di seluruh dunia.',
