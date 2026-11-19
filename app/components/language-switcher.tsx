@@ -49,6 +49,9 @@ export default function LanguageSwitcher() {
 
   const flag = language === 'id' ? '/flags/id.svg' : '/flags/us.svg';
   const label = language === 'id' ? 'Indonesian' : 'English (United States)';
+  const otherLanguage: Language = language === 'id' ? 'en-US' : 'id';
+  const otherFlag = otherLanguage === 'id' ? '/flags/id.svg' : '/flags/us.svg';
+  const otherLabel = otherLanguage === 'id' ? 'Indonesian' : 'English (United States)';
 
   return (
     <div className="language-switcher">
@@ -64,11 +67,8 @@ export default function LanguageSwitcher() {
       </button>
       {open && (
         <div className="language-options" id="language-options">
-          <button aria-label="English (United States)" aria-pressed={language === 'en-US'} className="language-option" type="button" onClick={() => changeLanguage('en-US')}>
-            <img src="/flags/us.svg" alt="" />
-          </button>
-          <button aria-label="Indonesian" aria-pressed={language === 'id'} className="language-option" type="button" onClick={() => changeLanguage('id')}>
-            <img src="/flags/id.svg" alt="" />
+          <button aria-label={`Switch to ${otherLabel}`} className="language-option" type="button" onClick={() => changeLanguage(otherLanguage)}>
+            <img src={otherFlag} alt="" />
           </button>
         </div>
       )}
