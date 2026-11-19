@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://gcua.us'),
   title: 'GCUA | Great Commission University of America',
   description: 'Great Commission University of America provides Christ-centered, Bible-based, Spirit-empowered academic and ministry education.',
+  icons: {
+    icon: '/logo-assets/logo.png',
+    apple: '/logo-assets/logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -20,6 +24,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/logo-assets/logo.png',
+        secureUrl: 'https://gcua.us/logo-assets/logo.png',
         width: 800,
         height: 800,
         alt: 'Great Commission University of America logo',
