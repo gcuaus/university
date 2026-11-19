@@ -7,12 +7,12 @@ import './academy-nav.css';
 import './reference-pages.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gcua.us'),
+  metadataBase: new URL('https://staging.gcua.us'),
   title: 'GCUA | Great Commission University of America',
   description: 'Great Commission University of America provides Christ-centered, Bible-based, Spirit-empowered academic and ministry education.',
   icons: {
-    icon: '/logo-assets/logo.png',
-    apple: '/logo-assets/logo.png',
+    icon: '/logo-assets/logo gcua.png',
+    apple: '/logo-assets/logo gcua.png',
   },
   openGraph: {
     type: 'website',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     description: 'Christ-centered, Bible-based, and Spirit-empowered education for Christian leaders and ministry preparation.',
     images: [
       {
-        url: '/logo-assets/logo.png',
-        secureUrl: 'https://gcua.us/logo-assets/logo.png',
+        url: '/logo-assets/logo gcua.png',
+        secureUrl: 'https://staging.gcua.us/logo-assets/logo%20gcua.png',
         width: 800,
         height: 800,
         alt: 'Great Commission University of America logo',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'GCUA | Great Commission University of America',
     description: 'Christ-centered, Bible-based, and Spirit-empowered education for Christian leaders and ministry preparation.',
-    images: ['/logo-assets/logo.png'],
+    images: ['/logo-assets/logo%20gcua.png'],
   },
 };
 
