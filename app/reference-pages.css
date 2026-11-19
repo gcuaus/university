@@ -1,16 +1,42 @@
 .about-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:1080px;margin:0 auto;padding:0 24px 80px}
-.about-feature-grid article,.pathway-card,.financing-grid article{padding:24px;border:1px solid #d8d1c5;background:#fff}
+.contact-page{background:#edf2f4}
+.contact-hero{max-width:1080px;margin:auto;padding:88px 24px 54px}
+.contact-hero h1{max-width:720px;margin:16px 0 14px;color:var(--ink);font:500 clamp(48px,7vw,76px)/1.02 var(--display)}
+.contact-hero>p:last-child{max-width:590px;margin:0;color:#405360;font-size:16px;line-height:1.75}
+.contact-layout{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);gap:18px;max-width:1080px;margin:auto;padding:0 24px 96px}
+.contact-information,.contact-message{min-width:0;padding:36px;border:1px solid #d3dde3;border-radius:10px;background:#fff}
+.contact-information h2,.contact-message h2{margin:14px 0 12px;color:var(--ink);font:500 clamp(30px,4vw,42px)/1.08 var(--display)}
+.contact-information>p:not(.eyebrow),.contact-message>p:not(.eyebrow){margin:0 0 24px;color:#405360;font-size:14px;line-height:1.75}
+.contact-card{padding:20px 0;border-top:1px solid #e2e6ea}
+.contact-card>span{color:#98702f;font:10px var(--mono)}
+.contact-card h3{margin:12px 0 7px;color:var(--ink);font:500 20px/1.2 var(--display)}
+.contact-card p,.contact-card address{margin:0 0 12px;color:#405360;font-size:13px;line-height:1.65;font-style:normal}
+.contact-card a{color:#8b6320;font-size:12px;font-weight:600}
+.contact-card a span{margin-left:6px}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.contact-form label{display:grid;gap:8px;color:#405360;font:600 11px var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;min-width:0;border:1px solid #cbd3da;border-radius:4px;padding:12px 13px;color:#102338;background:#fff;font:14px var(--body);text-transform:none}
+.contact-form input,.contact-form select{height:46px}
+.contact-form textarea{resize:vertical}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:2px solid #98702f;outline-offset:2px;border-color:#98702f}
+.contact-field-wide{grid-column:1/-1}
+.contact-submit{grid-column:1/-1;justify-self:start;border:0;cursor:pointer}
+.contact-error,.contact-success{grid-column:1/-1;margin:0;color:#9b2c2c;font-size:13px;line-height:1.6}
+.contact-success{color:#405360}
+@media(max-width:900px){.contact-layout{grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr)}.contact-information,.contact-message{padding:28px}}
+@media(max-width:720px){.contact-hero{padding:58px 20px 38px}.contact-hero h1{font-size:46px}.contact-layout{grid-template-columns:1fr;padding:0 20px 64px}.contact-information,.contact-message{padding:24px 20px}.contact-form{grid-template-columns:1fr}.contact-field-wide,.contact-submit,.contact-error,.contact-success{grid-column:auto}.contact-submit{justify-self:stretch;justify-content:center}}
+.about-feature-grid article,.pathway-card,.financing-grid article{padding:24px;border:1px solid #e2e6ea;background:#fff}
 .about-feature-grid h2{margin:25px 0 10px;color:var(--ink);font:500 24px/1.15 var(--display)}
-.about-feature-grid p,.pathway-card>p,.financing-grid p,.tuition-year>p{color:#68747b;font-size:13px;line-height:1.7}
+.about-feature-grid p,.pathway-card>p,.financing-grid p,.tuition-year>p{color:#405360;font-size:13px;line-height:1.7}
 .about-feature-grid a,.pathway-links a{display:inline-block;margin-top:14px;color:#8b6320;font-size:12px;font-weight:600}
 .about-feature-grid a span,.pathway-links a span{margin-left:6px}
 .pathway-section,.financing-section,.tuition-plan,.tuition-year{max-width:1080px;margin:auto;padding:24px 24px 72px}
 .pathway-section>h2,.financing-section>h2,.tuition-plan>h2,.tuition-year>h2{margin:16px 0 28px;color:var(--ink);font:500 38px/1.1 var(--display)}
-.program-filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;padding:4px;border:1px solid #d8d1c5;width:max-content;max-width:100%}
-.program-filter{padding:8px 12px;border:0;color:#52616b;background:transparent;font:10px var(--mono);cursor:pointer;white-space:nowrap}
+.program-filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;padding:4px;border:1px solid #e2e6ea;width:max-content;max-width:100%}
+.program-filter{padding:8px 12px;border:0;color:#405360;background:transparent;font:10px var(--mono);cursor:pointer;white-space:nowrap}
 .program-filter[aria-pressed='true']{color:var(--paper);background:var(--ink)}
-.program-filter-count{margin:0 0 16px;color:#68747b;font:10px var(--mono)}
-.program-filter-empty{padding:24px;border:1px solid #d8d1c5;color:#68747b;font-size:13px}
+.program-filter-count{margin:0 0 16px;color:#405360;font:10px var(--mono)}
+.program-filter-empty{padding:24px;border:1px solid #e2e6ea;color:#405360;font-size:13px}
 html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)}
 .pathway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .pathway-card{display:flex;min-width:0;flex-direction:column;align-items:flex-start}
@@ -21,31 +47,31 @@ html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)
 .pathway-card>p:not(.pathway-category):not(.pathway-fields){flex:1}
 .pathway-credential{margin-top:12px}
 .pathway-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:10px}
-.programs-next-step{max-width:1080px;margin:0 auto;padding:44px 24px 80px;border-top:1px solid #d8d1c5}
+.programs-next-step{max-width:1080px;margin:0 auto;padding:44px 24px 80px;border-top:1px solid #e2e6ea}
 .programs-next-step h2{max-width:700px;margin:16px 0 24px;color:var(--ink);font:500 36px/1.15 var(--display)}
 .tuition-page .directory-hero{padding-bottom:56px}
-.tuition-plan>p:not(.eyebrow){max-width:600px;color:#68747b;font-size:14px;line-height:1.7}
-.admission-tuition-plan{margin-top:24px;padding-top:44px;border-top:1px solid #d8d1c5}
+.tuition-plan>p:not(.eyebrow){max-width:600px;color:#405360;font-size:14px;line-height:1.7}
+.admission-tuition-plan{margin-top:24px;padding-top:44px;border-top:1px solid #e2e6ea}
 .admission-tuition-link{display:inline-block;margin-top:22px;color:#8b6320;font-size:12px;font-weight:600}
 .admission-tuition-link span{margin-left:6px}
 .tuition-plan-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:14px;margin-top:30px}
-.tuition-program,.tuition-payment{padding:28px;border:1px solid #d8d1c5;background:#fff}
+.tuition-program,.tuition-payment{padding:28px;border:1px solid #e2e6ea;background:#fff}
 .tuition-program h3{margin:36px 0 24px;color:var(--ink);font:500 27px var(--display)}
 .tuition-amount-label{margin:0;color:#98702f;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
 .tuition-amount{margin:7px 0;color:var(--ink);font:500 44px/1 var(--display)}
 .tuition-amount small{font:400 16px var(--body)}
-.tuition-division,.payment-rhythms{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;color:#68747b;font:10px var(--mono);text-transform:uppercase}
-.tuition-division span,.payment-rhythms span{padding:9px 11px;border:1px solid #d8d1c5}
-.tuition-payment>p:not(.tuition-amount-label):not(.tuition-amount){color:#68747b;font-size:12px;line-height:1.6}
+.tuition-division,.payment-rhythms{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;color:#405360;font:10px var(--mono);text-transform:uppercase}
+.tuition-division span,.payment-rhythms span{padding:9px 11px;border:1px solid #e2e6ea}
+.tuition-payment>p:not(.tuition-amount-label):not(.tuition-amount){color:#405360;font-size:12px;line-height:1.6}
 .tuition-payment dl{margin:24px 0}
-.tuition-payment dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #d8d1c5;font-size:12px}
-.tuition-payment dt{color:#68747b}.tuition-payment dd{margin:0;color:var(--ink);font-weight:600}
-.tuition-payment .pay-in-full{display:grid;gap:5px;margin:20px 0 0;padding-top:15px;border-top:1px solid #d8d1c5}
+.tuition-payment dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #e2e6ea;font-size:12px}
+.tuition-payment dt{color:#405360}.tuition-payment dd{margin:0;color:var(--ink);font-weight:600}
+.tuition-payment .pay-in-full{display:grid;gap:5px;margin:20px 0 0;padding-top:15px;border-top:1px solid #e2e6ea}
 .tuition-payment .pay-in-full strong{color:var(--ink);font:600 12px var(--mono);text-transform:uppercase}
 .financing-section{padding-top:18px}
 .financing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .financing-grid h3{margin:30px 0 8px;color:var(--ink);font:500 21px/1.2 var(--display)}
-.tuition-year{padding-top:44px;border-top:1px solid #d8d1c5}
+.tuition-year{padding-top:44px;border-top:1px solid #e2e6ea}
 .tuition-year>p{max-width:760px}
 .tuition-year .button{margin-top:14px}
 .location-map-wrap{max-width:950px;margin:50px auto;padding:0 24px}
@@ -58,18 +84,18 @@ html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)
   .tuition-program,.tuition-payment,.pathway-card,.financing-grid article{padding:22px}
   .location-map-wrap{margin:24px auto}
 }
-.tuition-calculator{max-width:880px;margin:28px auto 0;padding:clamp(22px,4vw,40px);border:1px solid #e1dbd1;border-radius:10px;background:linear-gradient(145deg,#fff 0%,#fbfaf7 100%);box-shadow:0 20px 55px rgba(16,35,56,.08)}
+.tuition-calculator{max-width:880px;margin:28px auto 0;padding:clamp(22px,4vw,40px);border:1px solid #e2e6ea;border-radius:10px;background:linear-gradient(145deg,#fff 0%,#ffffff 100%);box-shadow:0 20px 55px rgba(16,35,56,.08)}
 .tuition-calculator-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
 .tuition-calculator-heading h3{margin:12px 0 5px;color:var(--ink);font:500 clamp(25px,4vw,34px)/1.12 var(--display)}
-.tuition-calculator-heading>div:first-child>p{margin:0;color:#68747b;font-size:13px}
+.tuition-calculator-heading>div:first-child>p{margin:0;color:#405360;font-size:13px}
 .tuition-price-preview{display:grid;gap:5px;text-align:right}
-.tuition-price-preview span{color:#68747b;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.tuition-price-preview span{color:#405360;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .tuition-price-preview strong{color:var(--ink);font:500 24px var(--display)}
 .tuition-degree-filters{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 24px}
-.tuition-degree-filter{display:grid;min-width:120px;gap:5px;padding:11px 13px;border:1px solid #e1dbd1;border-radius:6px;color:var(--ink);background:#fff;text-align:left;cursor:pointer;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
+.tuition-degree-filter{display:grid;min-width:120px;gap:5px;padding:11px 13px;border:1px solid #e2e6ea;border-radius:6px;color:var(--ink);background:#fff;text-align:left;cursor:pointer;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
 .tuition-degree-filter span{color:#98702f;font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase}
 .tuition-degree-filter strong{font:500 12px var(--body)}
-.tuition-degree-filter[aria-pressed='true']{border-color:#173651;background:#f0f4f6;box-shadow:inset 0 0 0 1px #173651}
+.tuition-degree-filter[aria-pressed='true']{border-color:#173651;background:#ffffff;box-shadow:inset 0 0 0 1px #173651}
 .tuition-degree-filter:focus-visible{outline:2px solid #98702f;outline-offset:3px}
 .tuition-slider-control{margin:28px 0 18px}
 .tuition-slider-label{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:13px}
@@ -78,25 +104,25 @@ html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)
 .tuition-slider-control input{display:block;width:100%;height:28px;margin:0;accent-color:#173651;cursor:pointer;touch-action:pan-y}
 .tuition-slider-control input:focus-visible{outline:2px solid #98702f;outline-offset:5px}
 .tuition-slider-control input:disabled{cursor:default}
-.tuition-slider-endpoints{display:flex;justify-content:space-between;margin-top:3px;color:#68747b;font:10px var(--mono)}
-.tuition-terms{display:flex;width:max-content;max-width:100%;gap:4px;margin:24px 0;padding:4px;border:1px solid #e1dbd1;border-radius:7px;background:#f4f1eb}
-.tuition-terms button{min-height:42px;padding:10px 16px;border:0;border-radius:4px;color:#52616b;background:transparent;font:500 11px var(--mono);cursor:pointer}
+.tuition-slider-endpoints{display:flex;justify-content:space-between;margin-top:3px;color:#405360;font:10px var(--mono)}
+.tuition-terms{display:flex;width:max-content;max-width:100%;gap:4px;margin:24px 0;padding:4px;border:1px solid #e2e6ea;border-radius:7px;background:#ffffff}
+.tuition-terms button{min-height:42px;padding:10px 16px;border:0;border-radius:4px;color:#405360;background:transparent;font:500 11px var(--mono);cursor:pointer}
 .tuition-terms button[aria-pressed='true']{color:#fff;background:var(--ink);box-shadow:0 2px 6px rgba(16,35,56,.18)}
 .tuition-terms button:focus-visible{outline:2px solid #98702f;outline-offset:3px}
-.tuition-result{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,44px);align-items:center;padding:24px;border:1px solid #e7e1d7;border-radius:7px;background:#fff}
+.tuition-result{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,44px);align-items:center;padding:24px;border:1px solid #e2e6ea;border-radius:7px;background:#fff}
 .tuition-payment-highlight{display:grid;gap:9px}
 .tuition-payment-highlight>span{color:#98702f;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .tuition-payment-highlight>strong{color:var(--ink);font:500 clamp(42px,8vw,60px)/1 var(--display)}
-.tuition-payment-highlight>strong small{margin-left:4px;color:#68747b;font:400 15px var(--body)}
-.tuition-payment-highlight>p{margin:0;color:#68747b;font-size:12px}
+.tuition-payment-highlight>strong small{margin-left:4px;color:#405360;font:400 15px var(--body)}
+.tuition-payment-highlight>p{margin:0;color:#405360;font-size:12px}
 .tuition-cost-breakdown,.tuition-fee-list{margin:0}
-.tuition-cost-breakdown div,.tuition-fee-list div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid #e4ded4;font-size:12px}
-.tuition-cost-breakdown dt,.tuition-fee-list dt{color:#68747b}
+.tuition-cost-breakdown div,.tuition-fee-list div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid #e2e6ea;font-size:12px}
+.tuition-cost-breakdown dt,.tuition-fee-list dt{color:#405360}
 .tuition-cost-breakdown dd,.tuition-fee-list dd{margin:0;color:var(--ink);font-weight:600;text-align:right}
 .tuition-cost-breakdown .tuition-total{margin-top:3px;border-top:1px solid #c9bda8}
 .tuition-cost-breakdown .tuition-total dt,.tuition-cost-breakdown .tuition-total dd{color:var(--ink);font-weight:700}
-.tuition-estimate-note{max-width:760px;margin:15px 0 0;color:#68747b;font-size:11px;line-height:1.6}
-.tuition-fees{max-width:1032px;margin:0 auto 30px;padding:44px 24px 60px;border-top:1px solid #d8d1c5}
+.tuition-estimate-note{max-width:760px;margin:15px 0 0;color:#405360;font-size:11px;line-height:1.6}
+.tuition-fees{max-width:1032px;margin:0 auto 30px;padding:44px 24px 60px;border-top:1px solid #e2e6ea}
 .tuition-fees h2{margin:16px 0 24px;color:var(--ink);font:500 34px/1.1 var(--display)}
 .tuition-fee-list{max-width:700px}
 .tuition-fee-list div{padding:13px 0}
@@ -104,11 +130,11 @@ html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)
 .application-main,.application-next-steps{min-width:0}
 .application-section-heading{margin:0 0 24px}
 .application-section-heading h2{margin:14px 0 9px;color:var(--ink);font:500 clamp(30px,4vw,40px)/1.1 var(--display)}
-.application-section-heading>p:last-child{margin:0;color:#68747b;font-size:13px;line-height:1.7}
+.application-section-heading>p:last-child{margin:0;color:#405360;font-size:13px;line-height:1.7}
 .application-form{display:grid;gap:26px}
-.application-notice{margin:0;padding:16px 18px;border:1px solid #e6d5aa;border-radius:10px;color:#52616b;background:#fff8e9;font-size:13px;line-height:1.7}
+.application-notice{margin:0;padding:16px 18px;border:1px solid #e2e6ea;border-radius:10px;color:#405360;background:#ffffff;font-size:13px;line-height:1.7}
 .application-notice a{color:#8b6320;font-weight:600;text-decoration:underline;text-underline-offset:3px}
-.application-fieldset{display:grid;gap:20px;min-width:0;margin:0;padding:25px;border:1px solid #e7e1d7;border-radius:12px;background:linear-gradient(145deg,#fff 0%,#fcfbf8 100%);box-shadow:0 10px 28px rgba(16,35,56,.045)}
+.application-fieldset{display:grid;gap:20px;min-width:0;margin:0;padding:25px;border:1px solid #e2e6ea;border-radius:12px;background:linear-gradient(145deg,#fff 0%,#ffffff 100%);box-shadow:0 10px 28px rgba(16,35,56,.045)}
 .application-fieldset legend{padding:0 10px;color:var(--ink);font:500 22px/1.2 var(--display)}
 .application-fields-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .application-field{display:grid;align-content:start;gap:8px;min-width:0;color:#405360;font-size:12px;font-weight:600}
@@ -117,19 +143,18 @@ html[data-theme='light'] .program-filter[aria-pressed='true']{color:var(--paper)
 .application-field textarea{min-height:unset;resize:vertical}
 .application-field input:focus,.application-field select:focus,.application-field textarea:focus{border-color:#98702f;outline:0;box-shadow:0 0 0 3px rgba(199,150,56,.15)}
 .application-submit{justify-self:start;padding:14px 20px;border:0;border-radius:6px;cursor:pointer}
-.application-submit-status{margin:0;padding:14px 16px;border:1px solid #e6d5aa;border-radius:8px;color:#52616b;background:#fff8e9;font-size:13px;line-height:1.7}
-.application-next-steps{position:sticky;top:24px;padding:28px 24px;border:1px solid rgba(16,35,56,.08);border-radius:14px;color:var(--paper);background:linear-gradient(155deg,#173651,#102338 72%);box-shadow:0 18px 42px rgba(16,35,56,.15)}
-.application-next-steps>.eyebrow{color:#e0bb70}
-.application-next-steps>h2{margin:14px 0 23px;color:var(--paper);font:500 30px/1.12 var(--display)}
+.application-submit-status{margin:0;padding:14px 16px;border:1px solid #e2e6ea;border-radius:8px;color:#405360;background:#ffffff;font-size:13px;line-height:1.7}
+.application-next-steps{position:sticky;top:24px;padding:28px 24px;border:1px solid #e2e6ea;border-radius:14px;color:var(--ink);background:#ffffff;box-shadow:0 18px 42px rgba(16,35,56,.08)}
+.application-next-steps>.eyebrow{color:#8b6320}
+.application-next-steps>h2{margin:14px 0 23px;color:var(--ink);font:500 30px/1.12 var(--display)}
 .application-next-steps ol{display:grid;gap:0;margin:0;padding:0;list-style:none}
 .application-next-steps li{position:relative;display:grid;grid-template-columns:38px 1fr;gap:12px;padding:0 0 22px}
-.application-next-steps li:not(:last-child)::after{position:absolute;top:37px;bottom:0;left:18px;width:1px;background:rgba(224,187,112,.3);content:''}
-.application-next-steps li>span{display:grid;width:36px;height:36px;place-items:center;border:1px solid rgba(224,187,112,.55);border-radius:50%;color:#e0bb70;font:10px var(--mono)}
-.application-next-steps li h3{margin:2px 0 6px;color:var(--paper);font:500 17px/1.25 var(--display)}
-.application-next-steps li p{margin:0;color:#c2cdd3;font-size:12px;line-height:1.65}
-.application-next-steps-note{margin:1px 0 0;padding-top:17px;border-top:1px solid rgba(245,240,231,.18);color:#c2cdd3;font-size:11px;line-height:1.7}
-.application-next-steps-note a{color:#e0bb70;text-decoration:underline;text-underline-offset:3px}
-html[data-theme='light'] .application-next-steps{background:linear-gradient(155deg,#173651,#102338)}
+.application-next-steps li:not(:last-child)::after{position:absolute;top:37px;bottom:0;left:18px;width:1px;background:#e2e6ea;content:''}
+.application-next-steps li>span{display:grid;width:36px;height:36px;place-items:center;border:1px solid #98702f;border-radius:50%;color:#8b6320;font:10px var(--mono)}
+.application-next-steps li h3{margin:2px 0 6px;color:var(--ink);font:500 17px/1.25 var(--display)}
+.application-next-steps li p{margin:0;color:#405360;font-size:12px;line-height:1.65}
+.application-next-steps-note{margin:1px 0 0;padding-top:17px;border-top:1px solid #e2e6ea;color:#405360;font-size:11px;line-height:1.7}
+.application-next-steps-note a{color:#8b6320;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:720px){
   .application-content{grid-template-columns:1fr;padding:0 16px 56px}
   .application-next-steps{position:static;grid-row:1;padding:24px 20px}
@@ -146,7 +171,7 @@ html[data-theme='light'] .application-next-steps{background:linear-gradient(155d
   .tuition-degree-filter strong{font-size:11px}
   .tuition-slider-label{align-items:flex-start}
   .tuition-result{grid-template-columns:1fr;gap:17px;padding:18px}
-  .tuition-payment-highlight{padding-bottom:17px;border-bottom:1px solid #e4ded4}
+  .tuition-payment-highlight{padding-bottom:17px;border-bottom:1px solid #e2e6ea}
   .tuition-terms{display:grid;width:100%;grid-template-columns:1fr 1fr}
   .tuition-terms button{padding-inline:7px}
   .tuition-fees{margin-bottom:10px;padding:36px 24px 44px}

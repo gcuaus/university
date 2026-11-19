@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ApplicationForm from '../components/application-form';
+import { enrollmentSteps } from '../enrollment-steps';
 
 export const metadata: Metadata = {
   title: 'Application for Admission | GCUA',
@@ -27,22 +28,12 @@ export default function ApplicationPage() {
           <p className="eyebrow">Your path to GCUA</p>
           <h2 id="next-steps-title">What Happens Next</h2>
           <ol>
-            <li>
-              <span>01</span>
-              <div><h3>Application review</h3><p>Admissions reviews your program selection, education, and ministry background.</p></div>
-            </li>
-            <li>
-              <span>02</span>
-              <div><h3>Personal follow-up</h3><p>An admissions team member contacts you to discuss your goals, eligibility, and recommended academic plan.</p></div>
-            </li>
-            <li>
-              <span>03</span>
-              <div><h3>Plan your studies</h3><p>Get guidance on the $20 application fee, tuition, and available no-interest payment arrangements.</p></div>
-            </li>
-            <li>
-              <span>04</span>
-              <div><h3>Start learning</h3><p>After enrollment, required textbooks are included under GCUA's textbook policy. Study at your own pace from wherever you are.</p></div>
-            </li>
+            {enrollmentSteps.map((step) => (
+              <li key={step.number}>
+                <span>{step.number}</span>
+                <div><h3>{step.title}</h3><p>{step.description}</p></div>
+              </li>
+            ))}
           </ol>
           <p className="application-next-steps-note">This application form is a preview and does not submit or save your information yet. Contact <a href="mailto:admission@gcua.us">GCUA Admissions</a> to begin.</p>
         </aside>

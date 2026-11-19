@@ -35,6 +35,7 @@ export default async function SiteHeader() {
             <Link href="/programs">{home.navAcademic}</Link>
             <Link href="/admission">{home.navAdmission}</Link>
             <Link href="/resources">{home.navResources}</Link>
+            <Link href="/contact">Contact</Link>
           </nav>
           <div className="header-utilities"><LanguageSwitcher /></div>
         </MobileNavigation>
