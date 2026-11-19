@@ -7,6 +7,7 @@ export const translations: Record<string, string> = {
   'Getting Started': 'Memulai',
   'Tuition': 'Biaya Pendidikan',
   'News': 'Berita',
+  'Resources': 'Sumber Daya',
   'Contact': 'Kontak',
   'Location': 'Lokasi',
   'Academy': 'Akademi',

@@ -6,25 +6,35 @@ import '../site-content.css';
 const reader = createReader(process.cwd(), config);
 
 export default async function ResourcesPage() {
-  const page = await reader.singletons.resourcesPage.read();
+  const resources = await reader.collections.resources.all();
+  const publishedResources = resources
+    .filter(({ entry }) => entry.status === 'published')
+    .sort((left, right) =>
+      (right.entry.publishedAt ?? '').localeCompare(left.entry.publishedAt ?? '')
+    );
 
   return (
-    <main className="directory-page">
-      <section className="directory-hero">
-        <p className="eyebrow">{page?.heroEyebrow}</p>
-        <h1>{page?.heroTitle}</h1>
-        <p>{page?.heroDescription}</p>
+    <main className="directory-page resources-page">
+      <section className="directory-hero resources-hero">
+        <p className="eyebrow">Articles &amp; Insights</p>
+        <h1>Resources for your calling.</h1>
+        <p>Read reflections, guidance, and updates to support your studies and ministry.</p>
       </section>
-      <section className="directory-grid">
-        {page?.resources.map((resource) => (
-          <article className="directory-card" key={resource.title}>
-            <span className="card-index">{resource.label}</span>
-            <h2>{resource.title}</h2>
-            <p>{resource.description}</p>
-            <Link href={resource.href}>{resource.linkLabel} <span>↗</span></Link>
-          </article>
-        ))}
-      </section>
+      {publishedResources.length ? (
+        <section className="directory-grid resources-grid" aria-label="Published resources">
+          {publishedResources.map(({ slug, entry }) => (
+            <article className="directory-card resources-card" key={slug}>
+              {entry.publishedAt && <span className="card-index">{entry.publishedAt}</span>}
+              <h2>{entry.title}</h2>
+              {entry.excerpt && <p>{entry.excerpt}</p>}
+              <p className="card-meta">By {entry.author}</p>
+              <Link href={`/resources/${slug}`}>Read article <span>↗</span></Link>
+            </article>
+          ))}
+        </section>
+      ) : (
+        <p className="empty-state">No published resources yet. Check back soon.</p>
+      )}
     </main>
   );
 }

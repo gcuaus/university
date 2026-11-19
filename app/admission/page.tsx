@@ -6,11 +6,17 @@ import TuitionCalculator from '../components/tuition-calculator';
 const reader = createReader(process.cwd(), config);
 
 export default async function AdmissionPage() {
-  const [page, tuitionPage] = await Promise.all([
+  const [page, tuitionPage, admissionCards] = await Promise.all([
     reader.singletons.admissionPage.read(),
     reader.singletons.tuitionPage.read(),
+    reader.collections.admissionCards.all(),
   ]);
   if (!tuitionPage) throw new Error('Missing required "tuitionPage" content.');
+  const sortedAdmissionCards = [...admissionCards].sort(
+    (left, right) =>
+      (left.entry.sortOrder ?? Number.MAX_SAFE_INTEGER)
+      - (right.entry.sortOrder ?? Number.MAX_SAFE_INTEGER),
+  );
 
   return (
     <main className="directory-page">
@@ -21,12 +27,12 @@ export default async function AdmissionPage() {
         <p>{page?.heroDescription}</p>
       </section>
       <section className="directory-grid">
-        {page?.cards.map((card) => (
-          <article className="directory-card" id={card.id} key={card.id || card.label}>
-            <span className="card-index">{card.label}</span>
-            <h2>{card.title}</h2>
-            <p>{card.description}</p>
-            {card.linkHref && <a href={card.linkHref}>{card.linkLabel} <span>↗</span></a>}
+        {sortedAdmissionCards.map(({ slug, entry }) => (
+          <article className="directory-card" id={entry.sectionId || undefined} key={slug}>
+            <span className="card-index">{entry.label}</span>
+            <h2>{entry.title}</h2>
+            <p>{entry.description}</p>
+            {entry.linkHref && <a href={entry.linkHref}>{entry.linkLabel} <span>↗</span></a>}
           </article>
         ))}
       </section>

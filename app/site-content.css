@@ -21,6 +21,31 @@
 .home-enrollment-steps h3{margin:0 0 8px;color:var(--ink);font:500 19px/1.2 var(--display)}
 .home-enrollment-steps p{margin:0;color:#405360;font-size:13px;line-height:1.65}
 .home-enrollment>.button{display:flex;width:max-content;margin:auto}
+.resources-page{background:#edf2f4}
+.resources-hero{padding-bottom:48px}
+.resources-grid{padding-bottom:72px}
+.resources-card{display:flex;min-width:0;flex-direction:column;align-items:flex-start}
+.resources-card h2{margin:24px 0 10px}
+.resources-card>p:not(.card-meta){flex:1}
+.resources-card .card-meta{margin-top:auto}
+.resource-article-page{padding-bottom:80px}
+.resource-article{max-width:860px;margin:0 auto;padding:68px 24px 0}
+.resource-article-header{padding-bottom:30px;border-bottom:1px solid #d3dde3}
+.resource-back-link{display:inline-block;margin-bottom:32px;color:#8b6320;font-size:12px;font-weight:600}
+.resource-article-header .eyebrow{margin-bottom:14px}
+.resource-article-header h1{margin:0 0 12px;color:#102338;font:500 clamp(38px,6vw,64px)/1.08 var(--display);letter-spacing:-.02em}
+.resource-article-byline,.resource-article-excerpt{color:#405360;font-size:14px;line-height:1.75}
+.resource-article-byline{margin:0 0 14px}
+.resource-article-excerpt{max-width:700px;margin:0;font-size:17px}
+.resource-article-body{padding:30px 0;color:#405360;font-size:15px;line-height:1.85}
+.resource-article-body h2,.resource-article-body h3,.resource-article-body h4{margin:30px 0 12px;color:#102338;font-family:var(--display);line-height:1.2}
+.resource-article-body p,.resource-article-body ul,.resource-article-body ol{margin:0 0 18px}
+.resource-article-body img{max-width:100%;height:auto}
+.resource-article-body a{color:#8b6320;text-decoration:underline;text-underline-offset:3px}
+.resource-share{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #d3dde3}
+.resource-share>span{margin-right:6px;color:#405360;font:11px var(--mono);text-transform:uppercase}
+.resource-share a{padding:8px 11px;border:1px solid #cbd3da;border-radius:4px;color:#102338;background:#fff;font-size:12px}
+.resource-share a:hover{border-color:#98702f;color:#8b6320}
 .enrollment-journey-content{max-width:860px;margin:0 auto;padding:10px 24px 40px}
 .enrollment-journey-content h2{margin:18px 0 25px;color:var(--ink);font:500 clamp(26px,4vw,36px)/1.15 var(--display)}
 .enrollment-journey-content ol{margin:0;padding:0;list-style:none;counter-reset:journey-step}

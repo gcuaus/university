@@ -14,7 +14,7 @@ const fallback = {
   navAbout: 'About Us',
   navAcademic: 'Academic',
   navAdmission: 'Admission',
-  navResources: 'Resources Page',
+  navResources: 'Resources',
 };
 
 export default async function SiteHeader() {

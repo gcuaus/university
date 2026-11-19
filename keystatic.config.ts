@@ -7,9 +7,9 @@ export default config({
       : { kind: 'github', repo: 'gcuaus/university' },
   ui: {
     navigation: {
-      Pages: ['home', 'aboutPage', 'programsPage', 'tuitionPage', 'admissionPage', 'newsPage', 'facultyPage', 'locationPage'],
+      Pages: ['home', 'aboutPage', 'programsPage', 'tuitionPage', 'admissionPage', 'facultyPage', 'locationPage'],
       Infographics: ['infographics', 'credentialsSection', 'credentials'],
-      Content: ['heroSlides', 'aboutFaqs', 'pages', 'posts', 'faculty', 'about', 'programs', 'location', 'contact'],
+      Content: ['heroSlides', 'aboutFaqs', 'pages', 'resources', 'faculty', 'about', 'programs', 'admissionCards', 'location', 'contact'],
     },
   },
   singletons: {
@@ -111,22 +111,6 @@ export default config({
         detailBackLabel: fields.text({ label: 'Program detail back link' }),
       },
     }),
-    resourcesPage: singleton({
-      label: 'Resources Page',
-      path: 'content/resources-page',
-      schema: {
-        heroEyebrow: fields.text({ label: 'Hero eyebrow' }),
-        heroTitle: fields.text({ label: 'Hero title' }),
-        heroDescription: fields.text({ label: 'Hero description', multiline: true }),
-        resources: fields.array(fields.object({
-          label: fields.text({ label: 'Resource category' }),
-          title: fields.text({ label: 'Resource title', validation: { isRequired: true } }),
-          description: fields.text({ label: 'Resource description', multiline: true }),
-          href: fields.text({ label: 'Resource page path' }),
-          linkLabel: fields.text({ label: 'Link label' }),
-        }), { label: 'Resources', itemLabel: (props) => props.fields.title.value }),
-      },
-    }),
     tuitionPage: singleton({
       label: 'Tuition Page',
       path: 'content/tuition-page',
@@ -169,28 +153,6 @@ export default config({
         heroEyebrow: fields.text({ label: 'Hero eyebrow' }),
         heroTitle: fields.text({ label: 'Hero title' }),
         heroDescription: fields.text({ label: 'Hero description', multiline: true }),
-        cards: fields.array(fields.object({
-          id: fields.text({ label: 'Card section ID' }),
-          label: fields.text({ label: 'Card label', validation: { isRequired: true } }),
-          title: fields.text({ label: 'Card title' }),
-          description: fields.text({ label: 'Card description', multiline: true }),
-          email: fields.text({ label: 'Email address' }),
-          linkLabel: fields.text({ label: 'Link label' }),
-          linkHref: fields.text({ label: 'Link URL' }),
-        }), { label: 'Admission cards', itemLabel: (props) => props.fields.label.value }),
-      },
-    }),
-    newsPage: singleton({
-      label: 'News Page',
-      path: 'content/news-page',
-      schema: {
-        heroEyebrow: fields.text({ label: 'Hero eyebrow' }),
-        heroTitle: fields.text({ label: 'Hero title' }),
-        heroDescription: fields.text({ label: 'Hero description', multiline: true }),
-        emptyMessage: fields.text({ label: 'No published articles message' }),
-        authorPrefix: fields.text({ label: 'Author prefix' }),
-        readMoreLabel: fields.text({ label: 'Article link label' }),
-        detailBackLabel: fields.text({ label: 'Article detail back link' }),
       },
     }),
     facultyPage: singleton({
@@ -233,6 +195,22 @@ export default config({
     }),
   },
   collections: {
+    admissionCards: collection({
+      label: 'Admission Cards',
+      slugField: 'title',
+      path: 'content/admission-cards/*',
+      format: 'yaml',
+      schema: {
+        title: fields.slug({ name: { label: 'Card title', validation: { isRequired: true } } }),
+        sortOrder: fields.integer({ label: 'Display order', defaultValue: 1, validation: { min: 0 } }),
+        sectionId: fields.text({ label: 'Card section ID' }),
+        label: fields.text({ label: 'Card label', validation: { isRequired: true } }),
+        description: fields.text({ label: 'Card description', multiline: true }),
+        email: fields.text({ label: 'Email address' }),
+        linkLabel: fields.text({ label: 'Link label' }),
+        linkHref: fields.text({ label: 'Link URL' }),
+      },
+    }),
     infographics: collection({
       label: 'Infographics',
       slugField: 'title',
@@ -314,8 +292,8 @@ export default config({
         }),
       },
     }),
-    posts: collection({
-      label: 'Posts',
+    resources: collection({
+      label: 'Resources',
       slugField: 'title',
       path: 'content/posts/*',
       format: { data: 'yaml', contentField: 'content' },
