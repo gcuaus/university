@@ -121,7 +121,7 @@ main:not(.directory-page)>.homepage-faculty .faculty-intro blockquote{
 	max-width:430px;
 }
 main:not(.directory-page)>.homepage-faculty-grid{
-	grid-template-columns:repeat(3,minmax(0,1fr));
+	grid-template-columns:repeat(2,minmax(0,1fr));
 	gap:12px;
 	margin:0;
 }
@@ -134,12 +134,14 @@ main:not(.directory-page)>.homepage-faculty-grid article{
 	box-shadow:0 8px 24px rgba(16,35,56,.055);
 }
 main:not(.directory-page)>.homepage-faculty-grid img{
-	width:100%!important;
-	height:auto;
-	aspect-ratio:4/3;
-	margin:0 0 10px;
-	border:0;
-	border-radius:5px;
+	width:200px!important;
+	max-width:100%;
+	height:auto!important;
+	aspect-ratio:1;
+	flex-shrink:0;
+	margin:0 auto 10px;
+	border:2px solid var(--gold);
+	border-radius:50%;
 	object-fit:cover;
 	object-position:center top;
 }
@@ -159,8 +161,8 @@ main:not(.directory-page)>.homepage-faculty blockquote{
 	color:#405360;
 }
 main:not(.directory-page)>.homepage-faculty img{
-	border:1px solid #d3dde3;
-	border-radius:4px;
+	border:2px solid var(--gold);
+	border-radius:50%;
 }
 main:not(.directory-page)>.cta{
 	background:#ffffff;
