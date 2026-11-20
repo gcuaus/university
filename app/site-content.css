@@ -82,8 +82,21 @@
 .enrollment-journey-content li>p:not(:first-child){margin:0 0 10px;color:#405360;font-size:14px;line-height:1.75}
 .enrollment-journey-content li>p:last-child{margin-bottom:0}
 @media(max-width:720px){.getting-started-page .directory-hero{padding-top:62px;padding-bottom:24px}.enrollment-journey-content{padding:10px 24px 25px}.enrollment-journey-content li{padding:20px 20px 20px 70px}.enrollment-journey-content li::before{top:20px;left:16px;width:38px;height:38px}.enrollment-journey-content li:not(:last-child)::after{left:22px}.enrollment-journey-content li>p:first-child{font-size:19px}}
-.faculty-portrait{width:200px;height:auto;max-width:100%;aspect-ratio:1;margin-inline:auto;object-fit:cover;object-position:center top}
+.faculty-portrait{width:160px;height:auto;max-width:100%;aspect-ratio:1;margin-inline:auto;object-fit:cover;object-position:center top}
 .directory-page .faculty-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.faculty-card{display:flex;align-items:flex-start;gap:20px;padding:20px}
+.faculty-card .faculty-portrait-link{flex:0 0 160px;width:160px;margin:0}
+.faculty-card .faculty-portrait{width:100%;margin:0}
+.faculty-info{flex:1;min-width:0}
+.faculty-info h2{overflow-wrap:anywhere}
+@media(max-width:720px){
+  .directory-page .faculty-directory-grid{gap:12px;padding-inline:12px}
+  .faculty-card{gap:8px;padding:10px 8px}
+  .faculty-card .faculty-portrait-link{flex-basis:clamp(48px,15vw,90px);width:clamp(48px,15vw,90px)}
+  .faculty-info h2{font-size:clamp(12px,3.8vw,16px)}
+  .faculty-info p{font-size:11px;line-height:1.5}
+  .faculty-card .card-index{font-size:8px}
+}
 .home-enrollment{min-width:0}
 .home-enrollment .section-intro h2{font-size:clamp(28px,5vw,42px)}
 .home-enrollment-steps li{overflow-wrap:anywhere}
