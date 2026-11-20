@@ -58,11 +58,11 @@ export default async function HomePage() {
   return (
     <main>
       <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">{home.heroEyebrow}</p><h1>{home.heroTitle}</h1><p className="hero-body">{home.heroBody}</p><div className="actions"><Link className="button gold" href="/programs">{home.heroPrimaryCta}<span>↗</span></Link><Link className="button outline" href="/about/our-story">{home.heroSecondaryCta}</Link></div></div><HeroSlider slides={heroSlides.map(({ entry }) => entry)} /></section>
-      <section className="personal-invitation personal-invitation-top" aria-labelledby="invitation-title"><div className="invitation-image"><img src={home.invitationImageUrl} alt={home.invitationImageAlt} /></div><div className="invitation-copy"><p className="eyebrow">{home.invitationEyebrow}</p><h2 id="invitation-title">{home.invitationTitle}</h2><p>{home.invitationBody}</p><p className="invitation-tagline">{home.invitationTagline}</p><p className="invitation-signature"><strong>{home.invitationName}</strong><span>{home.invitationRole}</span></p></div></section>
+      <section className="personal-invitation personal-invitation-top" aria-labelledby="invitation-title"><div className="invitation-copy"><p className="eyebrow">{home.invitationEyebrow}</p><h2 id="invitation-title">{home.invitationTitle}</h2><p>{home.invitationBody}</p><p className="invitation-tagline">{home.invitationTagline}</p><div className="invitation-signature"><strong>{home.invitationName}</strong><span>{home.invitationRole}</span><img className="invitation-signature-image" src={home.invitationImageUrl} alt={home.invitationImageAlt} /></div></div></section>
       <section className="programs" id="programs" aria-labelledby="programs-title">
         <div className="section-intro">
           <p className="eyebrow">Our academic programs</p>
-          <h2 id="programs-title">Find the Program for Your Calling</h2>
+          <h2 id="programs-title" className="academic-range-title">From Diploma to Doctorate</h2>
           <p>Explore Christ-centered degree programs for biblical study, theology, Christian leadership, counseling, and practical ministry.</p>
         </div>
         <HomeProgramGrid
