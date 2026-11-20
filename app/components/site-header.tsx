@@ -26,7 +26,7 @@ export default async function SiteHeader() {
       <header className="site-header">
         <Link className="brand" href="/#top">
           <img className="brand-logo" src="/logo-assets/logo.png" alt="Great Commission University of America" />
-          <span><strong>{home.brand}</strong><small>{home.brandDescriptor}</small></span>
+          <span><strong>{home.brand}</strong></span>
         </Link>
         <MobileNavigation>
           <nav aria-label="Main navigation">
