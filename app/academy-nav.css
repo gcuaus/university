@@ -280,7 +280,7 @@ html[data-theme='light'] .language-option:hover{background:#ffffff}
 	.site-header{position:relative;height:auto;min-height:140px;padding:12px 20px;align-items:center;flex-wrap:nowrap;border-bottom-color:rgba(16,35,56,.18);color:#102338;background:#ffffff}
 	.site-header .brand-logo{width:116px;height:116px}
 	.site-header .brand strong{font-size:18px}
-	.site-header>.nav-cta{display:inline-flex;align-items:center;justify-content:center;height:38px;min-height:38px;margin-left:8px;padding:0 8px;font-size:10px;line-height:1;white-space:nowrap}
+	.site-header>.nav-cta{display:inline-flex;align-items:center;justify-content:center;height:56px;min-height:56px;margin-left:8px;padding:0 8px;font-size:10px;line-height:1;white-space:nowrap}
 	.mobile-navigation{position:static;display:flex;flex:1;justify-content:flex-end}
 	.mobile-nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;min-height:56px;padding:12px;border:1px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer}
 	.mobile-nav-toggle-bars,.mobile-nav-toggle-bars::before,.mobile-nav-toggle-bars::after{display:block;width:24px;height:2px;background:var(--gold);content:''}
