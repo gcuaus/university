@@ -226,8 +226,9 @@ main:not(.directory-page)>.cta{
 .site-dropdown-links[hidden]{display:none}
 .site-dropdown-links a{display:block;padding:10px 12px;white-space:nowrap}
 .site-dropdown-links a:hover{background:var(--ink2)}
-.brand-logo{display:block;width:156px;height:156px;flex:0 0 auto;object-fit:contain}
-.brand strong{font-size:20px}
+.brand-logo{display:block;width:96px;height:96px;flex:0 0 auto;aspect-ratio:1;object-fit:contain}
+.brand strong{font-size:26px}
+.brand small{display:block;margin-top:3px;color:#8b6320;font:10px/1.2 var(--body);letter-spacing:0;text-transform:none}
 .footer-logo{display:block;width:36px;height:36px;flex:0 0 auto;object-fit:contain}
 .site-header>.nav-cta{font-size:11px;line-height:1;white-space:nowrap}
 .header-utilities{display:inline-flex;align-items:center;gap:10px}
@@ -277,9 +278,9 @@ html[data-theme='light'] .language-option:hover{background:#ffffff}
 	.hero .hero-slide-caption strong{max-width:100%}
 }
 @media(max-width:1500px){
-	.site-header{position:relative;height:auto;min-height:140px;padding:12px 20px;align-items:center;flex-wrap:nowrap;border-bottom-color:rgba(16,35,56,.18);color:#102338;background:#ffffff}
-	.site-header .brand-logo{width:116px;height:116px}
-	.site-header .brand strong{font-size:18px}
+	.site-header{position:relative;height:auto;min-height:88px;padding:12px 20px;align-items:center;flex-wrap:nowrap;border-bottom-color:rgba(16,35,56,.18);color:#102338;background:#ffffff}
+	.site-header .brand-logo{width:64px;height:64px}
+	.site-header .brand strong{font-size:26px}
 	.site-header>.nav-cta{display:inline-flex;align-items:center;justify-content:center;height:56px;min-height:56px;margin-left:8px;padding:0 8px;font-size:10px;line-height:1;white-space:nowrap}
 	.mobile-navigation{position:static;display:flex;flex:1;justify-content:flex-end}
 	.mobile-nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;min-height:56px;padding:12px;border:1px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer}
