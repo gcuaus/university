@@ -226,6 +226,7 @@ main:not(.directory-page)>.cta{
 .site-dropdown-links[hidden]{display:none}
 .site-dropdown-links a{display:block;padding:10px 12px;white-space:nowrap}
 .site-dropdown-links a:hover{background:var(--ink2)}
+.site-header{height:112px}
 .brand-logo{display:block;width:96px;height:96px;flex:0 0 auto;aspect-ratio:1;object-fit:contain}
 .brand strong{font-size:26px}
 .brand small{display:block;margin-top:3px;color:#8b6320;font:10px/1.2 var(--body);letter-spacing:0;text-transform:none}
